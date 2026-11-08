@@ -1,0 +1,4 @@
+# Jaga agar file teks memakai LF di semua platform.
+# Ini penting karena freeze manifest menghitung SHA-256 dari isi file:
+# konversi CRLF/LF saat checkout bisa membuat `npm run verify` gagal.
+* text=auto eol=lf

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Indodax Dry-Run · Dual SMA 20/150</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Lewati ke isi</a>
+
+  <header class="top">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="30" height="30"><rect width="32" height="32" rx="8" fill="#7c5cff"/><path d="M9 21l4-6 3 3 4-7 3 4" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="23" cy="15" r="1.8" fill="#3ddc97"/></svg>
+      </div>
+      <div>
+        <div class="eyebrow">UAS Algoritma Trading · Dry-Run</div>
+        <h1>Indodax Dual SMA <span>20 / 150</span></h1>
+      </div>
+    </div>
+    <div class="identity" id="identity"></div>
+  </header>
+
+  <div class="statusbar" id="statusbar">
+    <span class="pill" id="phase-pill">memuat…</span>
+    <span class="sep">•</span>
+    <span id="update-line">Menyiapkan laporan…</span>
+    <span class="spacer"></span>
+    <button class="btn" id="refresh" type="button">Muat ulang</button>
+  </div>
+
+  <nav class="tabs" aria-label="Bagian laporan">
+    <button class="tab active" data-tab="ringkasan" type="button">Ringkasan</button>
+    <button class="tab" data-tab="backtest" type="button">Backtest 3 Tahun</button>
+    <button class="tab" data-tab="forward" type="button">Forward Test</button>
+    <button class="tab" data-tab="audit" type="button">Log &amp; Audit</button>
+    <button class="tab" data-tab="config" type="button">Konfigurasi</button>
+  </nav>
+
+  <main id="main">
+    <section class="tab-panel active" id="tab-ringkasan">
+      <div id="hero"></div>
+      <div class="kpi-grid" id="kpi-backtest"></div>
+
+      <div class="grid-2">
+        <div class="card span-2">
+          <div class="card-head">
+            <div>
+              <h2>Kurva Ekuitas vs Buy &amp; Hold</h2>
+              <p class="sub" id="equity-sub">Backtest 3 tahun, modal awal Rp100.000.000</p>
+            </div>
+            <div class="legend" id="equity-legend"></div>
+          </div>
+          <div class="chart-wrap tall">
+            <canvas id="equity-chart" aria-label="Grafik ekuitas backtest"></canvas>
+            <div class="chart-tip" id="equity-tip" hidden></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-head"><h2>Return Bulanan</h2><span class="tag">WIB</span></div>
+          <div id="monthly" class="monthly-wrap"></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><h2>Universe Terpilih</h2><span class="tag">8 pair IDR</span></div>
+          <div id="universe"></div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-head"><h2>Aturan Strategi</h2><span class="tag">fungsi sinyal tunggal</span></div>
+          <div id="rules"></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><h2>Ringkasan Biaya</h2><span class="tag">taker all-in</span></div>
+          <div id="cost-summary"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tab-panel" id="tab-backtest">
+      <div class="kpi-grid" id="bt-kpi"></div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-head"><h2>Metrik Lengkap</h2><span class="tag" id="bt-window"></span></div>
+          <div id="bt-metrics"></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><h2>Struktur Biaya</h2><span class="tag">fee + spread + slippage</span></div>
+          <div id="bt-costs"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <h2>Log Trade</h2>
+          <div class="controls">
+            <label for="trade-filter" class="sr-only">Filter simbol</label>
+            <select id="trade-filter"></select>
+          </div>
+        </div>
+        <div id="bt-trades"></div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-head"><h2>Posisi Terbuka Saat Akhir</h2><span class="tag" id="open-count"></span></div>
+          <div id="bt-open"></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><h2>Sinyal Dilewati</h2><span class="tag" id="skipped-count"></span></div>
+          <div id="bt-skipped"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tab-panel" id="tab-forward">
+      <div id="fwd-status"></div>
+      <div class="kpi-grid" id="fwd-kpi"></div>
+
+      <div class="grid-2">
+        <div class="card span-2">
+          <div class="card-head">
+            <div>
+              <h2>Ekuitas Forward Test</h2>
+              <p class="sub" id="fwd-equity-sub">Mark-to-market di bid setiap tick.</p>
+            </div>
+            <div class="legend" id="fwd-legend"></div>
+          </div>
+          <div class="chart-wrap tall">
+            <canvas id="live-chart" aria-label="Grafik ekuitas forward test"></canvas>
+            <div class="chart-tip" id="live-tip" hidden></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-head"><h2>Posisi Saat Ini</h2><span class="tag" id="fwd-pos-count"></span></div>
+          <div id="fwd-positions"></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><h2>Progres Candle</h2><span class="tag">idempotensi per candle</span></div>
+          <div id="fwd-progress"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><h2>Order Dry-Run</h2><span class="tag" id="fwd-order-count"></span></div>
+        <div id="fwd-orders"></div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-head"><h2>Validasi &amp; Error</h2><span class="tag" id="fwd-error-count"></span></div>
+          <div id="fwd-errors"></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><h2>Riwayat Tick</h2><span class="tag">terbaru dulu</span></div>
+          <div id="fwd-calls"></div>
+        </div>
+      </div>
+
+      <div class="card" id="fwd-compare-card" hidden>
+        <div class="card-head"><h2>Live vs Backtest Jendela yang Sama</h2><span class="tag">eksekusi beda itu wajar</span></div>
+        <div id="fwd-compare"></div>
+      </div>
+    </section>
+
+    <section class="tab-panel" id="tab-audit">
+      <div id="audit-summary"></div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-head"><h2>Hitung Ulang Backtest</h2><span class="tag" id="audit-bt-tag"></span></div>
+          <div id="audit-bt"></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><h2>Hitung Ulang Forward</h2><span class="tag" id="audit-live-tag"></span></div>
+          <div id="audit-live"></div>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-head"><h2>Sumber Spread &amp; Slippage</h2><span class="tag">snapshot order book</span></div>
+          <div id="audit-spread"></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><h2>Integritas Freeze</h2><span class="tag">SHA-256</span></div>
+          <div id="audit-freeze"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-head"><h2>Kepatuhan UAS</h2><span class="tag">bukti, bukan klaim</span></div>
+        <div id="compliance"></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><h2>Artefak &amp; Log Mentah</h2><span class="tag">bisa diunduh</span></div>
+        <div id="artifacts"></div>
+      </div>
+    </section>
+
+    <section class="tab-panel" id="tab-config">
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-head"><h2>Parameter Beku</h2><span class="tag" id="config-version"></span></div>
+          <div id="config-params"></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><h2>Biaya &amp; Minimum Order</h2><span class="tag">sumber resmi</span></div>
+          <div id="config-fees"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-head"><h2>Universe &amp; Likuiditas Awal</h2><span class="tag">dipilih sebelum backtest</span></div>
+        <div id="config-universe"></div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-head"><h2>Garis Waktu</h2><span class="tag">WIB / UTC</span></div>
+          <div id="config-timeline"></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><h2>Metodologi Singkat</h2><span class="tag">tanpa look-ahead</span></div>
+          <div id="config-method"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Disclaimer:</strong> Ini bot <em>dry-run</em> untuk tugas akademik. Tidak ada API key, tidak ada dana nyata, dan tidak ada order yang dikirim ke Indodax. Performa masa lalu tidak menjamin hasil masa depan.</p>
+    <p id="footer-meta"></p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

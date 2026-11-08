@@ -1,0 +1,877 @@
+{
+  "generated_at": "2026-11-08T06:50:03.214Z",
+  "backtest_start": "2023-11-08T00:00:00.000Z",
+  "early_window_days": 30,
+  "candidate_top": 60,
+  "pick": 8,
+  "selected": [
+    "BTCIDR",
+    "ETHIDR",
+    "SOLIDR",
+    "XRPIDR",
+    "DOGEIDR",
+    "ADAIDR",
+    "BNBIDR",
+    "TRXIDR"
+  ],
+  "screening_1d": [
+    {
+      "symbol": "BTCIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 22345429138,
+      "earlyOk": true
+    },
+    {
+      "symbol": "UAIIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "XRPIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 5352169117,
+      "earlyOk": true
+    },
+    {
+      "symbol": "HYPEIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "PEPEIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "ONLIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "ETHIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 8188186609,
+      "earlyOk": true
+    },
+    {
+      "symbol": "EPICIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "SOLIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 6284327973,
+      "earlyOk": true
+    },
+    {
+      "symbol": "ICNTIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "BEATIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "DEGENIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "FARTCOINIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "BIRBIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "SHIBIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "ANOAIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "ACTIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 63218853,
+      "earlyOk": true
+    },
+    {
+      "symbol": "ONDOIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "CSTIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "QNTIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 38044834,
+      "earlyOk": true
+    },
+    {
+      "symbol": "ASTERIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "PIEVERSEIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "NEONIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "ZEREBROIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "DOGEIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 5022151687,
+      "earlyOk": true
+    },
+    {
+      "symbol": "BNBIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 1624656513,
+      "earlyOk": true
+    },
+    {
+      "symbol": "PUMPIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "SUIIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "FUNIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "ENAIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "UCJLIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 18680014,
+      "earlyOk": true
+    },
+    {
+      "symbol": "SIGNIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "PENGUIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "UNIIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 113057148,
+      "earlyOk": true
+    },
+    {
+      "symbol": "ADAIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 2597356997,
+      "earlyOk": true
+    },
+    {
+      "symbol": "SKYAIIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "DGBIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 27719852,
+      "earlyOk": true
+    },
+    {
+      "symbol": "PIPPINIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "KOMAIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "CYBERIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "MITOIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "MARSCOINIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "BOMEIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "MOODENGIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "SAPIENIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "VCGIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 20692767,
+      "earlyOk": true
+    },
+    {
+      "symbol": "HUMAIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "CONXIDR",
+      "days": 15,
+      "coverage": 0.5,
+      "earlyMedianTurnoverIdr": 223281102,
+      "earlyOk": false
+    },
+    {
+      "symbol": "DRXIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "LITIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "EDENAIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "WLDIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 76746526,
+      "earlyOk": true
+    },
+    {
+      "symbol": "MYXIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "NEARIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 207129612,
+      "earlyOk": true
+    },
+    {
+      "symbol": "XLMIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "TMGIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 15506450,
+      "earlyOk": true
+    },
+    {
+      "symbol": "ARBIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 299769967,
+      "earlyOk": true
+    },
+    {
+      "symbol": "W3FIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "PMIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "INDRIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "AAVEIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "ANKRIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 46250342,
+      "earlyOk": true
+    },
+    {
+      "symbol": "ATOMIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 173046484,
+      "earlyOk": true
+    },
+    {
+      "symbol": "AVAXIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 410544315,
+      "earlyOk": true
+    },
+    {
+      "symbol": "AXSIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 61342144,
+      "earlyOk": true
+    },
+    {
+      "symbol": "BANDIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "BATIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 7185269,
+      "earlyOk": true
+    },
+    {
+      "symbol": "BCHIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "CELOIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 29653953,
+      "earlyOk": true
+    },
+    {
+      "symbol": "CHRIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 2333630,
+      "earlyOk": true
+    },
+    {
+      "symbol": "CHZIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 49039308,
+      "earlyOk": true
+    },
+    {
+      "symbol": "COMPIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 48460433,
+      "earlyOk": true
+    },
+    {
+      "symbol": "CRVIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 46062483,
+      "earlyOk": true
+    },
+    {
+      "symbol": "DOTIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 619964840,
+      "earlyOk": true
+    },
+    {
+      "symbol": "ENJIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 34567857,
+      "earlyOk": true
+    },
+    {
+      "symbol": "ETCIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 123914833,
+      "earlyOk": true
+    },
+    {
+      "symbol": "FILIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 119384260,
+      "earlyOk": true
+    },
+    {
+      "symbol": "GALAIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 83094664,
+      "earlyOk": true
+    },
+    {
+      "symbol": "GRTIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 285688471,
+      "earlyOk": true
+    },
+    {
+      "symbol": "HBARIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 348639421,
+      "earlyOk": true
+    },
+    {
+      "symbol": "ICPIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "IOSTIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 51564645,
+      "earlyOk": true
+    },
+    {
+      "symbol": "IOTAIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 16808597,
+      "earlyOk": true
+    },
+    {
+      "symbol": "KNCIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 1489504,
+      "earlyOk": true
+    },
+    {
+      "symbol": "KSMIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 12697374,
+      "earlyOk": true
+    },
+    {
+      "symbol": "LINKIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 776243565,
+      "earlyOk": true
+    },
+    {
+      "symbol": "LSKIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "LTCIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 567766345,
+      "earlyOk": true
+    },
+    {
+      "symbol": "MANAIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 220270768,
+      "earlyOk": true
+    },
+    {
+      "symbol": "NEOIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 20599397,
+      "earlyOk": true
+    },
+    {
+      "symbol": "POLIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "RENDERIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "RSRIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 8432025,
+      "earlyOk": true
+    },
+    {
+      "symbol": "SANDIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 389495438,
+      "earlyOk": true
+    },
+    {
+      "symbol": "SNXIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 36938607,
+      "earlyOk": true
+    },
+    {
+      "symbol": "SUSHIIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 194796190,
+      "earlyOk": true
+    },
+    {
+      "symbol": "THETAIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 67019851,
+      "earlyOk": true
+    },
+    {
+      "symbol": "TONIDR",
+      "days": 0,
+      "coverage": 0,
+      "earlyMedianTurnoverIdr": null,
+      "earlyOk": false
+    },
+    {
+      "symbol": "TRXIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 1502205566,
+      "earlyOk": true
+    },
+    {
+      "symbol": "VETIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 45693863,
+      "earlyOk": true
+    },
+    {
+      "symbol": "WAVESIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 181612866,
+      "earlyOk": true
+    },
+    {
+      "symbol": "XTZIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 23757014,
+      "earlyOk": true
+    },
+    {
+      "symbol": "YFIIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 288138880,
+      "earlyOk": true
+    },
+    {
+      "symbol": "ZRXIDR",
+      "days": 30,
+      "coverage": 1,
+      "earlyMedianTurnoverIdr": 45767213,
+      "earlyOk": true
+    }
+  ],
+  "verified_4h": [
+    {
+      "symbol": "BTCIDR",
+      "ok": true,
+      "reason": "lolos",
+      "bars": 6778,
+      "coverageFull": 1,
+      "earlyMedianTurnoverIdr": 3464516293
+    },
+    {
+      "symbol": "ETHIDR",
+      "ok": true,
+      "reason": "lolos",
+      "bars": 6778,
+      "coverageFull": 1,
+      "earlyMedianTurnoverIdr": 1101824282
+    },
+    {
+      "symbol": "SOLIDR",
+      "ok": true,
+      "reason": "lolos",
+      "bars": 6778,
+      "coverageFull": 1,
+      "earlyMedianTurnoverIdr": 899508211
+    },
+    {
+      "symbol": "XRPIDR",
+      "ok": true,
+      "reason": "lolos",
+      "bars": 6778,
+      "coverageFull": 1,
+      "earlyMedianTurnoverIdr": 851897501
+    },
+    {
+      "symbol": "DOGEIDR",
+      "ok": true,
+      "reason": "lolos",
+      "bars": 6778,
+      "coverageFull": 1,
+      "earlyMedianTurnoverIdr": 707208267
+    },
+    {
+      "symbol": "ADAIDR",
+      "ok": true,
+      "reason": "lolos",
+      "bars": 6778,
+      "coverageFull": 1,
+      "earlyMedianTurnoverIdr": 418321626
+    },
+    {
+      "symbol": "BNBIDR",
+      "ok": true,
+      "reason": "lolos",
+      "bars": 6778,
+      "coverageFull": 1,
+      "earlyMedianTurnoverIdr": 212078063
+    },
+    {
+      "symbol": "TRXIDR",
+      "ok": true,
+      "reason": "lolos",
+      "bars": 6778,
+      "coverageFull": 1,
+      "earlyMedianTurnoverIdr": 200556355
+    },
+    {
+      "symbol": "LINKIDR",
+      "ok": true,
+      "reason": "lolos",
+      "bars": 6778,
+      "coverageFull": 1,
+      "earlyMedianTurnoverIdr": 103781055
+    },
+    {
+      "symbol": "DOTIDR",
+      "ok": true,
+      "reason": "lolos",
+      "bars": 6778,
+      "coverageFull": 1,
+      "earlyMedianTurnoverIdr": 83144396
+    },
+    {
+      "symbol": "LTCIDR",
+      "ok": true,
+      "reason": "lolos",
+      "bars": 6778,
+      "coverageFull": 1,
+      "earlyMedianTurnoverIdr": 74719315
+    },
+    {
+      "symbol": "AVAXIDR",
+      "ok": true,
+      "reason": "lolos",
+      "bars": 6778,
+      "coverageFull": 1,
+      "earlyMedianTurnoverIdr": 62532994
+    },
+    {
+      "symbol": "SANDIDR",
+      "ok": true,
+      "reason": "lolos",
+      "bars": 6778,
+      "coverageFull": 1,
+      "earlyMedianTurnoverIdr": 55268755
+    },
+    {
+      "symbol": "HBARIDR",
+      "ok": true,
+      "reason": "lolos",
+      "bars": 6778,
+      "coverageFull": 1,
+      "earlyMedianTurnoverIdr": 54786529
+    },
+    {
+      "symbol": "ARBIDR",
+      "ok": true,
+      "reason": "lolos",
+      "bars": 6656,
+      "coverageFull": 1,
+      "earlyMedianTurnoverIdr": 43297193
+    },
+    {
+      "symbol": "YFIIDR",
+      "ok": true,
+      "reason": "lolos",
+      "bars": 6778,
+      "coverageFull": 1,
+      "earlyMedianTurnoverIdr": 32655072
+    }
+  ]
+}

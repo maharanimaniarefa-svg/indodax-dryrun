@@ -1,0 +1,26 @@
+{
+  "name": "indodax-dryrun-ma",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bot dry run Indodax (4h, Dual SMA 20/150) + backtest 3 tahun + dashboard - UAS Algoritma Trading",
+  "main": "api/tick.js",
+  "scripts": {
+    "universe": "node scripts/select_universe.js",
+    "history": "node scripts/fetch_history.js",
+    "snapshot": "node scripts/collect_snapshot.js",
+    "spread": "node scripts/build_spread.js",
+    "backtest": "node scripts/backtest.js",
+    "tick": "node scripts/tick_local.js",
+    "smoke": "node scripts/smoke_test.js",
+    "export": "node scripts/export_logs.js",
+    "recompute": "node scripts/recompute.js",
+    "dashboard": "node scripts/build_dashboard.js",
+    "freeze": "node scripts/freeze.js",
+    "verify": "node scripts/freeze.js --verify",
+    "audit": "node scripts/recompute.js && node scripts/freeze.js --verify",
+    "all": "node scripts/backtest.js && node scripts/recompute.js && node scripts/freeze.js && node scripts/build_dashboard.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

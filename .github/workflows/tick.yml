@@ -1,0 +1,54 @@
+name: Indodax dry-run tick
+
+# Tick utama tiap jam pada menit ke-7 (UTC).
+# Vercel Cron Hobby hanya sekali sehari, jadi workflow ini yang menjaga
+# candle 4 jam tetap diproses tepat setelah candle tertutup.
+on:
+  schedule:
+    - cron: "7 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: indodax-dryrun-tick
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  tick:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Cek jendela forward
+        id: window
+        run: |
+          today=$(date -u +%Y%m%d)
+          if [ "$today" -gt 20261114 ]; then
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "Jendela forward sudah selesai; tick dilewati."
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Panggil /api/tick
+        if: steps.window.outputs.run == 'true'
+        env:
+          BOT_URL: ${{ secrets.BOT_URL }}
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+        run: |
+          if [ -z "$BOT_URL" ] || [ -z "$CRON_SECRET" ]; then
+            echo "Secrets BOT_URL dan CRON_SECRET wajib diisi di Settings -> Secrets and variables -> Actions."
+            exit 1
+          fi
+          curl --silent --show-error --fail-with-body --max-time 90 \
+            -H "Authorization: Bearer $CRON_SECRET" \
+            "${BOT_URL%/}/api/tick" | tee tick.json
+          echo
+
+      - name: Ringkasan tick
+        if: steps.window.outputs.run == 'true'
+        run: |
+          if [ -f tick.json ]; then
+            node -e "const r=require('./tick.json'); console.log(JSON.stringify({ok:r.ok,waiting:r.waiting,frozen:r.frozen,skipped:r.skipped,equity:r.equity,orders:(r.orders||[]).length,errors:(r.errors||[]).length,message:r.message},null,2))" || cat tick.json
+          fi

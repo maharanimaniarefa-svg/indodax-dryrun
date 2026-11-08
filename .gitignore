@@ -1,0 +1,20 @@
+# rahasia - JANGAN pernah di-commit
+.env
+.env.local
+.env.*.local
+.vercel
+
+# dependensi & cache
+node_modules/
+.npm/
+*.log
+
+# log mentah lokal (yang dikumpulkan adalah hasil export_logs.js)
+logs/*.jsonl
+logs/state_*.json
+snapshots/*.jsonl
+
+# file sementara
+tmp/
+.DS_Store
+Thumbs.db

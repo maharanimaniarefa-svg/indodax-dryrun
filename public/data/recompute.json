@@ -1,0 +1,259 @@
+{
+  "generated_at": "2026-11-08T07:11:34.635Z",
+  "inputs": {
+    "backtest_full": "results/backtest_full.json",
+    "backtest_summary": "results/backtest_summary.json",
+    "backtest_trades_csv": "results/backtest_trades.csv",
+    "backtest_equity_csv": "results/backtest_equity.csv",
+    "live_source": null,
+    "live_export": "logs/export/*.jsonl"
+  },
+  "backtest": {
+    "available": true,
+    "reported": {
+      "start": 1699401600,
+      "end": 1794096000,
+      "years": 3.0006844626967832,
+      "initialCapital": 100000000,
+      "finalEquity": 143553627.56916004,
+      "totalReturn": 0.43553627569160036,
+      "cagr": 0.1280442048298418,
+      "maxDrawdown": -0.4245798296978984,
+      "mddPeak": 1733284800,
+      "mddTrough": 1793606400,
+      "calmar": 0.30157863344791763,
+      "trades": 461,
+      "winRate": 0.1822125813449024,
+      "profitFactor": 1.799684491495461,
+      "netProfitFactor": 1.2218448457164752,
+      "avgWinPct": 0.20484676781029773,
+      "avgLossPct": -0.03136801479273239,
+      "avgWinIdr": 2855694.63272354,
+      "avgLossIdr": -520755.2296541571,
+      "avgHoldHours": 175.69631236442515,
+      "fees": 46364600.80492579,
+      "costs": 68777914.5050102,
+      "grossProfit": 252801368.9481458,
+      "grossLoss": 140469826.87397537,
+      "costShare": 0.2720630619651344
+    },
+    "recomputed": {
+      "start": 1699401600,
+      "end": 1794096000,
+      "years": 3.0006844626967832,
+      "initialCapital": 100000000,
+      "finalEquity": 143553627.56916004,
+      "totalReturn": 0.43553627569160036,
+      "cagr": 0.1280442048298418,
+      "maxDrawdown": -0.4245798296978984,
+      "mddPeak": 1733284800,
+      "mddTrough": 1793606400,
+      "calmar": 0.30157863344791763,
+      "trades": 461,
+      "winRate": 0.1822125813449024,
+      "profitFactor": 1.799684491495461,
+      "netProfitFactor": 1.2218448457164752,
+      "avgWinPct": 0.20484676781029773,
+      "avgLossPct": -0.03136801479273239,
+      "avgWinIdr": 2855694.63272354,
+      "avgLossIdr": -520755.2296541571,
+      "avgHoldHours": 175.69631236442515,
+      "fees": 46364600.80492579,
+      "costs": 68777914.5050102,
+      "grossProfit": 252801368.9481458,
+      "grossLoss": 140469826.87397537,
+      "costShare": 0.2720630619651344,
+      "cost_breakdown": {
+        "fees": 46364600.80492579,
+        "spread": 13773102.29814901,
+        "slippage": 7798483.8200888,
+        "other": 841727.5818466166,
+        "total": 68777914.5050102
+      },
+      "csv": {
+        "trades": 461,
+        "equity_rows": 6577,
+        "fees": 46364605,
+        "costs": 68777921,
+        "net_pnl": 43553624,
+        "total_return": 0.43553628,
+        "max_drawdown": -0.42457982852816056
+      }
+    },
+    "checks": [
+      {
+        "id": "backtest.totalReturn",
+        "label": "backtest: totalReturn sama dengan hasil hitung ulang",
+        "pass": true,
+        "detail": {
+          "reported": 0.43553627569160036,
+          "recomputed": 0.43553627569160036
+        }
+      },
+      {
+        "id": "backtest.maxDrawdown",
+        "label": "backtest: maxDrawdown sama dengan hasil hitung ulang",
+        "pass": true,
+        "detail": {
+          "reported": -0.4245798296978984,
+          "recomputed": -0.4245798296978984
+        }
+      },
+      {
+        "id": "backtest.winRate",
+        "label": "backtest: winRate sama dengan hasil hitung ulang",
+        "pass": true,
+        "detail": {
+          "reported": 0.1822125813449024,
+          "recomputed": 0.1822125813449024
+        }
+      },
+      {
+        "id": "backtest.profitFactor",
+        "label": "backtest: profitFactor sama dengan hasil hitung ulang",
+        "pass": true,
+        "detail": {
+          "reported": 1.799684491495461,
+          "recomputed": 1.799684491495461
+        }
+      },
+      {
+        "id": "backtest.trades",
+        "label": "backtest: trades sama dengan hasil hitung ulang",
+        "pass": true,
+        "detail": {
+          "reported": 461,
+          "recomputed": 461
+        }
+      },
+      {
+        "id": "backtest.fees",
+        "label": "backtest: fees sama dengan hasil hitung ulang",
+        "pass": true,
+        "detail": {
+          "reported": 46364600.80492579,
+          "recomputed": 46364600.80492579
+        }
+      },
+      {
+        "id": "backtest.costs",
+        "label": "backtest: costs sama dengan hasil hitung ulang",
+        "pass": true,
+        "detail": {
+          "reported": 68777914.5050102,
+          "recomputed": 68777914.5050102
+        }
+      },
+      {
+        "id": "bt.csv.trade_count",
+        "label": "jumlah trade CSV = jumlah trade JSON",
+        "pass": true,
+        "detail": {
+          "csv": 461,
+          "json": 461
+        }
+      },
+      {
+        "id": "bt.csv.equity_count",
+        "label": "jumlah baris ekuitas CSV = panjang kurva JSON",
+        "pass": true,
+        "detail": {
+          "csv": 6577,
+          "json": 6577
+        }
+      },
+      {
+        "id": "bt.csv.fees",
+        "label": "total fee CSV ≈ total fee JSON (toleransi Rp100)",
+        "pass": true,
+        "detail": {
+          "csv": 46364605,
+          "json": 46364600.80492579
+        }
+      },
+      {
+        "id": "bt.csv.costs",
+        "label": "total biaya CSV ≈ total biaya JSON (toleransi Rp100)",
+        "pass": true,
+        "detail": {
+          "csv": 68777921,
+          "json": 68777914.5050102
+        }
+      },
+      {
+        "id": "bt.csv.return",
+        "label": "return dari CSV ekuitas ≈ return JSON (pembulatan Rp1)",
+        "pass": true,
+        "detail": {
+          "csv": 0.43553628,
+          "json": 0.43553627569160036
+        }
+      },
+      {
+        "id": "bt.csv.mdd",
+        "label": "max drawdown dari CSV ekuitas ≈ MDD JSON (pembulatan Rp1)",
+        "pass": true,
+        "detail": {
+          "csv": -0.42457982852816056,
+          "json": -0.4245798296978984
+        }
+      },
+      {
+        "id": "bt.csv.wins",
+        "label": "jumlah trade untung CSV = JSON",
+        "pass": true,
+        "detail": {
+          "csv": 84,
+          "json": 84
+        }
+      },
+      {
+        "id": "bt.pnl.identity",
+        "label": "netPnl = grossPnl - biaya pada setiap trade",
+        "pass": true,
+        "detail": {
+          "bad": 0
+        }
+      },
+      {
+        "id": "bt.order.fee",
+        "label": "fee setiap order = notional x tarif taker",
+        "pass": true,
+        "detail": {
+          "bad": 0
+        }
+      },
+      {
+        "id": "bt.time.order",
+        "label": "setiap exit terjadi setelah entry",
+        "pass": true,
+        "detail": {
+          "bad": 0
+        }
+      },
+      {
+        "id": "bt.risk.daily_loss",
+        "label": "tidak ada entry baru setelah daily loss limit aktif",
+        "pass": true,
+        "detail": {
+          "violations": 0
+        }
+      },
+      {
+        "id": "bt.risk.min_order",
+        "label": "semua order beli >= minimum Rp25000",
+        "pass": true,
+        "detail": {
+          "violations": 0
+        }
+      }
+    ],
+    "passed": true
+  },
+  "live": {
+    "available": false,
+    "source": null,
+    "note": "UPSTASH_REDIS_REST_URL / UPSTASH_REDIS_REST_TOKEN belum diset. Untuk lokal pakai STORE=file."
+  },
+  "overall_passed": true
+}

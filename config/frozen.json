@@ -1,0 +1,62 @@
+{
+  "version": "1.0.0",
+  "student": {
+    "nama": "Refa Maharani Imaniar",
+    "nim": "25110200011",
+    "kelas": "Algoritma Trading"
+  },
+  "frozen_at_wib": "2026-11-08T13:41:22+07:00",
+  "forward_start_candle_utc": "2026-11-08T08:00:00Z",
+  "forward_end_utc": "2026-11-14T16:59:00Z",
+  "backtest": {
+    "start": "2023-11-08T00:00:00Z",
+    "end": "2026-11-08T00:00:00Z",
+    "warmup_bars": 200
+  },
+  "timeframe": {
+    "tf": 240,
+    "label": "4h",
+    "seconds": 14400
+  },
+  "strategy": {
+    "name": "Dual SMA Trend Following (MA20 cross-up + filter MA150)",
+    "n": 20,
+    "x": 150,
+    "long_only": true,
+    "entry": "Close[s] > SMA20[s] AND Close[s-1] <= SMA20[s-1] AND Close[s] > SMA150[s]",
+    "exit": "Close[s] < SMA150[s]",
+    "execution": "sinyal dari candle tertutup s, eksekusi pada harga bid/ask tick berikutnya (backtest: open bar s+1)"
+  },
+  "capital_idr": 100000000,
+  "max_positions": 8,
+  "alloc_pct": 0.1,
+  "daily_loss_limit_pct": 0.03,
+  "min_order_idr": 25000,
+  "max_spread_pct": 0.02,
+  "max_fill_slippage_pct": 0.01,
+  "max_candle_age_bars": 2,
+  "liquidity_cap_pct": 0.05,
+  "rank_lookback_bars": 180,
+  "fees": {
+    "buy_taker": 0.0020555,
+    "sell_taker": 0.0041555,
+    "api_pairs_taker": 0.002,
+    "source": "Help Indodax - Rincian Biaya Transaksi (all-in-fees, IDR Market PRO, efektif 1 Okt 2026)",
+    "source_url": "https://help.indodax.com/hc/id/articles/4416646599705-Rincian-Biaya-Transaksi-di-INDODAX",
+    "accessed": "2026-11-08",
+    "note": "Dipakai tarif lebih mahal antara /api/pairs (0,2%) dan halaman resmi (beli 0,20555%, jual 0,41555%)."
+  },
+  "min_order_source": {
+    "api_pairs": 10000,
+    "official_pro": 25000,
+    "used": 25000,
+    "source_url": "https://help.indodax.com/hc/id/articles/4416646599705-Rincian-Biaya-Transaksi-di-INDODAX",
+    "accessed": "2026-11-08",
+    "note": "Ketentuan Pro minimal Rp25.000; dipakai angka yang lebih ketat."
+  },
+  "benchmark_symbol": "BTCIDR",
+  "signals": {
+    "idempotency": "satu simbol hanya diproses sekali per candle (state.lastProcessed + Redis SET NX)",
+    "retry": "maksimal 3 percobaan per request, backoff 400ms/1200ms, timeout 12s"
+  }
+}
