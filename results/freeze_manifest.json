@@ -1,0 +1,67 @@
+{
+  "frozen_at_wib": "2026-11-08T13:41:22+07:00",
+  "generated_at": "2026-11-08T07:12:27.535Z",
+  "strategy": "Dual SMA Trend Following (MA20 cross-up + filter MA150)",
+  "timeframe": "4h",
+  "universe": [
+    "BTCIDR",
+    "ETHIDR",
+    "SOLIDR",
+    "XRPIDR",
+    "DOGEIDR",
+    "ADAIDR",
+    "BNBIDR",
+    "TRXIDR"
+  ],
+  "freeze_hash": {
+    "aggregate": "05739d638487a99b4176ecc21cb447e4e706ebe8196771a414224c25f93483d7",
+    "files": {
+      "config/frozen.json": "aa13853ad62467b2d80ac0adb606728b7d9a28cc3386b83991cefb0b941dd7c8",
+      "config/universe.json": "8ca8ffa6a419a881bbaf6a4ae83607ff9d44154bd3d474f6407d22905947c3bd",
+      "lib/strategy.js": "634dde9781d9e4a989f3f449bcb812ce4c69221d2f71c21f6404fd0da91bf8b1",
+      "lib/backtest.js": "3ce88f2cbc394677f12ee99f2621e102179c67806bab1f5826426a9334003eb4",
+      "lib/bot.js": "0fa0983d47a9a6b398d774295ea13eb7248609c2827aff8f49242e9a718f454f",
+      "lib/fill.js": "751d07f63bb60465f06e9be53facafde15cf9e8f013a1ddf47d1245ab11221f0",
+      "lib/metrics.js": "4fc9e32d691187ee9293c8f42468396ab2d9886db859753e42c74b4851d2b3e7"
+    }
+  },
+  "git_commit": "7fd87465f05fd29456194ca54e968e257b08e904",
+  "node": "v24.20.0",
+  "files": {
+    "config/frozen.json": "aa13853ad62467b2d80ac0adb606728b7d9a28cc3386b83991cefb0b941dd7c8",
+    "config/universe.json": "8ca8ffa6a419a881bbaf6a4ae83607ff9d44154bd3d474f6407d22905947c3bd",
+    "lib/config.js": "c5eaf3a7983855c97948edd7c42c56ddeb35447f3d48dc822da7c034b0551981",
+    "lib/strategy.js": "634dde9781d9e4a989f3f449bcb812ce4c69221d2f71c21f6404fd0da91bf8b1",
+    "lib/backtest.js": "3ce88f2cbc394677f12ee99f2621e102179c67806bab1f5826426a9334003eb4",
+    "lib/bot.js": "0fa0983d47a9a6b398d774295ea13eb7248609c2827aff8f49242e9a718f454f",
+    "lib/fill.js": "751d07f63bb60465f06e9be53facafde15cf9e8f013a1ddf47d1245ab11221f0",
+    "lib/metrics.js": "4fc9e32d691187ee9293c8f42468396ab2d9886db859753e42c74b4851d2b3e7",
+    "lib/indodax.js": "ff38dfb7df3aa4ab10c4122f32326f267ac379b0ea46bb1df679e69d6b9ca4d6",
+    "lib/store.js": "d894d30c79598d23ed3991852cd9b3fac8360043dabdddd88e4c8e3e1c2903fd",
+    "data/spread.json": "bf2eee45e9896595118d1e58cc58dc8c8dae11583db6a78be6a133c8994923af",
+    "data/meta.json": "608f733778498c4a068ede42c87520555dabc32d4b4423ed50e6d2802d91ddb8",
+    "data/universe_candidates.json": "cc6fc70d2e1ce3f897b854daf36336a55a5f9be6196521cad106dff89c70e017",
+    "results/backtest_summary.json": "4a43c5d07ba53e21e8b3b6ff024deef70ea72f962adf1562c2546e7ab00a803a",
+    "results/backtest_full.json": "ada583435ef30e385991c05c3649d57b98ae4e407dc7676c1fd126445a4da9d5",
+    "results/backtest_trades.csv": "716eee853da2de44f006e49c24873044aaa2e155778b9cd409651f1fa3fff0f1",
+    "results/backtest_equity.csv": "4519793fbbfda4b49d6554e297264b4baf2e9c06cb4846a5f949c5507fd9b4be",
+    "results/backtest_signals.csv": "bc251658de570c59c07ee5d8a37f069531b9ea48884004b5251e1c24483332c8",
+    "results/recompute.json": "ea86d3888ef07b29d8ea7d49e0026339053fcd5f930097f3494f25a0bbfa5b09",
+    "data/candles/BTCIDR_240.csv": "52e0ad5f8b46501443bae6e619973cbf283d691abc60b26e875d01034eb7d7a3",
+    "data/candles/ETHIDR_240.csv": "7d92d854eed2fbdedce59372cb442b7c5167a641b4cada0f85b4bef902e510ac",
+    "data/candles/SOLIDR_240.csv": "5e49263a6e2594da9c6c6aac9f6f66cccdddbe40d539e1f7e582c959c55ef62c",
+    "data/candles/XRPIDR_240.csv": "5ea84b692fde14987038e9db8b6957186da0df76f402579098fe8fdaf581025b",
+    "data/candles/DOGEIDR_240.csv": "1f88972cda16f012cf2ceb0b06a4cab3c915eece67e783c8fdfc6ea7bce11981",
+    "data/candles/ADAIDR_240.csv": "33f2494e52959374896b3ddafa2eb29487b2716468d734a9515c86f92c0b963e",
+    "data/candles/BNBIDR_240.csv": "8a792fad5b1d5f240d1b4d8745da1ae94948259b977a9a00d3ad499db16f4cc5",
+    "data/candles/TRXIDR_240.csv": "2b4c5cf52e424bbc330dc9da74e9532dca49a2d2b99496cd4c54125b7814f19f"
+  },
+  "missing": [
+    "results/backtest_forward.json",
+    "logs/export/orders.jsonl",
+    "logs/export/equity.jsonl",
+    "logs/export/calls.jsonl",
+    "logs/export/state.json"
+  ],
+  "note": "Jalankan `node scripts/freeze.js --verify` untuk memastikan tidak ada file yang berubah setelah freeze."
+}
