@@ -95,6 +95,32 @@ Hash gabungan aturan (`freeze_hash.aggregate`) tetap sama sebelum dan sesudah pe
 
 ---
 
+## BF-006 — `includeFiles` Vercel harus string, bukan array
+
+- **Tanggal:** 2026-11-09 (WIB)
+- **File:** `vercel.json`
+- **Dampak:** pembuatan project Vercel gagal total; bukan aturan trading.
+- **Gejala:** saat **New Project**, Vercel menolak dengan
+  `Invalid request: 'functions.api/dashboard.js.includeFiles' should be string.`
+- **Penyebab:** schema `vercel.json` menetapkan `functions.<path>.includeFiles` sebagai
+  **satu string glob**, bukan array. Konfigurasi sebelumnya memakai array empat pola.
+- **Perbaikan:** gabungkan menjadi satu glob:
+  ```json
+  "includeFiles": "{config/**,lib/**,data/spread.json,data/meta.json,results/**}"
+  ```
+  `lib/**` ikut dimasukkan karena `freezeHash()` di `lib/report.js` membaca
+  `lib/strategy.js`, `lib/backtest.js`, dan file aturan lain saat dashboard meminta laporan.
+- **Verifikasi:**
+  - `node -e "require('./vercel.json')"` → JSON valid.
+  - Uji glob Node menghasilkan 29 file, termasuk `config/frozen.json`, `lib/strategy.js`,
+    `data/spread.json`, `data/meta.json`, `results/backtest_summary.json`,
+    `results/recompute.json`, dan `results/freeze_manifest.json`.
+  - `npm run verify` tetap `FREEZE UTUH` (31 file, 0 berubah).
+- **Tidak mengubah aturan:** `vercel.json` tidak termasuk file yang di-hash.
+- **Commit:** `81ad426`.
+
+---
+
 ## Ringkasan bugfix pasca-freeze
 
 | Kode | File | Sifat | Hash aturan berubah? |
@@ -104,6 +130,7 @@ Hash gabungan aturan (`freeze_hash.aggregate`) tetap sama sebelum dan sesudah pe
 | BF-003 | `vercel.json` | hapus rewrite `/public/...` | tidak |
 | BF-004 | `scripts/recompute.js` | normalisasi waktu equity | tidak |
 | BF-005 | `scripts/recompute.js`, `lib/report.js` | rumus coverage candle tertutup | tidak |
+| BF-006 | `vercel.json` | `includeFiles` string glob | tidak |
 
 Semua perubahan dilakukan **tanpa** menyentuh `config/frozen.json`, `config/universe.json`,
 `lib/strategy.js`, `lib/backtest.js`, `lib/bot.js`, `lib/fill.js`, atau `lib/metrics.js`.
