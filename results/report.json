@@ -1,7 +1,7 @@
 {
   "meta": {
     "report_version": 1,
-    "generated_at": "2026-11-09T02:29:48.542Z",
+    "generated_at": "2026-11-09T02:37:22.976Z",
     "student": {
       "nama": "Refa Maharani Imaniar",
       "nim": "25110200011",
@@ -30,8 +30,8 @@
       "samples": 24,
       "notional_idr": 10000000
     },
-    "built_offline_at": "2026-11-09T02:29:48.542Z",
-    "live_included": false
+    "built_offline_at": "2026-11-09T02:37:22.976Z",
+    "live_included": true
   },
   "config": {
     "capital_idr": 100000000,
@@ -30221,13 +30221,13 @@
     }
   },
   "recompute": {
-    "generated_at": "2026-11-08T07:11:34.635Z",
+    "generated_at": "2026-11-09T02:37:19.264Z",
     "inputs": {
       "backtest_full": "results/backtest_full.json",
       "backtest_summary": "results/backtest_summary.json",
       "backtest_trades_csv": "results/backtest_trades.csv",
       "backtest_equity_csv": "results/backtest_equity.csv",
-      "live_source": null,
+      "live_source": "logs/export",
       "live_export": "logs/export/*.jsonl"
     },
     "backtest": {
@@ -30473,9 +30473,184 @@
       "passed": true
     },
     "live": {
-      "available": false,
-      "source": null,
-      "note": "UPSTASH_REDIS_REST_URL / UPSTASH_REDIS_REST_TOKEN belum diset. Untuk lokal pakai STORE=file."
+      "available": true,
+      "source": "logs/export",
+      "orders": 0,
+      "equity_points": 3,
+      "trades": 0,
+      "metrics": {
+        "start": 1794190614,
+        "end": 1794191594,
+        "years": 0.00003105432605774837,
+        "initialCapital": 100000000,
+        "finalEquity": 100000000,
+        "totalReturn": 0,
+        "cagr": 0,
+        "maxDrawdown": 0,
+        "mddPeak": null,
+        "mddTrough": null,
+        "calmar": null,
+        "trades": 0,
+        "winRate": 0,
+        "profitFactor": null,
+        "netProfitFactor": null,
+        "avgWinPct": 0,
+        "avgLossPct": 0,
+        "avgWinIdr": 0,
+        "avgLossIdr": 0,
+        "avgHoldHours": 0,
+        "fees": 0,
+        "costs": 0,
+        "grossProfit": 0,
+        "grossLoss": 0,
+        "costShare": null
+      },
+      "cost_breakdown": {
+        "fees": 0,
+        "spread": 0,
+        "slippage": 0,
+        "other": 0,
+        "total": 0
+      },
+      "checks": [
+        {
+          "id": "live.idempotency",
+          "label": "tidak ada order ganda untuk simbol+candle+side",
+          "pass": true,
+          "detail": {
+            "duplicates": [],
+            "count": 0
+          }
+        },
+        {
+          "id": "live.closed_candle",
+          "label": "semua order dieksekusi setelah candle sinyal tertutup",
+          "pass": true,
+          "detail": {
+            "violations": 0
+          }
+        },
+        {
+          "id": "live.fee",
+          "label": "fee order = notional x tarif taker",
+          "pass": true,
+          "detail": {
+            "violations": 0
+          }
+        },
+        {
+          "id": "live.min_order",
+          "label": "order beli >= minimum Rp25000",
+          "pass": true,
+          "detail": {
+            "violations": 0
+          }
+        },
+        {
+          "id": "live.cash",
+          "label": "kas dari log order = kas di state",
+          "pass": true,
+          "detail": {
+            "from_orders": 100000000,
+            "from_state": 100000000
+          }
+        },
+        {
+          "id": "live.position_sequence",
+          "label": "tidak ada SELL tanpa posisi",
+          "pass": true,
+          "detail": {
+            "violations": 0
+          }
+        },
+        {
+          "id": "live.daily_loss",
+          "label": "tidak ada entry setelah daily loss limit aktif",
+          "pass": true,
+          "detail": {
+            "violations": 0
+          }
+        },
+        {
+          "id": "live.progress",
+          "label": "setiap simbol memproses >= 90% candle yang seharusnya",
+          "pass": true,
+          "detail": {
+            "min_coverage": 1,
+            "expected_candles": 4,
+            "per_symbol": {
+              "BTCIDR": {
+                "processed": 4,
+                "expected": 4
+              },
+              "ETHIDR": {
+                "processed": 4,
+                "expected": 4
+              },
+              "SOLIDR": {
+                "processed": 4,
+                "expected": 4
+              },
+              "XRPIDR": {
+                "processed": 4,
+                "expected": 4
+              },
+              "DOGEIDR": {
+                "processed": 4,
+                "expected": 4
+              },
+              "ADAIDR": {
+                "processed": 4,
+                "expected": 4
+              },
+              "BNBIDR": {
+                "processed": 4,
+                "expected": 4
+              },
+              "TRXIDR": {
+                "processed": 4,
+                "expected": 4
+              }
+            }
+          }
+        }
+      ],
+      "passed": true,
+      "comparison": null,
+      "progress": {
+        "BTCIDR": {
+          "processed": 4,
+          "expected": 4
+        },
+        "ETHIDR": {
+          "processed": 4,
+          "expected": 4
+        },
+        "SOLIDR": {
+          "processed": 4,
+          "expected": 4
+        },
+        "XRPIDR": {
+          "processed": 4,
+          "expected": 4
+        },
+        "DOGEIDR": {
+          "processed": 4,
+          "expected": 4
+        },
+        "ADAIDR": {
+          "processed": 4,
+          "expected": 4
+        },
+        "BNBIDR": {
+          "processed": 4,
+          "expected": 4
+        },
+        "TRXIDR": {
+          "processed": 4,
+          "expected": 4
+        }
+      }
     },
     "overall_passed": true
   },
@@ -30522,84 +30697,438 @@
     }
   ],
   "live": {
-    "available": false,
+    "available": true,
     "window": {
       "start": "2026-11-08T08:00:00Z",
       "end": "2026-11-14T16:59:00Z"
     },
-    "phase": "belum_ada_data",
-    "now_utc": "2026-11-09T02:29:48.000Z",
-    "last_tick_age_sec": null,
+    "phase": "berjalan",
+    "now_utc": "2026-11-09T02:37:22.000Z",
+    "last_tick_age_sec": 248,
     "next_candle_close_utc": "2026-11-09T04:00:00.000Z",
     "progress": {
-      "expected_candles": 5,
-      "coverage_pct": 0,
+      "expected_candles": 4,
+      "coverage_pct": 0.25,
       "per_symbol": {
         "BTCIDR": {
-          "lastProcessed": null,
-          "processed": 0,
-          "expected": 5,
-          "method": "lastProcessed"
+          "lastProcessed": "2026-11-08T20:00:00Z",
+          "processed": 1,
+          "expected": 4,
+          "method": "calls"
         },
         "ETHIDR": {
-          "lastProcessed": null,
-          "processed": 0,
-          "expected": 5,
-          "method": "lastProcessed"
+          "lastProcessed": "2026-11-08T20:00:00Z",
+          "processed": 1,
+          "expected": 4,
+          "method": "calls"
         },
         "SOLIDR": {
-          "lastProcessed": null,
-          "processed": 0,
-          "expected": 5,
-          "method": "lastProcessed"
+          "lastProcessed": "2026-11-08T20:00:00Z",
+          "processed": 1,
+          "expected": 4,
+          "method": "calls"
         },
         "XRPIDR": {
-          "lastProcessed": null,
-          "processed": 0,
-          "expected": 5,
-          "method": "lastProcessed"
+          "lastProcessed": "2026-11-08T20:00:00Z",
+          "processed": 1,
+          "expected": 4,
+          "method": "calls"
         },
         "DOGEIDR": {
-          "lastProcessed": null,
-          "processed": 0,
-          "expected": 5,
-          "method": "lastProcessed"
+          "lastProcessed": "2026-11-08T20:00:00Z",
+          "processed": 1,
+          "expected": 4,
+          "method": "calls"
         },
         "ADAIDR": {
-          "lastProcessed": null,
-          "processed": 0,
-          "expected": 5,
-          "method": "lastProcessed"
+          "lastProcessed": "2026-11-08T20:00:00Z",
+          "processed": 1,
+          "expected": 4,
+          "method": "calls"
         },
         "BNBIDR": {
-          "lastProcessed": null,
-          "processed": 0,
-          "expected": 5,
-          "method": "lastProcessed"
+          "lastProcessed": "2026-11-08T20:00:00Z",
+          "processed": 1,
+          "expected": 4,
+          "method": "calls"
         },
         "TRXIDR": {
-          "lastProcessed": null,
-          "processed": 0,
-          "expected": 5,
-          "method": "lastProcessed"
+          "lastProcessed": "2026-11-08T20:00:00Z",
+          "processed": 1,
+          "expected": 4,
+          "method": "calls"
         }
       },
       "started": true,
-      "method": "lastProcessed",
-      "first_tick_utc": null,
-      "last_tick_utc": null,
+      "method": "calls",
+      "first_tick_utc": "2026-11-09T02:16:54Z",
+      "last_tick_utc": "2026-11-09T02:33:14Z",
       "window_start_utc": "2026-11-08T08:00:00Z",
       "window_end_utc": "2026-11-14T16:59:00Z"
     },
-    "state": null,
+    "state": {
+      "cash": 100000000,
+      "equity": 100000000,
+      "peak_equity": 100000000,
+      "positions": {},
+      "npos": 0,
+      "counters": {
+        "calls": 3,
+        "orders": 0,
+        "entries": 0,
+        "exits": 0,
+        "errors": 0,
+        "killSwitchUses": 0,
+        "blockedDays": 0
+      },
+      "day": {
+        "key": "2026-11-09",
+        "startEquity": 100000000,
+        "blockedLogged": false
+      },
+      "kill_switch": {
+        "active": false,
+        "reason": null,
+        "at": null,
+        "source": null
+      },
+      "last_tick": {
+        "at": "2026-11-09T02:33:14.000Z",
+        "serverTime": 1794191594,
+        "durationMs": 1861,
+        "processed": [],
+        "orders": 0,
+        "equity": 100000000
+      },
+      "updated_at": "2026-11-09T02:33:14.000Z"
+    },
     "metrics": null,
     "equity": [],
     "trades": [],
     "orders": [],
-    "calls": [],
+    "calls": [
+      {
+        "at": "2026-11-09T02:16:54.000Z",
+        "serverTime": 1794190614,
+        "mode": "dry-run",
+        "durationMs": 1426,
+        "killSwitch": {
+          "active": false,
+          "reason": null,
+          "at": null,
+          "source": null
+        },
+        "day": {
+          "key": "2026-11-09",
+          "startEquity": 100000000,
+          "pnlPct": 0,
+          "blocked": false,
+          "rolled": true
+        },
+        "universe": [
+          "BTCIDR",
+          "ETHIDR",
+          "SOLIDR",
+          "XRPIDR",
+          "DOGEIDR",
+          "ADAIDR",
+          "BNBIDR",
+          "TRXIDR"
+        ],
+        "processed": [
+          "BTCIDR",
+          "ETHIDR",
+          "SOLIDR",
+          "XRPIDR",
+          "DOGEIDR",
+          "ADAIDR",
+          "BNBIDR",
+          "TRXIDR"
+        ],
+        "signals": [],
+        "orders": 0,
+        "equity": 100000000,
+        "cash": 100000000,
+        "positions": [],
+        "notes": [
+          "hari WIB baru 2026-11-09: equity awal Rp 100.000.000"
+        ],
+        "errors": [],
+        "nextCandleCloseUtc": 1794196800
+      },
+      {
+        "at": "2026-11-09T02:18:21.000Z",
+        "serverTime": 1794190701,
+        "mode": "dry-run",
+        "durationMs": 1279,
+        "killSwitch": {
+          "active": false,
+          "reason": null,
+          "at": null,
+          "source": null
+        },
+        "day": {
+          "key": "2026-11-09",
+          "startEquity": 100000000,
+          "pnlPct": 0,
+          "blocked": false,
+          "rolled": false
+        },
+        "universe": [
+          "BTCIDR",
+          "ETHIDR",
+          "SOLIDR",
+          "XRPIDR",
+          "DOGEIDR",
+          "ADAIDR",
+          "BNBIDR",
+          "TRXIDR"
+        ],
+        "processed": [],
+        "signals": [],
+        "orders": 0,
+        "equity": 100000000,
+        "cash": 100000000,
+        "positions": [],
+        "notes": [],
+        "errors": [],
+        "nextCandleCloseUtc": 1794196800
+      },
+      {
+        "at": "2026-11-09T02:33:14.000Z",
+        "serverTime": 1794191594,
+        "mode": "dry-run",
+        "durationMs": 1861,
+        "killSwitch": {
+          "active": false,
+          "reason": null,
+          "at": null,
+          "source": null
+        },
+        "day": {
+          "key": "2026-11-09",
+          "startEquity": 100000000,
+          "pnlPct": 0,
+          "blocked": false,
+          "rolled": false
+        },
+        "universe": [
+          "BTCIDR",
+          "ETHIDR",
+          "SOLIDR",
+          "XRPIDR",
+          "DOGEIDR",
+          "ADAIDR",
+          "BNBIDR",
+          "TRXIDR"
+        ],
+        "processed": [],
+        "signals": [],
+        "orders": 0,
+        "equity": 100000000,
+        "cash": 100000000,
+        "positions": [],
+        "notes": [],
+        "errors": [],
+        "nextCandleCloseUtc": 1794196800
+      }
+    ],
     "errors": [],
     "kill": [],
-    "snapshots": [],
+    "snapshots": [
+      {
+        "at": "2026-11-09T02:16:54.000Z",
+        "serverTime": 1794190614,
+        "symbol": "BTCIDR",
+        "bid": 1362367000,
+        "ask": 1362368000,
+        "spreadPct": 7.340163355335473e-7
+      },
+      {
+        "at": "2026-11-09T02:16:54.000Z",
+        "serverTime": 1794190614,
+        "symbol": "ETHIDR",
+        "bid": 38830000,
+        "ask": 38831000,
+        "spreadPct": 0.00002575295193211522
+      },
+      {
+        "at": "2026-11-09T02:16:54.000Z",
+        "serverTime": 1794190614,
+        "symbol": "SOLIDR",
+        "bid": 1592751,
+        "ask": 1593899,
+        "spreadPct": 0.0007205058603862991
+      },
+      {
+        "at": "2026-11-09T02:16:54.000Z",
+        "serverTime": 1794190614,
+        "symbol": "XRPIDR",
+        "bid": 20206,
+        "ask": 20221,
+        "spreadPct": 0.0007420783139980706
+      },
+      {
+        "at": "2026-11-09T02:16:54.000Z",
+        "serverTime": 1794190614,
+        "symbol": "DOGEIDR",
+        "bid": 1262,
+        "ask": 1263,
+        "spreadPct": 0.0007920792079207921
+      },
+      {
+        "at": "2026-11-09T02:16:54.000Z",
+        "serverTime": 1794190614,
+        "symbol": "ADAIDR",
+        "bid": 3215,
+        "ask": 3216,
+        "spreadPct": 0.00031099362463069506
+      },
+      {
+        "at": "2026-11-09T02:16:54.000Z",
+        "serverTime": 1794190614,
+        "symbol": "BNBIDR",
+        "bid": 12400997,
+        "ask": 12459929,
+        "spreadPct": 0.004740933624113599
+      },
+      {
+        "at": "2026-11-09T02:16:54.000Z",
+        "serverTime": 1794190614,
+        "symbol": "TRXIDR",
+        "bid": 5775,
+        "ask": 5791,
+        "spreadPct": 0.0027667300708974583
+      },
+      {
+        "at": "2026-11-09T02:18:21.000Z",
+        "serverTime": 1794190701,
+        "symbol": "BTCIDR",
+        "bid": 1362367000,
+        "ask": 1362368000,
+        "spreadPct": 7.340163355335473e-7
+      },
+      {
+        "at": "2026-11-09T02:18:21.000Z",
+        "serverTime": 1794190701,
+        "symbol": "ETHIDR",
+        "bid": 38862000,
+        "ask": 38912000,
+        "spreadPct": 0.001285776737727261
+      },
+      {
+        "at": "2026-11-09T02:18:21.000Z",
+        "serverTime": 1794190701,
+        "symbol": "SOLIDR",
+        "bid": 1591000,
+        "ask": 1592827,
+        "spreadPct": 0.0011476754233191691
+      },
+      {
+        "at": "2026-11-09T02:18:21.000Z",
+        "serverTime": 1794190701,
+        "symbol": "XRPIDR",
+        "bid": 20208,
+        "ask": 20234,
+        "spreadPct": 0.0012857919984174868
+      },
+      {
+        "at": "2026-11-09T02:18:21.000Z",
+        "serverTime": 1794190701,
+        "symbol": "DOGEIDR",
+        "bid": 1263,
+        "ask": 1265,
+        "spreadPct": 0.0015822784810126582
+      },
+      {
+        "at": "2026-11-09T02:18:21.000Z",
+        "serverTime": 1794190701,
+        "symbol": "ADAIDR",
+        "bid": 3215,
+        "ask": 3216,
+        "spreadPct": 0.00031099362463069506
+      },
+      {
+        "at": "2026-11-09T02:18:21.000Z",
+        "serverTime": 1794190701,
+        "symbol": "BNBIDR",
+        "bid": 12401024,
+        "ask": 12459929,
+        "spreadPct": 0.004738756394414969
+      },
+      {
+        "at": "2026-11-09T02:18:21.000Z",
+        "serverTime": 1794190701,
+        "symbol": "TRXIDR",
+        "bid": 5775,
+        "ask": 5792,
+        "spreadPct": 0.002939396559176969
+      },
+      {
+        "at": "2026-11-09T02:33:14.000Z",
+        "serverTime": 1794191594,
+        "symbol": "BTCIDR",
+        "bid": 1365099000,
+        "ask": 1366097000,
+        "spreadPct": 0.0007308153644044588
+      },
+      {
+        "at": "2026-11-09T02:33:14.000Z",
+        "serverTime": 1794191594,
+        "symbol": "ETHIDR",
+        "bid": 38995000,
+        "ask": 39022000,
+        "spreadPct": 0.0006921568376123153
+      },
+      {
+        "at": "2026-11-09T02:33:14.000Z",
+        "serverTime": 1794191594,
+        "symbol": "SOLIDR",
+        "bid": 1596379,
+        "ask": 1596977,
+        "spreadPct": 0.00037452761295640074
+      },
+      {
+        "at": "2026-11-09T02:33:14.000Z",
+        "serverTime": 1794191594,
+        "symbol": "XRPIDR",
+        "bid": 20278,
+        "ask": 20293,
+        "spreadPct": 0.000739444430751029
+      },
+      {
+        "at": "2026-11-09T02:33:14.000Z",
+        "serverTime": 1794191594,
+        "symbol": "DOGEIDR",
+        "bid": 1267,
+        "ask": 1268,
+        "spreadPct": 0.0007889546351084812
+      },
+      {
+        "at": "2026-11-09T02:33:14.000Z",
+        "serverTime": 1794191594,
+        "symbol": "ADAIDR",
+        "bid": 3224,
+        "ask": 3229,
+        "spreadPct": 0.001549666821633349
+      },
+      {
+        "at": "2026-11-09T02:33:14.000Z",
+        "serverTime": 1794191594,
+        "symbol": "BNBIDR",
+        "bid": 12410707,
+        "ask": 12459800,
+        "spreadPct": 0.003947888959400787
+      },
+      {
+        "at": "2026-11-09T02:33:14.000Z",
+        "serverTime": 1794191594,
+        "symbol": "TRXIDR",
+        "bid": 5769,
+        "ask": 5785,
+        "spreadPct": 0.0027696036004846805
+      }
+    ],
     "cost_breakdown": {
       "fees": 0,
       "spread": 0,

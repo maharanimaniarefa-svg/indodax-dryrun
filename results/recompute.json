@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-11-08T07:11:34.635Z",
+  "generated_at": "2026-11-09T02:37:19.264Z",
   "inputs": {
     "backtest_full": "results/backtest_full.json",
     "backtest_summary": "results/backtest_summary.json",
     "backtest_trades_csv": "results/backtest_trades.csv",
     "backtest_equity_csv": "results/backtest_equity.csv",
-    "live_source": null,
+    "live_source": "logs/export",
     "live_export": "logs/export/*.jsonl"
   },
   "backtest": {
@@ -251,9 +251,184 @@
     "passed": true
   },
   "live": {
-    "available": false,
-    "source": null,
-    "note": "UPSTASH_REDIS_REST_URL / UPSTASH_REDIS_REST_TOKEN belum diset. Untuk lokal pakai STORE=file."
+    "available": true,
+    "source": "logs/export",
+    "orders": 0,
+    "equity_points": 3,
+    "trades": 0,
+    "metrics": {
+      "start": 1794190614,
+      "end": 1794191594,
+      "years": 0.00003105432605774837,
+      "initialCapital": 100000000,
+      "finalEquity": 100000000,
+      "totalReturn": 0,
+      "cagr": 0,
+      "maxDrawdown": 0,
+      "mddPeak": null,
+      "mddTrough": null,
+      "calmar": null,
+      "trades": 0,
+      "winRate": 0,
+      "profitFactor": null,
+      "netProfitFactor": null,
+      "avgWinPct": 0,
+      "avgLossPct": 0,
+      "avgWinIdr": 0,
+      "avgLossIdr": 0,
+      "avgHoldHours": 0,
+      "fees": 0,
+      "costs": 0,
+      "grossProfit": 0,
+      "grossLoss": 0,
+      "costShare": null
+    },
+    "cost_breakdown": {
+      "fees": 0,
+      "spread": 0,
+      "slippage": 0,
+      "other": 0,
+      "total": 0
+    },
+    "checks": [
+      {
+        "id": "live.idempotency",
+        "label": "tidak ada order ganda untuk simbol+candle+side",
+        "pass": true,
+        "detail": {
+          "duplicates": [],
+          "count": 0
+        }
+      },
+      {
+        "id": "live.closed_candle",
+        "label": "semua order dieksekusi setelah candle sinyal tertutup",
+        "pass": true,
+        "detail": {
+          "violations": 0
+        }
+      },
+      {
+        "id": "live.fee",
+        "label": "fee order = notional x tarif taker",
+        "pass": true,
+        "detail": {
+          "violations": 0
+        }
+      },
+      {
+        "id": "live.min_order",
+        "label": "order beli >= minimum Rp25000",
+        "pass": true,
+        "detail": {
+          "violations": 0
+        }
+      },
+      {
+        "id": "live.cash",
+        "label": "kas dari log order = kas di state",
+        "pass": true,
+        "detail": {
+          "from_orders": 100000000,
+          "from_state": 100000000
+        }
+      },
+      {
+        "id": "live.position_sequence",
+        "label": "tidak ada SELL tanpa posisi",
+        "pass": true,
+        "detail": {
+          "violations": 0
+        }
+      },
+      {
+        "id": "live.daily_loss",
+        "label": "tidak ada entry setelah daily loss limit aktif",
+        "pass": true,
+        "detail": {
+          "violations": 0
+        }
+      },
+      {
+        "id": "live.progress",
+        "label": "setiap simbol memproses >= 90% candle yang seharusnya",
+        "pass": true,
+        "detail": {
+          "min_coverage": 1,
+          "expected_candles": 4,
+          "per_symbol": {
+            "BTCIDR": {
+              "processed": 4,
+              "expected": 4
+            },
+            "ETHIDR": {
+              "processed": 4,
+              "expected": 4
+            },
+            "SOLIDR": {
+              "processed": 4,
+              "expected": 4
+            },
+            "XRPIDR": {
+              "processed": 4,
+              "expected": 4
+            },
+            "DOGEIDR": {
+              "processed": 4,
+              "expected": 4
+            },
+            "ADAIDR": {
+              "processed": 4,
+              "expected": 4
+            },
+            "BNBIDR": {
+              "processed": 4,
+              "expected": 4
+            },
+            "TRXIDR": {
+              "processed": 4,
+              "expected": 4
+            }
+          }
+        }
+      }
+    ],
+    "passed": true,
+    "comparison": null,
+    "progress": {
+      "BTCIDR": {
+        "processed": 4,
+        "expected": 4
+      },
+      "ETHIDR": {
+        "processed": 4,
+        "expected": 4
+      },
+      "SOLIDR": {
+        "processed": 4,
+        "expected": 4
+      },
+      "XRPIDR": {
+        "processed": 4,
+        "expected": 4
+      },
+      "DOGEIDR": {
+        "processed": 4,
+        "expected": 4
+      },
+      "ADAIDR": {
+        "processed": 4,
+        "expected": 4
+      },
+      "BNBIDR": {
+        "processed": 4,
+        "expected": 4
+      },
+      "TRXIDR": {
+        "processed": 4,
+        "expected": 4
+      }
+    }
   },
   "overall_passed": true
 }

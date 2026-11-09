@@ -61,3 +61,50 @@ Hash gabungan aturan (`freeze_hash.aggregate`) tetap sama sebelum dan sesudah pe
 - **Verifikasi:** handler `/api/dashboard?section=static` diuji lokal (HTTP 200, 461 trade); struktur static mengikuti perilaku Vercel `public/`.
 - **Tidak mengubah aturan:** `vercel.json` tidak termasuk file yang di-hash; `npm run verify` tetap `FREEZE UTUH`.
 - **Commit:** `d80cfd7`.
+
+---
+
+## BF-004 — Audit forward mengabaikan log equity (`serverTime` vs `t`)
+
+- **Tanggal:** 2026-11-09 (WIB)
+- **File:** `scripts/recompute.js` (`recomputeLive`)
+- **Gejala:** dengan `STORE=file`, `node scripts/recompute.js` melaporkan
+  `belum ada log forward (export atau store)` padahal `logs/equity.jsonl` berisi data.
+- **Penyebab:** log bot menulis waktu di field `serverTime` (unix detik), sedangkan
+  `recomputeLive` hanya menerima baris berfield `t`. Semua equity terbuang.
+- **Perbaikan:** normalisasi `t = e.t ?? e.serverTime` sebelum filter.
+- **Verifikasi:** `STORE=file node scripts/recompute.js` → `Forward : PASS`,
+  `equity_points` > 0, rekonsiliasi kas PASS.
+
+---
+
+## BF-005 — Coverage candle dihitung +1 (candle yang masih berjalan)
+
+- **Tanggal:** 2026-11-09 (WIB)
+- **File:** `scripts/recompute.js`, `lib/report.js` (`progressOf`)
+- **Gejala:** bot memproses **4 dari 4** candle tertutup, tetapi audit melaporkan
+  `processed 4 / expected 5` → coverage 80% dan `[FAIL] setiap simbol memproses >= 90%`.
+- **Penyebab:** `expected = floor((now - start)/tf) + 1` ikut menghitung candle yang
+  belum tertutup (open 00:00 UTC saat 02:35 UTC belum close). Fallback `lastProcessed`
+  memakai `start - tf` sehingga efektif +2 (tertutup oleh `min`).
+- **Perbaikan:** `expected = floor((now - start)/tf)`, dan
+  `n = floor((last - start)/tf) + 1` (candle pertama s.d. `last`, inklusif).
+- **Verifikasi:** `STORE=file node scripts/recompute.js` → `Forward : PASS`,
+  `expected_candles` = jumlah candle tertutup, coverage 100%.
+- **Tidak mengubah aturan:** hanya perhitungan pelaporan/uptime.
+
+---
+
+## Ringkasan bugfix pasca-freeze
+
+| Kode | File | Sifat | Hash aturan berubah? |
+|---|---|---|---|
+| BF-001 | `lib/indodax.js` | unit `server_time` ms → s | tidak |
+| BF-002 | `lib/report.js` | coverage dari `calls.jsonl` | tidak |
+| BF-003 | `vercel.json` | hapus rewrite `/public/...` | tidak |
+| BF-004 | `scripts/recompute.js` | normalisasi waktu equity | tidak |
+| BF-005 | `scripts/recompute.js`, `lib/report.js` | rumus coverage candle tertutup | tidak |
+
+Semua perubahan dilakukan **tanpa** menyentuh `config/frozen.json`, `config/universe.json`,
+`lib/strategy.js`, `lib/backtest.js`, `lib/bot.js`, `lib/fill.js`, atau `lib/metrics.js`.
+

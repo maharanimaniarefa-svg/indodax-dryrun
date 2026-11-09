@@ -307,6 +307,29 @@ node scripts/tick_local.js --no-window
 
 > Tick lokal memakai order book Indodax sungguhan, tetapi tetap **dry-run**. Jangan jalankan `--no-window` saat jendela forward sedang berjalan kecuali untuk uji; gunakan `/api/tick` di Vercel untuk data forward yang sah.
 
+### 7.1 Automation lokal (Windows Task Scheduler)
+
+Jika deployment Vercel belum tersedia, bot bisa dijalankan otomatis dari laptop dengan aturan
+yang sama (timeframe 4 jam tetap dibaca dari `config/frozen.json`):
+
+```powershell
+# Daftarkan: tick tiap 15 menit, berhenti otomatis 14 Nov 2026 23:59 WIB
+npm run task:register
+
+# Cek jadwal & hasil terakhir
+Get-ScheduledTask -TaskName IndodaxDryRunTick | Get-ScheduledTaskInfo
+
+# Hentikan (log lama tetap tersimpan)
+npm run task:unregister
+```
+
+- Wrapper: `scripts/tick_task.cmd` → `node scripts/tick_local.js` dengan `STORE=file`.
+- Log mentah: `logs/calls.jsonl`, `logs/orders.jsonl`, `logs/equity.jsonl`,
+  `logs/snapshots.jsonl`, `logs/errors.jsonl`, `logs/state.json`, `logs/scheduler.log`.
+- Bot idempoten: tick tiap 15 menit hanya memproses candle baru sekali; sisanya mengisi
+  snapshot order book dan equity.
+- Detail deploy GitHub/Vercel: `docs/DEPLOY.md`. Perbaikan bug live: `docs/BUGFIX_LOG.md`.
+
 Semua perintah yang butuh Upstash bisa memakai `.env`:
 
 ```powershell
@@ -319,7 +342,8 @@ node --env-file=.env scripts/export_logs.js
 
 ## 8. Deploy (dilakukan oleh pemilik proyek)
 
-Asisten tidak melakukan deploy. Langkah berikut harus dijalankan sendiri.
+Asisten tidak melakukan deploy tanpa kredensial. Panduan turnkey ada di **`docs/DEPLOY.md`**,
+dengan script bantuan `scripts/push_github.ps1` dan `scripts/deploy_vercel.ps1`.
 
 ### 8.1 GitHub
 

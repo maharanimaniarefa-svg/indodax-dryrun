@@ -196,7 +196,11 @@ async function loadLiveRaw() {
 
 function recomputeLive(raw) {
   const orders = raw.orders || [];
-  const equity = (raw.equity || []).filter(e => Number.isFinite(e.t) && Number.isFinite(e.equity));
+  // Log bot menulis waktu equity di `serverTime` (unix detik); jalur export/CSV
+  // memakai `t`. Normalisasi agar audit forward tidak menganggap log kosong.
+  const equity = (raw.equity || [])
+    .map(e => ({ ...e, t: Number.isFinite(e.t) ? e.t : Number(e.serverTime) }))
+    .filter(e => Number.isFinite(e.t) && Number.isFinite(e.equity));
   if (!orders.length && !equity.length) {
     return { available: false, source: raw.source, note: raw.note || 'belum ada log forward (export atau store)' };
   }
@@ -268,14 +272,17 @@ function recomputeLive(raw) {
   checks.push(check('live.daily_loss', 'tidak ada entry setelah daily loss limit aktif', badDay.length === 0,
     { violations: badDay.length }));
 
-  // Kelengkapan candle: lastProcessed tiap simbol vs jumlah candle yang seharusnya.
+  // Jumlah candle yang SUDAH TERTUTUP dalam jendela. Candle yang masih berjalan
+  // (open <= now < open+tf) belum dihitung; rumus lama (+1) menghitungnya.
   const now = Math.min(Math.floor(Date.now() / 1000), cfg.forwardEnd);
-  const expected = Math.max(0, Math.floor((now - cfg.forwardStart) / cfg.tfSec) + 1);
+  const expected = Math.max(0, Math.floor((now - cfg.forwardStart) / cfg.tfSec));
   const progress = {};
   let minProgress = 1;
   for (const sym of cfg.SYMBOLS) {
     const last = raw.state?.lastProcessed?.[sym];
-    const n = Number.isFinite(last) ? Math.max(0, Math.min(expected, Math.floor((last - (cfg.forwardStart - cfg.tfSec)) / cfg.tfSec))) : 0;
+    const n = Number.isFinite(last)
+      ? Math.max(0, Math.min(expected, Math.floor((last - cfg.forwardStart) / cfg.tfSec) + 1))
+      : 0;
     progress[sym] = { processed: n, expected };
     if (expected > 0) minProgress = Math.min(minProgress, n / expected);
   }

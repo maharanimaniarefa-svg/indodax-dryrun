@@ -1,6 +1,6 @@
 {
   "frozen_at_wib": "2026-11-08T13:41:22+07:00",
-  "generated_at": "2026-11-09T02:18:59.661Z",
+  "generated_at": "2026-11-09T02:37:27.523Z",
   "strategy": "Dual SMA Trend Following (MA20 cross-up + filter MA150)",
   "timeframe": "4h",
   "universe": [
@@ -25,7 +25,7 @@
       "lib/metrics.js": "4fc9e32d691187ee9293c8f42468396ab2d9886db859753e42c74b4851d2b3e7"
     }
   },
-  "git_commit": "4723293e903c8cef3ef00190b8566f7dc985d203",
+  "git_commit": "b09c8490bd5c5c3d83cf9ec6e7c5a17cac58dc5d",
   "node": "v24.20.0",
   "files": {
     "config/frozen.json": "aa13853ad62467b2d80ac0adb606728b7d9a28cc3386b83991cefb0b941dd7c8",
@@ -46,7 +46,11 @@
     "results/backtest_trades.csv": "716eee853da2de44f006e49c24873044aaa2e155778b9cd409651f1fa3fff0f1",
     "results/backtest_equity.csv": "4519793fbbfda4b49d6554e297264b4baf2e9c06cb4846a5f949c5507fd9b4be",
     "results/backtest_signals.csv": "bc251658de570c59c07ee5d8a37f069531b9ea48884004b5251e1c24483332c8",
-    "results/recompute.json": "ea86d3888ef07b29d8ea7d49e0026339053fcd5f930097f3494f25a0bbfa5b09",
+    "results/recompute.json": "aa7fe3de5d9e7e4d72f42ef3ba1f748901779e45aa997a3e1a30aebafaf55f1f",
+    "logs/export/orders.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/export/equity.jsonl": "e2932e2bce98e0f017a96368749d12f9cd9fac58fb785226efe148e51b98fe6b",
+    "logs/export/calls.jsonl": "ce560eae7b7761372961290c17755267d6b6dca841ebae20f1e2d67f31b9ce38",
+    "logs/export/state.json": "fca645b1497fb895cbb8551187216b215e19cda76e2980b9c83bdeb6dadabb3e",
     "data/candles/BTCIDR_240.csv": "52e0ad5f8b46501443bae6e619973cbf283d691abc60b26e875d01034eb7d7a3",
     "data/candles/ETHIDR_240.csv": "7d92d854eed2fbdedce59372cb442b7c5167a641b4cada0f85b4bef902e510ac",
     "data/candles/SOLIDR_240.csv": "5e49263a6e2594da9c6c6aac9f6f66cccdddbe40d539e1f7e582c959c55ef62c",
@@ -57,11 +61,7 @@
     "data/candles/TRXIDR_240.csv": "2b4c5cf52e424bbc330dc9da74e9532dca49a2d2b99496cd4c54125b7814f19f"
   },
   "missing": [
-    "results/backtest_forward.json",
-    "logs/export/orders.jsonl",
-    "logs/export/equity.jsonl",
-    "logs/export/calls.jsonl",
-    "logs/export/state.json"
+    "results/backtest_forward.json"
   ],
   "note": "Jalankan `node scripts/freeze.js --verify` untuk memastikan tidak ada file yang berubah setelah freeze."
 }

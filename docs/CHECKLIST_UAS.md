@@ -5,7 +5,11 @@
 Dokumen ini memetakan setiap requirement tugas ke implementasi, bukti file, dan status. Tujuannya agar penilaian tidak bergantung pada klaim di README, tetapi bisa dicek langsung ke kode dan artefak.
 
 - **Status keseluruhan:** kode, backtest, dashboard, audit, dan freeze **selesai**.
-- **Forward test:** **belum berjalan** karena deployment dilakukan oleh pemilik proyek (bukan asisten). Jendela sudah dibekukan; langkah deploy ada di bagian 4.
+- **Automation:** sejak **9 November 2026 09:33 WIB** bot dry-run berjalan otomatis di laptop
+  lewat Windows Task Scheduler `IndodaxDryRunTick` (tick tiap 15 menit, berhenti 14 Nov 23:59 WIB),
+  dengan log mentah di `logs/`. Ini penjadwal eksternal yang sah; deployment Vercel tetap disiapkan.
+- **Deploy Vercel/GitHub:** **menunggu kredensial pemilik** (mesin belum punya login Vercel/GitHub).
+  Panduan turnkey: `docs/DEPLOY.md`.
 - **Deviasi yang disepakati:** forward test **6,37 hari** (8–14 November 2026), bukan 10 hari. Dicatat di README, STRATEGI, REFLEKSI, dan HASIL_BACKTEST.
 
 ---
@@ -30,9 +34,9 @@ Dokumen ini memetakan setiap requirement tugas ke implementasi, bukti file, dan 
 | 14 | Endpoint tick dilindungi **CRON_SECRET** | Wajib `Authorization: Bearer <CRON_SECRET>` atau `?secret=`; tanpa secret 401 | `api/tick.js` | **Selesai** |
 | 15 | **Backtest ≥ 3 tahun** | 8 Nov 2023 → 8 Nov 2026 = **3,0007 tahun**; 461 trade | `results/backtest_summary.json`, `HASIL_BACKTEST.md` | **Selesai** |
 | 16 | Fungsi sinyal **sama** untuk bot & backtest | Satu implementasi `computeSignals` di `lib/strategy.js`, diimpor kedua mesin | `lib/strategy.js`, `lib/backtest.js`, `lib/bot.js` | **Selesai** |
-| 17 | **Forward test** ~6 hari | Jendela beku 8 Nov 15:00 WIB → 14 Nov 23:59 WIB; 39 slot 4 jam | `config/frozen.json`, `.github/workflows/tick.yml` | **Menunggu deploy** |
+| 17 | **Forward test** ~6 hari | Jendela beku 8 Nov 15:00 WIB → 14 Nov 23:59 WIB; 39 slot 4 jam | `config/frozen.json`, task `IndodaxDryRunTick`, `logs/` | **Berjalan lokal sejak 9 Nov 09:33 WIB** |
 | 18 | **Dashboard** online + offline | `public/index.html` + `app.js` + `data.js`; online `/api/dashboard`, offline `file://` | `public/`; 5 tab berfungsi, canvas chart tergambar | **Selesai** |
-| 19 | **Log mentah** forward | `export_logs.js` → `logs/export/*.jsonl` + CSV + `manifest.json` | `scripts/export_logs.js` | **Menunggu forward** |
+| 19 | **Log mentah** forward | `export_logs.js` → `logs/export/*.jsonl` + CSV + `manifest.json`; selama lokal: `logs/*.jsonl` | `scripts/export_logs.js`, `logs/` | **Berjalan lokal; export menunggu akhir forward** |
 | 20 | **Skrip hitung ulang** | `scripts/recompute.js` menghitung ulang dari CSV/log, bukan dashboard | `results/recompute.json` | **Selesai** (backtest 19/19 PASS) |
 | 21 | **Freeze + integritas** | `scripts/freeze.js` membuat manifest SHA-256; `--verify` menolak perubahan | `results/freeze_manifest.json`, `npm run verify`, `docs/BUGFIX_LOG.md` | **Selesai setelah commit** |
 | 22 | **Deploy Vercel** | `vercel.json` (fungsi, rewrite, cron backup, header) | `vercel.json` | **Siap; pemilik deploy** |

@@ -12,6 +12,7 @@ node_modules/
 # log mentah lokal (yang dikumpulkan adalah hasil export_logs.js)
 logs/*.jsonl
 logs/*.json
+logs/*.txt
 logs/state_*.json
 snapshots/*.jsonl
 

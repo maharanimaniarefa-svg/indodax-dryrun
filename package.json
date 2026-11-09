@@ -11,6 +11,8 @@
     "spread": "node scripts/build_spread.js",
     "backtest": "node scripts/backtest.js",
     "tick": "node scripts/tick_local.js",
+    "task:register": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/register_task.ps1",
+    "task:unregister": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/unregister_task.ps1",
     "smoke": "node scripts/smoke_test.js",
     "export": "node scripts/export_logs.js",
     "recompute": "node scripts/recompute.js",
