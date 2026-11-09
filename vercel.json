@@ -22,14 +22,6 @@
       "maxDuration": 30
     }
   },
-  "rewrites": [
-    { "source": "/", "destination": "/public/index.html" },
-    { "source": "/index.html", "destination": "/public/index.html" },
-    { "source": "/style.css", "destination": "/public/style.css" },
-    { "source": "/app.js", "destination": "/public/app.js" },
-    { "source": "/data.js", "destination": "/public/data.js" },
-    { "source": "/data/:path*", "destination": "/public/data/:path*" }
-  ],
   "crons": [
     {
       "path": "/api/tick",
