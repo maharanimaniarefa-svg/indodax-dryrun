@@ -137,6 +137,7 @@ Bukan dari return positif, tetapi dari:
 | Deviasi | Alasan | Dicatat di |
 |---|---|---|
 | Forward **6,37 hari**, bukan 10 hari | Freeze 8 November, forward dihentikan 14 November sesuai arahan | README §9, STRATEGI §9.3, REFLEKSI §4.5, HASIL_BACKTEST §14 |
+| Deployment bisa molor | Bot hanya memproses candle terbaru; candle sebelum deploy tidak diproses ulang. Coverage dihitung dari `calls.jsonl`, bukan `lastProcessed` | README §9, `lib/report.js` (`progressOf`) |
 | Snapshot spread/slippage hanya **24 sampel** satu jendela waktu | Waktu terbatas sebelum freeze; floor 0,05% dipakai | README §4.3, STRATEGI §5.2, REFLEKSI §4.4 |
 | Parameter **N=20/X=150 diwarisi**, tidak dioptimasi pada crypto | Menghindari overfitting pada satu rezim | STRATEGI §2.4, REFLEKSI §4.1 |
 | Backtest **satu jalur historis**, tanpa Monte Carlo | Keterbatasan cakupan tugas | STRATEGI §9.2, HASIL_BACKTEST §12 |

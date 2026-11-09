@@ -246,7 +246,8 @@ Setelah jendela berakhir:
 
 1. Tunggu sampai 15 November 2026 pukul 03:00 WIB agar candle 16:00 UTC 14 November tertutup.
 2. Jalankan `npm run history`, `npm run backtest`, `node scripts/export_logs.js`, `npm run recompute`, `npm run freeze`, `npm run dashboard`.
-3. Isi tabel berikut dari `results/recompute.json` dan `logs/export/`:
+3. Jika deployment baru berjalan setelah 8 November 15:00 WIB, sebagian candle awal jendela tidak akan pernah diproses. Bot tidak melakukan order retroaktif; dashboard akan menampilkan coverage berdasarkan candle yang benar-benar ada di `calls.jsonl`. Ini dilaporkan apa adanya, bukan ditutupi dengan angka `lastProcessed`.
+4. Isi tabel berikut dari `results/recompute.json` dan `logs/export/`:
 
 | Item | Hasil |
 |---|---|

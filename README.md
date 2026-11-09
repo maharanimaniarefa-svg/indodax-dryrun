@@ -400,6 +400,8 @@ curl.exe -H "Authorization: Bearer $env:CRON_SECRET" "https://PROJECT.vercel.app
 
 Jendela beku: **8 November 2026 15:00 WIB → 14 November 2026 23:59 WIB** (6,37 hari; 39 slot candle 4 jam). Assignment meminta 10 hari, tetapi sesuai arahan dosen/pemilik proyek freeze dilakukan 8 November dan forward test dihentikan 14 November. Keterbatasan ini dicatat di `REFLEKSI.md`, bukan disembunyikan.
 
+> **Penting jika deployment molor:** bot hanya memproses candle terbaru pada setiap tick. Candle yang sudah lewat sebelum deployment **tidak diproses ulang** (tidak ada order retroaktif). Dashboard menghitung coverage dari candle yang benar-benar tercatat di `calls.jsonl`, bukan dari `lastProcessed`, sehingga keterlambatan deployment terlihat jujur sebagai coverage < 100%. Deploy sedini mungkin agar mendekati 39 slot.
+
 ### Sebelum 8 November 15:00 WIB
 
 1. Deploy Vercel + Upstash.

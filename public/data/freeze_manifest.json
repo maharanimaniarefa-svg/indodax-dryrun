@@ -1,6 +1,6 @@
 {
   "frozen_at_wib": "2026-11-08T13:41:22+07:00",
-  "generated_at": "2026-11-08T07:12:27.535Z",
+  "generated_at": "2026-11-09T02:18:59.661Z",
   "strategy": "Dual SMA Trend Following (MA20 cross-up + filter MA150)",
   "timeframe": "4h",
   "universe": [
@@ -25,7 +25,7 @@
       "lib/metrics.js": "4fc9e32d691187ee9293c8f42468396ab2d9886db859753e42c74b4851d2b3e7"
     }
   },
-  "git_commit": "7fd87465f05fd29456194ca54e968e257b08e904",
+  "git_commit": "4723293e903c8cef3ef00190b8566f7dc985d203",
   "node": "v24.20.0",
   "files": {
     "config/frozen.json": "aa13853ad62467b2d80ac0adb606728b7d9a28cc3386b83991cefb0b941dd7c8",
@@ -36,7 +36,7 @@
     "lib/bot.js": "0fa0983d47a9a6b398d774295ea13eb7248609c2827aff8f49242e9a718f454f",
     "lib/fill.js": "751d07f63bb60465f06e9be53facafde15cf9e8f013a1ddf47d1245ab11221f0",
     "lib/metrics.js": "4fc9e32d691187ee9293c8f42468396ab2d9886db859753e42c74b4851d2b3e7",
-    "lib/indodax.js": "ff38dfb7df3aa4ab10c4122f32326f267ac379b0ea46bb1df679e69d6b9ca4d6",
+    "lib/indodax.js": "58dc54ea0a297d9d711c634cb3c3ff0a03e99152682843e9517e38439699b059",
     "lib/store.js": "d894d30c79598d23ed3991852cd9b3fac8360043dabdddd88e4c8e3e1c2903fd",
     "data/spread.json": "bf2eee45e9896595118d1e58cc58dc8c8dae11583db6a78be6a133c8994923af",
     "data/meta.json": "608f733778498c4a068ede42c87520555dabc32d4b4423ed50e6d2802d91ddb8",
