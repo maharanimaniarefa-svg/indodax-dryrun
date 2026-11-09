@@ -34,7 +34,7 @@ Dokumen ini memetakan setiap requirement tugas ke implementasi, bukti file, dan 
 | 18 | **Dashboard** online + offline | `public/index.html` + `app.js` + `data.js`; online `/api/dashboard`, offline `file://` | `public/`; 5 tab berfungsi, canvas chart tergambar | **Selesai** |
 | 19 | **Log mentah** forward | `export_logs.js` → `logs/export/*.jsonl` + CSV + `manifest.json` | `scripts/export_logs.js` | **Menunggu forward** |
 | 20 | **Skrip hitung ulang** | `scripts/recompute.js` menghitung ulang dari CSV/log, bukan dashboard | `results/recompute.json` | **Selesai** (backtest 19/19 PASS) |
-| 21 | **Freeze + integritas** | `scripts/freeze.js` membuat manifest SHA-256; `--verify` menolak perubahan | `results/freeze_manifest.json`, `npm run verify` | **Selesai setelah commit** |
+| 21 | **Freeze + integritas** | `scripts/freeze.js` membuat manifest SHA-256; `--verify` menolak perubahan | `results/freeze_manifest.json`, `npm run verify`, `docs/BUGFIX_LOG.md` | **Selesai setelah commit** |
 | 22 | **Deploy Vercel** | `vercel.json` (fungsi, rewrite, cron backup, header) | `vercel.json` | **Siap; pemilik deploy** |
 | 23 | **Tick otomatis** | GitHub Actions tiap jam menit ke-7 UTC; Vercel Cron harian sebagai backup | `.github/workflows/tick.yml`, `vercel.json` | **Siap; pemilik isi secrets** |
 | 24 | **Tanpa rahasia di repo** | `.env` di `.gitignore`; `.env.example` hanya placeholder | `.gitignore`, `.env.example` | **Selesai** |

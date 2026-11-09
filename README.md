@@ -7,7 +7,8 @@ Bot **dry-run** untuk pasar IDR Indodax dengan timeframe **4 jam**, backtest **3
 
 > **Status freeze:** `2026-11-08T13:41:22+07:00`  
 > **Jendela forward:** `2026-11-08T08:00:00Z` → `2026-11-14T16:59:00Z`  
-> **Commit beku:** `freeze-2026-11-08`
+> **Commit beku:** `freeze-2026-11-08` (`7fd8746`) · manifest `4723293` · bugfix pasca-freeze `62c27bf`  
+> **Catatan:** bugfix `server_time` (milidetik → detik) tidak mengubah aturan/parameter/universe; dicatat di `docs/BUGFIX_LOG.md`.
 
 ---
 
@@ -248,7 +249,10 @@ indodax-dryrun/
 ├─ README.md
 ├─ STRATEGI.md
 ├─ REFLEKSI.md
-└─ HASIL_BACKTEST.md
+├─ HASIL_BACKTEST.md
+└─ docs/
+   ├─ CHECKLIST_UAS.md
+   └─ BUGFIX_LOG.md
 ```
 
 ---
