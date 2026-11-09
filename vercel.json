@@ -8,12 +8,7 @@
     },
     "api/dashboard.js": {
       "maxDuration": 60,
-      "includeFiles": [
-        "config/**",
-        "data/spread.json",
-        "data/meta.json",
-        "results/**"
-      ]
+      "includeFiles": "{config/**,lib/**,data/spread.json,data/meta.json,results/**}"
     },
     "api/kill.js": {
       "maxDuration": 30
