@@ -1,6 +1,6 @@
 {
   "frozen_at_wib": "2026-11-08T13:41:22+07:00",
-  "generated_at": "2026-11-09T02:37:27.523Z",
+  "generated_at": "2026-11-09T02:37:52.332Z",
   "strategy": "Dual SMA Trend Following (MA20 cross-up + filter MA150)",
   "timeframe": "4h",
   "universe": [
@@ -25,7 +25,7 @@
       "lib/metrics.js": "4fc9e32d691187ee9293c8f42468396ab2d9886db859753e42c74b4851d2b3e7"
     }
   },
-  "git_commit": "b09c8490bd5c5c3d83cf9ec6e7c5a17cac58dc5d",
+  "git_commit": "450ee64e0fb549d85f01b7a593d6ea94de222d68",
   "node": "v24.20.0",
   "files": {
     "config/frozen.json": "aa13853ad62467b2d80ac0adb606728b7d9a28cc3386b83991cefb0b941dd7c8",
