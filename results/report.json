@@ -1,7 +1,7 @@
 {
   "meta": {
     "report_version": 1,
-    "generated_at": "2026-11-09T02:24:48.806Z",
+    "generated_at": "2026-11-09T02:29:48.542Z",
     "student": {
       "nama": "Refa Maharani Imaniar",
       "nim": "25110200011",
@@ -30,7 +30,7 @@
       "samples": 24,
       "notional_idr": 10000000
     },
-    "built_offline_at": "2026-11-09T02:24:48.806Z",
+    "built_offline_at": "2026-11-09T02:29:48.542Z",
     "live_included": false
   },
   "config": {
@@ -30527,8 +30527,8 @@
       "start": "2026-11-08T08:00:00Z",
       "end": "2026-11-14T16:59:00Z"
     },
-    "phase": "berjalan",
-    "now_utc": "2026-11-09T02:24:48.000Z",
+    "phase": "belum_ada_data",
+    "now_utc": "2026-11-09T02:29:48.000Z",
     "last_tick_age_sec": null,
     "next_candle_close_utc": "2026-11-09T04:00:00.000Z",
     "progress": {

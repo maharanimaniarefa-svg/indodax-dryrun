@@ -344,9 +344,9 @@
     const end = Date.parse(r.meta.forward_end_utc) / 1000;
     const phase = live.phase || (now < start ? 'belum_mulai' : now > end ? 'selesai' : 'berjalan');
     const pill = $('#phase-pill');
-    const labels = { belum_mulai: 'Forward belum mulai', berjalan: 'Forward berjalan', selesai: 'Forward selesai' };
+    const labels = { belum_mulai: 'Forward belum mulai', belum_ada_data: 'Menunggu data forward', berjalan: 'Forward berjalan', selesai: 'Forward selesai' };
     pill.textContent = labels[phase] || phase;
-    pill.className = 'pill ' + (phase === 'berjalan' ? 'live' : phase === 'selesai' ? 'warn' : '');
+    pill.className = 'pill ' + (phase === 'berjalan' ? 'live' : phase === 'selesai' || phase === 'belum_ada_data' ? 'warn' : '');
     if (live.state?.kill_switch?.active) {
       pill.textContent += ' · KILL SWITCH';
       pill.className = 'pill bad';
@@ -603,7 +603,7 @@
     const start = Date.parse(r.meta.forward_start_utc) / 1000;
     const end = Date.parse(r.meta.forward_end_utc) / 1000;
     const phase = l.phase || (now < start ? 'belum_mulai' : now > end ? 'selesai' : 'berjalan');
-    const labels = { belum_mulai: 'Belum mulai', berjalan: 'Berjalan', selesai: 'Selesai' };
+    const labels = { belum_mulai: 'Belum mulai', belum_ada_data: 'Menunggu deployment', berjalan: 'Berjalan', selesai: 'Selesai' };
 
     if (!l.available) {
       $('#fwd-status').innerHTML = `<div class="hero"><div>
