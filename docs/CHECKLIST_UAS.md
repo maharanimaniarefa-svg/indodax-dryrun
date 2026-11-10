@@ -4,13 +4,16 @@
 
 Dokumen ini memetakan setiap requirement tugas ke implementasi, bukti file, dan status. Tujuannya agar penilaian tidak bergantung pada klaim di README, tetapi bisa dicek langsung ke kode dan artefak.
 
-- **Status keseluruhan:** kode, backtest, dashboard, audit, dan freeze **selesai**.
-- **Automation:** sejak **9 November 2026 09:33 WIB** bot dry-run berjalan otomatis di laptop
-  lewat Windows Task Scheduler `IndodaxDryRunTick` (tick tiap 15 menit, berhenti 14 Nov 23:59 WIB),
-  dengan log mentah di `logs/`. Ini penjadwal eksternal yang sah; deployment Vercel tetap disiapkan.
-- **Deploy Vercel/GitHub:** **menunggu kredensial pemilik** (mesin belum punya login Vercel/GitHub).
-  Panduan turnkey: `docs/DEPLOY.md`.
+- **Status keseluruhan:** kode, backtest, dashboard, audit, freeze, dan **deploy** selesai.
+- **Automation:** sejak **10 November 2026 14:19 WIB** bot dry-run berjalan di **Vercel**
+  (region `sin1`) dengan state di **Upstash Redis**, dipicu **GitHub Actions** tiap jam
+  (menit ke-7 UTC) sampai 14 Nov 2026. Task lokal `IndodaxDryRunTick` sudah dihapus.
+- **Deploy Vercel/GitHub:** **selesai** — `https://indodax-dryrun-uas-refa-maharani-tr.vercel.app`.
+  Panduan ulang: `docs/DEPLOY.md`.
 - **Deviasi yang disepakati:** forward test **6,37 hari** (8–14 November 2026), bukan 10 hari. Dicatat di README, STRATEGI, REFLEKSI, dan HASIL_BACKTEST.
+- **Cakupan candle:** tick pertama baru 9 Nov 04:37 UTC (deploy tertunda) sehingga candle
+  8 Nov 08:00 UTC – 9 Nov 04:00 UTC tidak terproses dan **tidak diisi ulang**. Cakupan
+  dihitung apa adanya dari `calls.jsonl` (`lib/report.js` → `progressOf`), bukan diklaim 100%.
 
 ---
 
@@ -34,13 +37,13 @@ Dokumen ini memetakan setiap requirement tugas ke implementasi, bukti file, dan 
 | 14 | Endpoint tick dilindungi **CRON_SECRET** | Wajib `Authorization: Bearer <CRON_SECRET>` atau `?secret=`; tanpa secret 401 | `api/tick.js` | **Selesai** |
 | 15 | **Backtest ≥ 3 tahun** | 8 Nov 2023 → 8 Nov 2026 = **3,0007 tahun**; 461 trade | `results/backtest_summary.json`, `HASIL_BACKTEST.md` | **Selesai** |
 | 16 | Fungsi sinyal **sama** untuk bot & backtest | Satu implementasi `computeSignals` di `lib/strategy.js`, diimpor kedua mesin | `lib/strategy.js`, `lib/backtest.js`, `lib/bot.js` | **Selesai** |
-| 17 | **Forward test** ~6 hari | Jendela beku 8 Nov 15:00 WIB → 14 Nov 23:59 WIB; 39 slot 4 jam | `config/frozen.json`, task `IndodaxDryRunTick`, `logs/` | **Berjalan lokal sejak 9 Nov 09:33 WIB** |
+| 17 | **Forward test** ~6 hari | Jendela beku 8 Nov 15:00 WIB → 14 Nov 23:59 WIB; 39 slot 4 jam | `config/frozen.json`, Vercel + Upstash, `logs/` | **Berjalan di Vercel sejak 10 Nov 07:19 UTC** (cakupan awal 27,3%, lihat §5) |
 | 18 | **Dashboard** online + offline | `public/index.html` + `app.js` + `data.js`; online `/api/dashboard`, offline `file://` | `public/`; 5 tab berfungsi, canvas chart tergambar | **Selesai** |
-| 19 | **Log mentah** forward | `export_logs.js` → `logs/export/*.jsonl` + CSV + `manifest.json`; selama lokal: `logs/*.jsonl` | `scripts/export_logs.js`, `logs/` | **Berjalan lokal; export menunggu akhir forward** |
+| 19 | **Log mentah** forward | `export_logs.js` → `logs/export/*.jsonl` + CSV + `manifest.json`; selama forward: Upstash `indodax:*` | `scripts/export_logs.js`, Upstash | **Berjalan; export menunggu akhir forward** |
 | 20 | **Skrip hitung ulang** | `scripts/recompute.js` menghitung ulang dari CSV/log, bukan dashboard | `results/recompute.json` | **Selesai** (backtest 19/19 PASS) |
 | 21 | **Freeze + integritas** | `scripts/freeze.js` membuat manifest SHA-256; `--verify` menolak perubahan | `results/freeze_manifest.json`, `npm run verify`, `docs/BUGFIX_LOG.md` | **Selesai setelah commit** |
-| 22 | **Deploy Vercel** | `vercel.json` (fungsi, rewrite, cron backup, header) | `vercel.json` | **Siap; pemilik deploy** |
-| 23 | **Tick otomatis** | GitHub Actions tiap jam menit ke-7 UTC; Vercel Cron harian sebagai backup | `.github/workflows/tick.yml`, `vercel.json` | **Siap; pemilik isi secrets** |
+| 22 | **Deploy Vercel** | `vercel.json` (fungsi, cron backup, header); project `indodax-dryrun-uas-refa-maharani-trading` | `vercel.json`, `/api/health` | **Selesai** |
+| 23 | **Tick otomatis** | GitHub Actions tiap jam menit ke-7 UTC; Vercel Cron harian sebagai backup | `.github/workflows/tick.yml`, `vercel.json`, run `42774428747` | **Aktif** |
 | 24 | **Tanpa rahasia di repo** | `.env` di `.gitignore`; `.env.example` hanya placeholder | `.gitignore`, `.env.example` | **Selesai** |
 | 25 | Dokumentasi strategi | `STRATEGI.md` (desain, eksekusi, biaya, keterbatasan) | `STRATEGI.md` | **Selesai** |
 | 26 | Dokumentasi hasil | `HASIL_BACKTEST.md` (metrik, per tahun/bulan/pair, audit) | `HASIL_BACKTEST.md` | **Selesai** |
@@ -86,28 +89,21 @@ Interpretasi lengkap ada di `HASIL_BACKTEST.md` dan `STRATEGI.md` §8. Kesimpula
 
 ---
 
-## 4. Yang masih harus dilakukan pemilik proyek
+## 4. Status pekerjaan pemilik proyek
 
-Asisten tidak melakukan deploy. Urutan ini harus dijalankan sendiri.
+**Deploy dan otomasi: selesai pada 10 November 2026.** Urutan di bawah disimpan sebagai catatan.
 
-### 4.1 Sebelum/saat deploy (8 November 2026)
+### 4.1 Deploy (selesai 10 November 2026)
 
-- [ ] Buat database **Upstash Redis** region Singapore; catat REST URL + token.
-- [ ] Buat repo GitHub, push folder `indodax-dryrun`.
-- [ ] Import repo ke **Vercel**; Root Directory `indodax-dryrun` bila perlu.
-- [ ] Isi environment Vercel: `CRON_SECRET`, `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN`, `STORE=upstash`, `KILL_SWITCH=0`.
-- [ ] Isi GitHub Actions secrets: `BOT_URL`, `CRON_SECRET` (sama).
-- [ ] Buka `/api/health` dan `/`; pastikan dashboard tampil.
-- [ ] Uji tick pertama:
-
-  ```powershell
-  $env:CRON_SECRET = "secret-yang-sama"
-  curl.exe -H "Authorization: Bearer $env:CRON_SECRET" https://PROJECT.vercel.app/api/tick
-  ```
-
-  Sebelum 15:00 WIB: `{ "ok": true, "waiting": true }`.  
-  Sesudah 15:00 WIB: `{ "ok": true, "processed": [...] }`.
-- [ ] Biarkan GitHub Actions berjalan tiap jam sampai 14 November 23:59 WIB.
+- [x] Buat database **Upstash Redis** region Singapore (`decent-foal-184268`).
+- [x] Buat repo GitHub, push folder `indodax-dryrun` (publik, branch `main`).
+- [x] Import repo ke **Vercel**; framework **Other**, tanpa build command.
+- [x] Isi environment Vercel: `CRON_SECRET`, `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN`, `STORE=upstash`, `KILL_SWITCH=0` (Production + Preview, Sensitive).
+- [x] Isi GitHub Actions secrets: `BOT_URL`, `CRON_SECRET` (sama).
+- [x] Buka `/api/health` dan `/`; dashboard tampil.
+- [x] Uji tick pertama: `{"ok": true}` dengan 8 pair diproses (9 Nov 04:37 UTC).
+- [x] Biarkan GitHub Actions berjalan tiap jam sampai 14 November 23:59 WIB.
+- [x] Hapus task lokal `IndodaxDryRunTick` supaya hanya satu sumber data.
 
 ### 4.2 Setelah 14 November 2026
 
@@ -141,7 +137,8 @@ Bukan dari return positif, tetapi dari:
 | Deviasi | Alasan | Dicatat di |
 |---|---|---|
 | Forward **6,37 hari**, bukan 10 hari | Freeze 8 November, forward dihentikan 14 November sesuai arahan | README §9, STRATEGI §9.3, REFLEKSI §4.5, HASIL_BACKTEST §14 |
-| Deployment bisa molor | Bot hanya memproses candle terbaru; candle sebelum deploy tidak diproses ulang. Coverage dihitung dari `calls.jsonl`, bukan `lastProcessed` | README §9, `lib/report.js` (`progressOf`) |
+| Deployment molor 1 hari | Tick pertama 9 Nov 04:37 UTC; candle 8 Nov 08:00 – 9 Nov 04:00 UTC hilang dan **tidak diisi ulang**. Coverage dilaporkan apa adanya (~27% saat deploy) dan naik mengikuti tick per jam | README §9, `lib/report.js` (`progressOf`), dashboard tab Forward |
+| Cakupan candle akhir ~75% | 11 candle hilang sebelum deploy + Vercel Hobby hanya cron harian sampai GitHub Actions diaktifkan 10 Nov 07:19 UTC | dashboard `coverage_pct` |
 | Snapshot spread/slippage hanya **24 sampel** satu jendela waktu | Waktu terbatas sebelum freeze; floor 0,05% dipakai | README §4.3, STRATEGI §5.2, REFLEKSI §4.4 |
 | Parameter **N=20/X=150 diwarisi**, tidak dioptimasi pada crypto | Menghindari overfitting pada satu rezim | STRATEGI §2.4, REFLEKSI §4.1 |
 | Backtest **satu jalur historis**, tanpa Monte Carlo | Keterbatasan cakupan tugas | STRATEGI §9.2, HASIL_BACKTEST §12 |
@@ -183,4 +180,5 @@ indodax-dryrun/
 - Tidak ada parameter yang diubah setelah melihat hasil backtest.
 - Hasil yang jelek (kalah dari BTC, MDD −42,46%, 32 loss beruntun) dilaporkan, bukan disembunyikan.
 - Semua angka hasil bisa ditelusuri ke CSV/JSON dan dihitung ulang dengan `scripts/recompute.js`.
-- Forward test yang belum berjalan tidak diklaim sebagai selesai; statusnya **menunggu deploy**.
+- Forward test berjalan di Vercel sejak 9 Nov 04:37 UTC; cakupan candle yang tidak terproses
+  **tidak diklaim** sebagai selesai, melainkan dilaporkan apa adanya di dashboard (`coverage_pct`).

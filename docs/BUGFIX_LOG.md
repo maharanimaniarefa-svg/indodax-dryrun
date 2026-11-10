@@ -121,6 +121,30 @@ Hash gabungan aturan (`freeze_hash.aggregate`) tetap sama sebelum dan sesudah pe
 
 ---
 
+## BF-007 — Dashboard menampilkan ekuitas forward kosong
+
+- **Tanggal:** 2026-11-10 (WIB)
+- **File:** `lib/report.js` (`liveReport`)
+- **Dampak:** tampilan/ pelaporan saja; tidak memengaruhi tick, order, atau hasil backtest.
+- **Gejala:** tab **Forward Test** menampilkan *"0 titik ekuitas · Menunggu tick pertama"*
+  padahal Upstash sudah berisi 3 entri `indodax:equity` dan `/api/health` menunjukkan
+  `last_tick` terbaru.
+- **Penyebab:** `state + log` dari bot menulis waktu equity di `serverTime` (unix detik),
+  sedangkan `liveReport` memfilter `Number.isFinite(e.t)`. Field `t` tidak ada, sehingga
+  semua titik ekuitas dibuang dan `metrics` menjadi `null`.
+  `scripts/recompute.js` sudah menormalkan ini (BF-004), tetapi jalur dashboard belum.
+- **Perbaikan:**
+  ```js
+  const eq = arr(equity)
+    .map(e => (e && Number.isFinite(e.t) ? e : (e ? { ...e, t: Number(e.serverTime) } : e)))
+    .filter(e => e && Number.isFinite(e.t) && Number.isFinite(e.equity));
+  ```
+- **Verifikasi:** `liveReport` langsung dari Upstash → `eqPoints: 3`, `phase: "berjalan"`,
+  `progress.coverage_pct: 0.2727`; setelah redeploy, dashboard menampilkan grafik ekuitas.
+- **Tidak mengubah aturan:** laporan saja; `lib/report.js` tidak termasuk manifest hash aturan.
+
+---
+
 ## Ringkasan bugfix pasca-freeze
 
 | Kode | File | Sifat | Hash aturan berubah? |
@@ -131,6 +155,7 @@ Hash gabungan aturan (`freeze_hash.aggregate`) tetap sama sebelum dan sesudah pe
 | BF-004 | `scripts/recompute.js` | normalisasi waktu equity | tidak |
 | BF-005 | `scripts/recompute.js`, `lib/report.js` | rumus coverage candle tertutup | tidak |
 | BF-006 | `vercel.json` | `includeFiles` string glob | tidak |
+| BF-007 | `lib/report.js` | normalisasi `serverTime` → `t` di dashboard | tidak |
 
 Semua perubahan dilakukan **tanpa** menyentuh `config/frozen.json`, `config/universe.json`,
 `lib/strategy.js`, `lib/backtest.js`, `lib/bot.js`, `lib/fill.js`, atau `lib/metrics.js`.

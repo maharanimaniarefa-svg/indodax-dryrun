@@ -1,13 +1,13 @@
 # Deploy GitHub + Vercel (turnkey)
 
-Status per **9 November 2026 09:35 WIB**:
+Status per **10 November 2026 14:20 WIB**:
 
-- **Automation lokal sudah berjalan** lewat Windows Task Scheduler `IndodaxDryRunTick`
-  (setiap 15 menit, berhenti 14 Nov 2026 23:59 WIB, log ke `logs/`).
-- **Deploy belum bisa dijalankan dari mesin ini** karena tidak ada kredensial:
-  CLI `vercel`/`gh` belum terpasang, belum ada `~/.vercel/auth.json`,
-  belum ada remote GitHub, dan tidak ada token di environment.
-- Semua file deploy sudah siap. Hanya perlu login sekali, lalu jalankan perintah di bawah.
+- **Sudah ter-deploy.** Bot berjalan di Vercel (`sin1`) dengan state di Upstash Redis.
+- **Tick otomatis aktif**: GitHub Actions `.github/workflows/tick.yml` memanggil `/api/tick`
+  tiap jam (menit ke-7 UTC); Vercel Cron harian sebagai cadangan.
+- Task lokal `IndodaxDryRunTick` sudah **dihapus** agar tidak ada dua sumber data.
+- URL produksi: `https://indodax-dryrun-uas-refa-maharani-tr.vercel.app`.
+- Dokumen ini tetap disimpan sebagai panduan ulang bila perlu deploy dari nol.
 
 > Jangan pernah menulis token/secret ke dalam repo. Semua nilai rahasia masuk ke
 > environment variable Vercel / GitHub Secrets.
