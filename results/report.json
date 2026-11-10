@@ -1,7 +1,7 @@
 {
   "meta": {
     "report_version": 1,
-    "generated_at": "2026-11-09T02:37:22.976Z",
+    "generated_at": "2026-11-10T07:31:18.033Z",
     "student": {
       "nama": "Refa Maharani Imaniar",
       "nim": "25110200011",
@@ -30,7 +30,7 @@
       "samples": 24,
       "notional_idr": 10000000
     },
-    "built_offline_at": "2026-11-09T02:37:22.976Z",
+    "built_offline_at": "2026-11-10T07:31:18.033Z",
     "live_included": true
   },
   "config": {
@@ -30703,59 +30703,59 @@
       "end": "2026-11-14T16:59:00Z"
     },
     "phase": "berjalan",
-    "now_utc": "2026-11-09T02:37:22.000Z",
-    "last_tick_age_sec": 248,
-    "next_candle_close_utc": "2026-11-09T04:00:00.000Z",
+    "now_utc": "2026-11-10T07:31:18.000Z",
+    "last_tick_age_sec": 104284,
+    "next_candle_close_utc": "2026-11-10T08:00:00.000Z",
     "progress": {
-      "expected_candles": 4,
-      "coverage_pct": 0.25,
+      "expected_candles": 11,
+      "coverage_pct": 0.09090909090909093,
       "per_symbol": {
         "BTCIDR": {
           "lastProcessed": "2026-11-08T20:00:00Z",
           "processed": 1,
-          "expected": 4,
+          "expected": 11,
           "method": "calls"
         },
         "ETHIDR": {
           "lastProcessed": "2026-11-08T20:00:00Z",
           "processed": 1,
-          "expected": 4,
+          "expected": 11,
           "method": "calls"
         },
         "SOLIDR": {
           "lastProcessed": "2026-11-08T20:00:00Z",
           "processed": 1,
-          "expected": 4,
+          "expected": 11,
           "method": "calls"
         },
         "XRPIDR": {
           "lastProcessed": "2026-11-08T20:00:00Z",
           "processed": 1,
-          "expected": 4,
+          "expected": 11,
           "method": "calls"
         },
         "DOGEIDR": {
           "lastProcessed": "2026-11-08T20:00:00Z",
           "processed": 1,
-          "expected": 4,
+          "expected": 11,
           "method": "calls"
         },
         "ADAIDR": {
           "lastProcessed": "2026-11-08T20:00:00Z",
           "processed": 1,
-          "expected": 4,
+          "expected": 11,
           "method": "calls"
         },
         "BNBIDR": {
           "lastProcessed": "2026-11-08T20:00:00Z",
           "processed": 1,
-          "expected": 4,
+          "expected": 11,
           "method": "calls"
         },
         "TRXIDR": {
           "lastProcessed": "2026-11-08T20:00:00Z",
           "processed": 1,
-          "expected": 4,
+          "expected": 11,
           "method": "calls"
         }
       },
@@ -30802,8 +30802,74 @@
       },
       "updated_at": "2026-11-09T02:33:14.000Z"
     },
-    "metrics": null,
-    "equity": [],
+    "metrics": {
+      "start": 1794190614,
+      "end": 1794191594,
+      "years": 0.00003105432605774837,
+      "initialCapital": 100000000,
+      "finalEquity": 100000000,
+      "totalReturn": 0,
+      "cagr": 0,
+      "maxDrawdown": 0,
+      "mddPeak": null,
+      "mddTrough": null,
+      "calmar": null,
+      "trades": 0,
+      "winRate": 0,
+      "profitFactor": null,
+      "netProfitFactor": null,
+      "avgWinPct": 0,
+      "avgLossPct": 0,
+      "avgWinIdr": 0,
+      "avgLossIdr": 0,
+      "avgHoldHours": 0,
+      "fees": 0,
+      "costs": 0,
+      "grossProfit": 0,
+      "grossLoss": 0,
+      "costShare": null
+    },
+    "equity": [
+      {
+        "at": "2026-11-09T02:16:54.000Z",
+        "serverTime": 1794190614,
+        "dayKey": "2026-11-09",
+        "equity": 100000000,
+        "cash": 100000000,
+        "invested": 0,
+        "npos": 0,
+        "positions": {},
+        "source": "tick",
+        "dayStart": true,
+        "t": 1794190614
+      },
+      {
+        "at": "2026-11-09T02:18:21.000Z",
+        "serverTime": 1794190701,
+        "dayKey": "2026-11-09",
+        "equity": 100000000,
+        "cash": 100000000,
+        "invested": 0,
+        "npos": 0,
+        "positions": {},
+        "source": "tick",
+        "dayStart": false,
+        "t": 1794190701
+      },
+      {
+        "at": "2026-11-09T02:33:14.000Z",
+        "serverTime": 1794191594,
+        "dayKey": "2026-11-09",
+        "equity": 100000000,
+        "cash": 100000000,
+        "invested": 0,
+        "npos": 0,
+        "positions": {},
+        "source": "tick",
+        "dayStart": false,
+        "t": 1794191594
+      }
+    ],
     "trades": [],
     "orders": [],
     "calls": [
