@@ -1,6 +1,6 @@
 # Deploy GitHub + Vercel (turnkey)
 
-Status per **10 November 2026 14:20 WIB**:
+Status per **11 November 2026 12:00 WIB**:
 
 - **Sudah ter-deploy.** Bot berjalan di Vercel (`sin1`) dengan state di Upstash Redis.
 - **Tick otomatis aktif**: GitHub Actions `.github/workflows/tick.yml` memanggil `/api/tick`
@@ -121,6 +121,24 @@ Workflow `.github/workflows/tick.yml` berjalan tiap jam menit ke-7 UTC dan berhe
 otomatis setelah 14 November 2026. Bisa dijalankan manual lewat **Actions → Run workflow**.
 
 Vercel Cron di `vercel.json` (`7 1 * * *`) hanya backup harian.
+
+### Riwayat run merah di halaman Actions
+
+Halaman **Actions** repo menampilkan **26 run berstatus failure** pada 9–10 November 2026.
+Itu **bukan kegagalan bot dan bukan bug strategi**. Semua run tersebut berhenti di langkah
+pertama dengan pesan:
+
+```text
+Secrets BOT_URL dan CRON_SECRET wajib diisi di Settings -> Secrets and variables -> Actions.
+```
+
+Penyebabnya: kedua secret baru dipasang pada **10 November 2026 07:18 UTC**. Sejak itu
+seluruh run berstatus **success** (21 dari 21 sampai 11 November 2026 03:50 UTC).
+
+Konsekuensi yang dilaporkan terbuka: tidak ada tick antara 9 Nov 04:37 UTC dan
+10 Nov 07:18 UTC, sehingga beberapa candle 4 jam di awal jendela forward tidak pernah
+diproses. Bot tidak melakukan order retroaktif. Angka `coverage_pct` di dashboard
+menunjukkan hal ini apa adanya.
 
 ---
 

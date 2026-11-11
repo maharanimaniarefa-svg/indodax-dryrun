@@ -1,43 +1,43 @@
 {
-  "exported_at": "2026-11-09T02:37:13.849Z",
-  "store": "file",
+  "exported_at": "2026-11-11T06:16:24.763Z",
+  "store": "upstash",
   "state": {
-    "updatedAt": "2026-11-09T02:33:14.000Z",
+    "updatedAt": "2026-11-11T05:55:13.000Z",
     "cash": 100000000,
     "positions": 0
   },
   "counts": {
-    "calls": 3,
+    "calls": 26,
     "orders": 0,
-    "equity": 3,
-    "errors": 0,
-    "snapshots": 24,
+    "equity": 26,
+    "errors": 1,
+    "snapshots": 208,
     "kill": 0
   },
   "files": {
     "state.json": {
-      "bytes": 953,
-      "sha256": "fca645b1497fb895cbb8551187216b215e19cda76e2980b9c83bdeb6dadabb3e"
+      "bytes": 954,
+      "sha256": "0faf36340e63a68a8573852a897f8bde7f4cd5054f2b0cb8c4dd467df0e307ee"
     },
     "calls.jsonl": {
-      "bytes": 1580,
-      "sha256": "ce560eae7b7761372961290c17755267d6b6dca841ebae20f1e2d67f31b9ce38"
+      "bytes": 13484,
+      "sha256": "ea113c5ccc43aaafaf1909b841a85b1fb3825ef1a076db4a02efe0136d632a35"
     },
     "orders.jsonl": {
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     "equity.jsonl": {
-      "bytes": 557,
-      "sha256": "e2932e2bce98e0f017a96368749d12f9cd9fac58fb785226efe148e51b98fe6b"
+      "bytes": 4833,
+      "sha256": "8e39228c6fb47d12603c0d9af38b9e90bdb50ee3fbdc032aeeaaa2cb004d96ec"
     },
     "errors.jsonl": {
-      "bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      "bytes": 118,
+      "sha256": "150c1c6d31c85722ca16d3381ce8329704863aa7d7d575997d3b524ff60eee96"
     },
     "snapshots.jsonl": {
-      "bytes": 14865,
-      "sha256": "f874538a33477d1fa50c8258118aa0e6a16064c77aca112b7d6c5495ed2c6a06"
+      "bytes": 129360,
+      "sha256": "76254276ff91a7435f1b4262955ee2bd39e45314c7585aa7bfad804b8b043ca1"
     },
     "kill.jsonl": {
       "bytes": 0,
@@ -48,20 +48,20 @@
       "sha256": "8778d214ccc13d8576cf2da15c845d2f6e6c04789c1fdf76de06827daf2e91d1"
     },
     "equity.csv": {
-      "bytes": 300,
-      "sha256": "375cdfd1d583f401cab2ec97668cb4c7884e39863967b475725bf97d53266b4e"
+      "bytes": 2048,
+      "sha256": "98fd83969d48b7a62374be2a738ba5431692df2f8e3ac0939d2eb79e91319ddb"
     },
     "calls.csv": {
-      "bytes": 397,
-      "sha256": "5313dbb42e54e07535fdd41ebb929c67d6689649e92c4b75041b65a749ab25d7"
+      "bytes": 2490,
+      "sha256": "089b1d83860744d8242c3d8740f987697d74491d3c8c661ac24733d249934333"
     },
     "errors.csv": {
-      "bytes": 28,
-      "sha256": "0b07c1e6b7b40f23434408519c01a887a2261251c641d632a09cb4ed0a8e6135"
+      "bytes": 104,
+      "sha256": "bcd1ee373e4f38a535ab7466a67235bfe576d6213845c7a1d4f7696b3b058426"
     },
     "snapshots.csv": {
-      "bytes": 2496,
-      "sha256": "8f11d16a0ddadf691736787973cbe7d1bd8c544c5c736e7eb8ebd79eb34bdc9c"
+      "bytes": 20949,
+      "sha256": "7e9676ee2d48e8f469abe52cf3209315e48aaebf76988f69a5815fc07b769ae6"
     },
     "kill.csv": {
       "bytes": 28,

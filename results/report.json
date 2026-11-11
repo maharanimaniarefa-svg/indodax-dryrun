@@ -1,7 +1,7 @@
 {
   "meta": {
     "report_version": 1,
-    "generated_at": "2026-11-10T07:31:18.033Z",
+    "generated_at": "2026-11-11T06:16:41.443Z",
     "student": {
       "nama": "Refa Maharani Imaniar",
       "nim": "25110200011",
@@ -30,7 +30,7 @@
       "samples": 24,
       "notional_idr": 10000000
     },
-    "built_offline_at": "2026-11-10T07:31:18.033Z",
+    "built_offline_at": "2026-11-11T06:16:41.443Z",
     "live_included": true
   },
   "config": {
@@ -30221,7 +30221,7 @@
     }
   },
   "recompute": {
-    "generated_at": "2026-11-09T02:37:19.264Z",
+    "generated_at": "2026-11-11T06:16:34.111Z",
     "inputs": {
       "backtest_full": "results/backtest_full.json",
       "backtest_summary": "results/backtest_summary.json",
@@ -30476,12 +30476,12 @@
       "available": true,
       "source": "logs/export",
       "orders": 0,
-      "equity_points": 3,
+      "equity_points": 26,
       "trades": 0,
       "metrics": {
-        "start": 1794190614,
-        "end": 1794191594,
-        "years": 0.00003105432605774837,
+        "start": 1794199077,
+        "end": 1794376513,
+        "years": 0.005622607549370041,
         "initialCapital": 100000000,
         "finalEquity": 100000000,
         "totalReturn": 0,
@@ -30577,39 +30577,39 @@
           "pass": true,
           "detail": {
             "min_coverage": 1,
-            "expected_candles": 4,
+            "expected_candles": 17,
             "per_symbol": {
               "BTCIDR": {
-                "processed": 4,
-                "expected": 4
+                "processed": 17,
+                "expected": 17
               },
               "ETHIDR": {
-                "processed": 4,
-                "expected": 4
+                "processed": 17,
+                "expected": 17
               },
               "SOLIDR": {
-                "processed": 4,
-                "expected": 4
+                "processed": 17,
+                "expected": 17
               },
               "XRPIDR": {
-                "processed": 4,
-                "expected": 4
+                "processed": 17,
+                "expected": 17
               },
               "DOGEIDR": {
-                "processed": 4,
-                "expected": 4
+                "processed": 17,
+                "expected": 17
               },
               "ADAIDR": {
-                "processed": 4,
-                "expected": 4
+                "processed": 17,
+                "expected": 17
               },
               "BNBIDR": {
-                "processed": 4,
-                "expected": 4
+                "processed": 17,
+                "expected": 17
               },
               "TRXIDR": {
-                "processed": 4,
-                "expected": 4
+                "processed": 17,
+                "expected": 17
               }
             }
           }
@@ -30619,36 +30619,36 @@
       "comparison": null,
       "progress": {
         "BTCIDR": {
-          "processed": 4,
-          "expected": 4
+          "processed": 17,
+          "expected": 17
         },
         "ETHIDR": {
-          "processed": 4,
-          "expected": 4
+          "processed": 17,
+          "expected": 17
         },
         "SOLIDR": {
-          "processed": 4,
-          "expected": 4
+          "processed": 17,
+          "expected": 17
         },
         "XRPIDR": {
-          "processed": 4,
-          "expected": 4
+          "processed": 17,
+          "expected": 17
         },
         "DOGEIDR": {
-          "processed": 4,
-          "expected": 4
+          "processed": 17,
+          "expected": 17
         },
         "ADAIDR": {
-          "processed": 4,
-          "expected": 4
+          "processed": 17,
+          "expected": 17
         },
         "BNBIDR": {
-          "processed": 4,
-          "expected": 4
+          "processed": 17,
+          "expected": 17
         },
         "TRXIDR": {
-          "processed": 4,
-          "expected": 4
+          "processed": 17,
+          "expected": 17
         }
       }
     },
@@ -30703,66 +30703,66 @@
       "end": "2026-11-14T16:59:00Z"
     },
     "phase": "berjalan",
-    "now_utc": "2026-11-10T07:31:18.000Z",
-    "last_tick_age_sec": 104284,
-    "next_candle_close_utc": "2026-11-10T08:00:00.000Z",
+    "now_utc": "2026-11-11T06:16:41.000Z",
+    "last_tick_age_sec": 1288,
+    "next_candle_close_utc": "2026-11-11T08:00:00.000Z",
     "progress": {
-      "expected_candles": 11,
-      "coverage_pct": 0.09090909090909093,
+      "expected_candles": 17,
+      "coverage_pct": 0.5294117647058824,
       "per_symbol": {
         "BTCIDR": {
-          "lastProcessed": "2026-11-08T20:00:00Z",
-          "processed": 1,
-          "expected": 11,
+          "lastProcessed": "2026-11-11T00:00:00Z",
+          "processed": 9,
+          "expected": 17,
           "method": "calls"
         },
         "ETHIDR": {
-          "lastProcessed": "2026-11-08T20:00:00Z",
-          "processed": 1,
-          "expected": 11,
+          "lastProcessed": "2026-11-11T00:00:00Z",
+          "processed": 9,
+          "expected": 17,
           "method": "calls"
         },
         "SOLIDR": {
-          "lastProcessed": "2026-11-08T20:00:00Z",
-          "processed": 1,
-          "expected": 11,
+          "lastProcessed": "2026-11-11T00:00:00Z",
+          "processed": 9,
+          "expected": 17,
           "method": "calls"
         },
         "XRPIDR": {
-          "lastProcessed": "2026-11-08T20:00:00Z",
-          "processed": 1,
-          "expected": 11,
+          "lastProcessed": "2026-11-11T00:00:00Z",
+          "processed": 9,
+          "expected": 17,
           "method": "calls"
         },
         "DOGEIDR": {
-          "lastProcessed": "2026-11-08T20:00:00Z",
-          "processed": 1,
-          "expected": 11,
+          "lastProcessed": "2026-11-11T00:00:00Z",
+          "processed": 9,
+          "expected": 17,
           "method": "calls"
         },
         "ADAIDR": {
-          "lastProcessed": "2026-11-08T20:00:00Z",
-          "processed": 1,
-          "expected": 11,
+          "lastProcessed": "2026-11-11T00:00:00Z",
+          "processed": 9,
+          "expected": 17,
           "method": "calls"
         },
         "BNBIDR": {
-          "lastProcessed": "2026-11-08T20:00:00Z",
-          "processed": 1,
-          "expected": 11,
+          "lastProcessed": "2026-11-11T00:00:00Z",
+          "processed": 9,
+          "expected": 17,
           "method": "calls"
         },
         "TRXIDR": {
-          "lastProcessed": "2026-11-08T20:00:00Z",
-          "processed": 1,
-          "expected": 11,
+          "lastProcessed": "2026-11-11T00:00:00Z",
+          "processed": 9,
+          "expected": 17,
           "method": "calls"
         }
       },
       "started": true,
       "method": "calls",
-      "first_tick_utc": "2026-11-09T02:16:54Z",
-      "last_tick_utc": "2026-11-09T02:33:14Z",
+      "first_tick_utc": "2026-11-09T04:37:57Z",
+      "last_tick_utc": "2026-11-11T05:55:13Z",
       "window_start_utc": "2026-11-08T08:00:00Z",
       "window_end_utc": "2026-11-14T16:59:00Z"
     },
@@ -30773,16 +30773,16 @@
       "positions": {},
       "npos": 0,
       "counters": {
-        "calls": 3,
+        "calls": 26,
         "orders": 0,
         "entries": 0,
         "exits": 0,
-        "errors": 0,
+        "errors": 1,
         "killSwitchUses": 0,
         "blockedDays": 0
       },
       "day": {
-        "key": "2026-11-09",
+        "key": "2026-11-11",
         "startEquity": 100000000,
         "blockedLogged": false
       },
@@ -30793,19 +30793,19 @@
         "source": null
       },
       "last_tick": {
-        "at": "2026-11-09T02:33:14.000Z",
-        "serverTime": 1794191594,
-        "durationMs": 1861,
+        "at": "2026-11-11T05:55:13.000Z",
+        "serverTime": 1794376513,
+        "durationMs": 1551,
         "processed": [],
         "orders": 0,
         "equity": 100000000
       },
-      "updated_at": "2026-11-09T02:33:14.000Z"
+      "updated_at": "2026-11-11T05:55:13.000Z"
     },
     "metrics": {
-      "start": 1794190614,
-      "end": 1794191594,
-      "years": 0.00003105432605774837,
+      "start": 1794199077,
+      "end": 1794376513,
+      "years": 0.005622607549370041,
       "initialCapital": 100000000,
       "finalEquity": 100000000,
       "totalReturn": 0,
@@ -30831,8 +30831,8 @@
     },
     "equity": [
       {
-        "at": "2026-11-09T02:16:54.000Z",
-        "serverTime": 1794190614,
+        "at": "2026-11-09T04:37:57.000Z",
+        "serverTime": 1794199077,
         "dayKey": "2026-11-09",
         "equity": 100000000,
         "cash": 100000000,
@@ -30841,12 +30841,25 @@
         "positions": {},
         "source": "tick",
         "dayStart": true,
-        "t": 1794190614
+        "t": 1794199077
       },
       {
-        "at": "2026-11-09T02:18:21.000Z",
-        "serverTime": 1794190701,
-        "dayKey": "2026-11-09",
+        "at": "2026-11-10T01:24:20.000Z",
+        "serverTime": 1794273860,
+        "dayKey": "2026-11-10",
+        "equity": 100000000,
+        "cash": 100000000,
+        "invested": 0,
+        "npos": 0,
+        "positions": {},
+        "source": "tick",
+        "dayStart": true,
+        "t": 1794273860
+      },
+      {
+        "at": "2026-11-10T07:19:06.000Z",
+        "serverTime": 1794295146,
+        "dayKey": "2026-11-10",
         "equity": 100000000,
         "cash": 100000000,
         "invested": 0,
@@ -30854,12 +30867,12 @@
         "positions": {},
         "source": "tick",
         "dayStart": false,
-        "t": 1794190701
+        "t": 1794295146
       },
       {
-        "at": "2026-11-09T02:33:14.000Z",
-        "serverTime": 1794191594,
-        "dayKey": "2026-11-09",
+        "at": "2026-11-10T08:11:04.000Z",
+        "serverTime": 1794298264,
+        "dayKey": "2026-11-10",
         "equity": 100000000,
         "cash": 100000000,
         "invested": 0,
@@ -30867,17 +30880,303 @@
         "positions": {},
         "source": "tick",
         "dayStart": false,
-        "t": 1794191594
+        "t": 1794298264
+      },
+      {
+        "at": "2026-11-10T09:53:05.000Z",
+        "serverTime": 1794304385,
+        "dayKey": "2026-11-10",
+        "equity": 100000000,
+        "cash": 100000000,
+        "invested": 0,
+        "npos": 0,
+        "positions": {},
+        "source": "tick",
+        "dayStart": false,
+        "t": 1794304385
+      },
+      {
+        "at": "2026-11-10T10:51:23.000Z",
+        "serverTime": 1794307883,
+        "dayKey": "2026-11-10",
+        "equity": 100000000,
+        "cash": 100000000,
+        "invested": 0,
+        "npos": 0,
+        "positions": {},
+        "source": "tick",
+        "dayStart": false,
+        "t": 1794307883
+      },
+      {
+        "at": "2026-11-10T11:47:26.000Z",
+        "serverTime": 1794311246,
+        "dayKey": "2026-11-10",
+        "equity": 100000000,
+        "cash": 100000000,
+        "invested": 0,
+        "npos": 0,
+        "positions": {},
+        "source": "tick",
+        "dayStart": false,
+        "t": 1794311246
+      },
+      {
+        "at": "2026-11-10T12:56:18.000Z",
+        "serverTime": 1794315378,
+        "dayKey": "2026-11-10",
+        "equity": 100000000,
+        "cash": 100000000,
+        "invested": 0,
+        "npos": 0,
+        "positions": {},
+        "source": "tick",
+        "dayStart": false,
+        "t": 1794315378
+      },
+      {
+        "at": "2026-11-10T14:07:02.000Z",
+        "serverTime": 1794319622,
+        "dayKey": "2026-11-10",
+        "equity": 100000000,
+        "cash": 100000000,
+        "invested": 0,
+        "npos": 0,
+        "positions": {},
+        "source": "tick",
+        "dayStart": false,
+        "t": 1794319622
+      },
+      {
+        "at": "2026-11-10T14:56:45.000Z",
+        "serverTime": 1794322605,
+        "dayKey": "2026-11-10",
+        "equity": 100000000,
+        "cash": 100000000,
+        "invested": 0,
+        "npos": 0,
+        "positions": {},
+        "source": "tick",
+        "dayStart": false,
+        "t": 1794322605
+      },
+      {
+        "at": "2026-11-10T15:44:35.000Z",
+        "serverTime": 1794325475,
+        "dayKey": "2026-11-10",
+        "equity": 100000000,
+        "cash": 100000000,
+        "invested": 0,
+        "npos": 0,
+        "positions": {},
+        "source": "tick",
+        "dayStart": false,
+        "t": 1794325475
+      },
+      {
+        "at": "2026-11-10T16:49:04.000Z",
+        "serverTime": 1794329344,
+        "dayKey": "2026-11-10",
+        "equity": 100000000,
+        "cash": 100000000,
+        "invested": 0,
+        "npos": 0,
+        "positions": {},
+        "source": "tick",
+        "dayStart": false,
+        "t": 1794329344
+      },
+      {
+        "at": "2026-11-10T17:45:28.000Z",
+        "serverTime": 1794332728,
+        "dayKey": "2026-11-11",
+        "equity": 100000000,
+        "cash": 100000000,
+        "invested": 0,
+        "npos": 0,
+        "positions": {},
+        "source": "tick",
+        "dayStart": true,
+        "t": 1794332728
+      },
+      {
+        "at": "2026-11-10T18:44:58.000Z",
+        "serverTime": 1794336298,
+        "dayKey": "2026-11-11",
+        "equity": 100000000,
+        "cash": 100000000,
+        "invested": 0,
+        "npos": 0,
+        "positions": {},
+        "source": "tick",
+        "dayStart": false,
+        "t": 1794336298
+      },
+      {
+        "at": "2026-11-10T19:49:57.000Z",
+        "serverTime": 1794340197,
+        "dayKey": "2026-11-11",
+        "equity": 100000000,
+        "cash": 100000000,
+        "invested": 0,
+        "npos": 0,
+        "positions": {},
+        "source": "tick",
+        "dayStart": false,
+        "t": 1794340197
+      },
+      {
+        "at": "2026-11-10T20:42:15.000Z",
+        "serverTime": 1794343335,
+        "dayKey": "2026-11-11",
+        "equity": 100000000,
+        "cash": 100000000,
+        "invested": 0,
+        "npos": 0,
+        "positions": {},
+        "source": "tick",
+        "dayStart": false,
+        "t": 1794343335
+      },
+      {
+        "at": "2026-11-10T21:37:41.000Z",
+        "serverTime": 1794346661,
+        "dayKey": "2026-11-11",
+        "equity": 100000000,
+        "cash": 100000000,
+        "invested": 0,
+        "npos": 0,
+        "positions": {},
+        "source": "tick",
+        "dayStart": false,
+        "t": 1794346661
+      },
+      {
+        "at": "2026-11-10T22:38:10.000Z",
+        "serverTime": 1794350290,
+        "dayKey": "2026-11-11",
+        "equity": 100000000,
+        "cash": 100000000,
+        "invested": 0,
+        "npos": 0,
+        "positions": {},
+        "source": "tick",
+        "dayStart": false,
+        "t": 1794350290
+      },
+      {
+        "at": "2026-11-10T23:32:15.000Z",
+        "serverTime": 1794353535,
+        "dayKey": "2026-11-11",
+        "equity": 100000000,
+        "cash": 100000000,
+        "invested": 0,
+        "npos": 0,
+        "positions": {},
+        "source": "tick",
+        "dayStart": false,
+        "t": 1794353535
+      },
+      {
+        "at": "2026-11-11T00:55:08.000Z",
+        "serverTime": 1794358508,
+        "dayKey": "2026-11-11",
+        "equity": 100000000,
+        "cash": 100000000,
+        "invested": 0,
+        "npos": 0,
+        "positions": {},
+        "source": "tick",
+        "dayStart": false,
+        "t": 1794358508
+      },
+      {
+        "at": "2026-11-11T01:24:20.000Z",
+        "serverTime": 1794360260,
+        "dayKey": "2026-11-11",
+        "equity": 100000000,
+        "cash": 100000000,
+        "invested": 0,
+        "npos": 0,
+        "positions": {},
+        "source": "tick",
+        "dayStart": false,
+        "t": 1794360260
+      },
+      {
+        "at": "2026-11-11T01:57:34.000Z",
+        "serverTime": 1794362254,
+        "dayKey": "2026-11-11",
+        "equity": 100000000,
+        "cash": 100000000,
+        "invested": 0,
+        "npos": 0,
+        "positions": {},
+        "source": "tick",
+        "dayStart": false,
+        "t": 1794362254
+      },
+      {
+        "at": "2026-11-11T02:46:35.000Z",
+        "serverTime": 1794365195,
+        "dayKey": "2026-11-11",
+        "equity": 100000000,
+        "cash": 100000000,
+        "invested": 0,
+        "npos": 0,
+        "positions": {},
+        "source": "tick",
+        "dayStart": false,
+        "t": 1794365195
+      },
+      {
+        "at": "2026-11-11T03:50:49.000Z",
+        "serverTime": 1794369049,
+        "dayKey": "2026-11-11",
+        "equity": 100000000,
+        "cash": 100000000,
+        "invested": 0,
+        "npos": 0,
+        "positions": {},
+        "source": "tick",
+        "dayStart": false,
+        "t": 1794369049
+      },
+      {
+        "at": "2026-11-11T04:54:52.000Z",
+        "serverTime": 1794372892,
+        "dayKey": "2026-11-11",
+        "equity": 100000000,
+        "cash": 100000000,
+        "invested": 0,
+        "npos": 0,
+        "positions": {},
+        "source": "tick",
+        "dayStart": false,
+        "t": 1794372892
+      },
+      {
+        "at": "2026-11-11T05:55:13.000Z",
+        "serverTime": 1794376513,
+        "dayKey": "2026-11-11",
+        "equity": 100000000,
+        "cash": 100000000,
+        "invested": 0,
+        "npos": 0,
+        "positions": {},
+        "source": "tick",
+        "dayStart": false,
+        "t": 1794376513
       }
     ],
     "trades": [],
     "orders": [],
     "calls": [
       {
-        "at": "2026-11-09T02:16:54.000Z",
-        "serverTime": 1794190614,
+        "at": "2026-11-09T04:37:57.000Z",
+        "serverTime": 1794199077,
         "mode": "dry-run",
-        "durationMs": 1426,
+        "durationMs": 1811,
         "killSwitch": {
           "active": false,
           "reason": null,
@@ -30920,13 +31219,13 @@
           "hari WIB baru 2026-11-09: equity awal Rp 100.000.000"
         ],
         "errors": [],
-        "nextCandleCloseUtc": 1794196800
+        "nextCandleCloseUtc": 1794211200
       },
       {
-        "at": "2026-11-09T02:18:21.000Z",
-        "serverTime": 1794190701,
+        "at": "2026-11-10T01:24:20.000Z",
+        "serverTime": 1794273860,
         "mode": "dry-run",
-        "durationMs": 1279,
+        "durationMs": 1520,
         "killSwitch": {
           "active": false,
           "reason": null,
@@ -30934,7 +31233,150 @@
           "source": null
         },
         "day": {
-          "key": "2026-11-09",
+          "key": "2026-11-10",
+          "startEquity": 100000000,
+          "pnlPct": 0,
+          "blocked": false,
+          "rolled": true
+        },
+        "universe": [
+          "BTCIDR",
+          "ETHIDR",
+          "SOLIDR",
+          "XRPIDR",
+          "DOGEIDR",
+          "ADAIDR",
+          "BNBIDR",
+          "TRXIDR"
+        ],
+        "processed": [
+          "BTCIDR",
+          "ETHIDR",
+          "SOLIDR",
+          "XRPIDR",
+          "DOGEIDR",
+          "ADAIDR",
+          "BNBIDR",
+          "TRXIDR"
+        ],
+        "signals": [],
+        "orders": 0,
+        "equity": 100000000,
+        "cash": 100000000,
+        "positions": [],
+        "notes": [
+          "hari WIB baru 2026-11-10: equity awal Rp 100.000.000"
+        ],
+        "errors": [],
+        "nextCandleCloseUtc": 1794283200
+      },
+      {
+        "at": "2026-11-10T07:19:06.000Z",
+        "serverTime": 1794295146,
+        "mode": "dry-run",
+        "durationMs": 1708,
+        "killSwitch": {
+          "active": false,
+          "reason": null,
+          "at": null,
+          "source": null
+        },
+        "day": {
+          "key": "2026-11-10",
+          "startEquity": 100000000,
+          "pnlPct": 0,
+          "blocked": false,
+          "rolled": false
+        },
+        "universe": [
+          "BTCIDR",
+          "ETHIDR",
+          "SOLIDR",
+          "XRPIDR",
+          "DOGEIDR",
+          "ADAIDR",
+          "BNBIDR",
+          "TRXIDR"
+        ],
+        "processed": [
+          "BTCIDR",
+          "ETHIDR",
+          "SOLIDR",
+          "XRPIDR",
+          "DOGEIDR",
+          "ADAIDR",
+          "BNBIDR",
+          "TRXIDR"
+        ],
+        "signals": [],
+        "orders": 0,
+        "equity": 100000000,
+        "cash": 100000000,
+        "positions": [],
+        "notes": [],
+        "errors": [],
+        "nextCandleCloseUtc": 1794297600
+      },
+      {
+        "at": "2026-11-10T08:11:04.000Z",
+        "serverTime": 1794298264,
+        "mode": "dry-run",
+        "durationMs": 1938,
+        "killSwitch": {
+          "active": false,
+          "reason": null,
+          "at": null,
+          "source": null
+        },
+        "day": {
+          "key": "2026-11-10",
+          "startEquity": 100000000,
+          "pnlPct": 0,
+          "blocked": false,
+          "rolled": false
+        },
+        "universe": [
+          "BTCIDR",
+          "ETHIDR",
+          "SOLIDR",
+          "XRPIDR",
+          "DOGEIDR",
+          "ADAIDR",
+          "BNBIDR",
+          "TRXIDR"
+        ],
+        "processed": [
+          "BTCIDR",
+          "ETHIDR",
+          "SOLIDR",
+          "XRPIDR",
+          "DOGEIDR",
+          "ADAIDR",
+          "BNBIDR",
+          "TRXIDR"
+        ],
+        "signals": [],
+        "orders": 0,
+        "equity": 100000000,
+        "cash": 100000000,
+        "positions": [],
+        "notes": [],
+        "errors": [],
+        "nextCandleCloseUtc": 1794312000
+      },
+      {
+        "at": "2026-11-10T09:53:05.000Z",
+        "serverTime": 1794304385,
+        "mode": "dry-run",
+        "durationMs": 1647,
+        "killSwitch": {
+          "active": false,
+          "reason": null,
+          "at": null,
+          "source": null
+        },
+        "day": {
+          "key": "2026-11-10",
           "startEquity": 100000000,
           "pnlPct": 0,
           "blocked": false,
@@ -30958,13 +31400,13 @@
         "positions": [],
         "notes": [],
         "errors": [],
-        "nextCandleCloseUtc": 1794196800
+        "nextCandleCloseUtc": 1794312000
       },
       {
-        "at": "2026-11-09T02:33:14.000Z",
-        "serverTime": 1794191594,
+        "at": "2026-11-10T10:51:23.000Z",
+        "serverTime": 1794307883,
         "mode": "dry-run",
-        "durationMs": 1861,
+        "durationMs": 1655,
         "killSwitch": {
           "active": false,
           "reason": null,
@@ -30972,7 +31414,7 @@
           "source": null
         },
         "day": {
-          "key": "2026-11-09",
+          "key": "2026-11-10",
           "startEquity": 100000000,
           "pnlPct": 0,
           "blocked": false,
@@ -30996,203 +31438,2494 @@
         "positions": [],
         "notes": [],
         "errors": [],
-        "nextCandleCloseUtc": 1794196800
+        "nextCandleCloseUtc": 1794312000
+      },
+      {
+        "at": "2026-11-10T11:47:26.000Z",
+        "serverTime": 1794311246,
+        "mode": "dry-run",
+        "durationMs": 1740,
+        "killSwitch": {
+          "active": false,
+          "reason": null,
+          "at": null,
+          "source": null
+        },
+        "day": {
+          "key": "2026-11-10",
+          "startEquity": 100000000,
+          "pnlPct": 0,
+          "blocked": false,
+          "rolled": false
+        },
+        "universe": [
+          "BTCIDR",
+          "ETHIDR",
+          "SOLIDR",
+          "XRPIDR",
+          "DOGEIDR",
+          "ADAIDR",
+          "BNBIDR",
+          "TRXIDR"
+        ],
+        "processed": [],
+        "signals": [],
+        "orders": 0,
+        "equity": 100000000,
+        "cash": 100000000,
+        "positions": [],
+        "notes": [],
+        "errors": [],
+        "nextCandleCloseUtc": 1794312000
+      },
+      {
+        "at": "2026-11-10T12:56:18.000Z",
+        "serverTime": 1794315378,
+        "mode": "dry-run",
+        "durationMs": 1838,
+        "killSwitch": {
+          "active": false,
+          "reason": null,
+          "at": null,
+          "source": null
+        },
+        "day": {
+          "key": "2026-11-10",
+          "startEquity": 100000000,
+          "pnlPct": 0,
+          "blocked": false,
+          "rolled": false
+        },
+        "universe": [
+          "BTCIDR",
+          "ETHIDR",
+          "SOLIDR",
+          "XRPIDR",
+          "DOGEIDR",
+          "ADAIDR",
+          "BNBIDR",
+          "TRXIDR"
+        ],
+        "processed": [
+          "BTCIDR",
+          "ETHIDR",
+          "SOLIDR",
+          "XRPIDR",
+          "DOGEIDR",
+          "ADAIDR",
+          "BNBIDR",
+          "TRXIDR"
+        ],
+        "signals": [],
+        "orders": 0,
+        "equity": 100000000,
+        "cash": 100000000,
+        "positions": [],
+        "notes": [],
+        "errors": [],
+        "nextCandleCloseUtc": 1794326400
+      },
+      {
+        "at": "2026-11-10T14:07:02.000Z",
+        "serverTime": 1794319622,
+        "mode": "dry-run",
+        "durationMs": 1697,
+        "killSwitch": {
+          "active": false,
+          "reason": null,
+          "at": null,
+          "source": null
+        },
+        "day": {
+          "key": "2026-11-10",
+          "startEquity": 100000000,
+          "pnlPct": 0,
+          "blocked": false,
+          "rolled": false
+        },
+        "universe": [
+          "BTCIDR",
+          "ETHIDR",
+          "SOLIDR",
+          "XRPIDR",
+          "DOGEIDR",
+          "ADAIDR",
+          "BNBIDR",
+          "TRXIDR"
+        ],
+        "processed": [],
+        "signals": [],
+        "orders": 0,
+        "equity": 100000000,
+        "cash": 100000000,
+        "positions": [],
+        "notes": [],
+        "errors": [
+          {
+            "scope": "spread",
+            "message": "TRXIDR: spread 3.997% melebihi batas"
+          }
+        ],
+        "nextCandleCloseUtc": 1794326400
+      },
+      {
+        "at": "2026-11-10T14:56:45.000Z",
+        "serverTime": 1794322605,
+        "mode": "dry-run",
+        "durationMs": 1667,
+        "killSwitch": {
+          "active": false,
+          "reason": null,
+          "at": null,
+          "source": null
+        },
+        "day": {
+          "key": "2026-11-10",
+          "startEquity": 100000000,
+          "pnlPct": 0,
+          "blocked": false,
+          "rolled": false
+        },
+        "universe": [
+          "BTCIDR",
+          "ETHIDR",
+          "SOLIDR",
+          "XRPIDR",
+          "DOGEIDR",
+          "ADAIDR",
+          "BNBIDR",
+          "TRXIDR"
+        ],
+        "processed": [],
+        "signals": [],
+        "orders": 0,
+        "equity": 100000000,
+        "cash": 100000000,
+        "positions": [],
+        "notes": [],
+        "errors": [],
+        "nextCandleCloseUtc": 1794326400
+      },
+      {
+        "at": "2026-11-10T15:44:35.000Z",
+        "serverTime": 1794325475,
+        "mode": "dry-run",
+        "durationMs": 1684,
+        "killSwitch": {
+          "active": false,
+          "reason": null,
+          "at": null,
+          "source": null
+        },
+        "day": {
+          "key": "2026-11-10",
+          "startEquity": 100000000,
+          "pnlPct": 0,
+          "blocked": false,
+          "rolled": false
+        },
+        "universe": [
+          "BTCIDR",
+          "ETHIDR",
+          "SOLIDR",
+          "XRPIDR",
+          "DOGEIDR",
+          "ADAIDR",
+          "BNBIDR",
+          "TRXIDR"
+        ],
+        "processed": [],
+        "signals": [],
+        "orders": 0,
+        "equity": 100000000,
+        "cash": 100000000,
+        "positions": [],
+        "notes": [],
+        "errors": [],
+        "nextCandleCloseUtc": 1794326400
+      },
+      {
+        "at": "2026-11-10T16:49:04.000Z",
+        "serverTime": 1794329344,
+        "mode": "dry-run",
+        "durationMs": 1801,
+        "killSwitch": {
+          "active": false,
+          "reason": null,
+          "at": null,
+          "source": null
+        },
+        "day": {
+          "key": "2026-11-10",
+          "startEquity": 100000000,
+          "pnlPct": 0,
+          "blocked": false,
+          "rolled": false
+        },
+        "universe": [
+          "BTCIDR",
+          "ETHIDR",
+          "SOLIDR",
+          "XRPIDR",
+          "DOGEIDR",
+          "ADAIDR",
+          "BNBIDR",
+          "TRXIDR"
+        ],
+        "processed": [
+          "BTCIDR",
+          "ETHIDR",
+          "SOLIDR",
+          "XRPIDR",
+          "DOGEIDR",
+          "ADAIDR",
+          "BNBIDR",
+          "TRXIDR"
+        ],
+        "signals": [],
+        "orders": 0,
+        "equity": 100000000,
+        "cash": 100000000,
+        "positions": [],
+        "notes": [],
+        "errors": [],
+        "nextCandleCloseUtc": 1794340800
+      },
+      {
+        "at": "2026-11-10T17:45:28.000Z",
+        "serverTime": 1794332728,
+        "mode": "dry-run",
+        "durationMs": 1506,
+        "killSwitch": {
+          "active": false,
+          "reason": null,
+          "at": null,
+          "source": null
+        },
+        "day": {
+          "key": "2026-11-11",
+          "startEquity": 100000000,
+          "pnlPct": 0,
+          "blocked": false,
+          "rolled": true
+        },
+        "universe": [
+          "BTCIDR",
+          "ETHIDR",
+          "SOLIDR",
+          "XRPIDR",
+          "DOGEIDR",
+          "ADAIDR",
+          "BNBIDR",
+          "TRXIDR"
+        ],
+        "processed": [],
+        "signals": [],
+        "orders": 0,
+        "equity": 100000000,
+        "cash": 100000000,
+        "positions": [],
+        "notes": [
+          "hari WIB baru 2026-11-11: equity awal Rp 100.000.000"
+        ],
+        "errors": [],
+        "nextCandleCloseUtc": 1794340800
+      },
+      {
+        "at": "2026-11-10T18:44:58.000Z",
+        "serverTime": 1794336298,
+        "mode": "dry-run",
+        "durationMs": 1795,
+        "killSwitch": {
+          "active": false,
+          "reason": null,
+          "at": null,
+          "source": null
+        },
+        "day": {
+          "key": "2026-11-11",
+          "startEquity": 100000000,
+          "pnlPct": 0,
+          "blocked": false,
+          "rolled": false
+        },
+        "universe": [
+          "BTCIDR",
+          "ETHIDR",
+          "SOLIDR",
+          "XRPIDR",
+          "DOGEIDR",
+          "ADAIDR",
+          "BNBIDR",
+          "TRXIDR"
+        ],
+        "processed": [],
+        "signals": [],
+        "orders": 0,
+        "equity": 100000000,
+        "cash": 100000000,
+        "positions": [],
+        "notes": [],
+        "errors": [],
+        "nextCandleCloseUtc": 1794340800
+      },
+      {
+        "at": "2026-11-10T19:49:57.000Z",
+        "serverTime": 1794340197,
+        "mode": "dry-run",
+        "durationMs": 1709,
+        "killSwitch": {
+          "active": false,
+          "reason": null,
+          "at": null,
+          "source": null
+        },
+        "day": {
+          "key": "2026-11-11",
+          "startEquity": 100000000,
+          "pnlPct": 0,
+          "blocked": false,
+          "rolled": false
+        },
+        "universe": [
+          "BTCIDR",
+          "ETHIDR",
+          "SOLIDR",
+          "XRPIDR",
+          "DOGEIDR",
+          "ADAIDR",
+          "BNBIDR",
+          "TRXIDR"
+        ],
+        "processed": [],
+        "signals": [],
+        "orders": 0,
+        "equity": 100000000,
+        "cash": 100000000,
+        "positions": [],
+        "notes": [],
+        "errors": [],
+        "nextCandleCloseUtc": 1794340800
+      },
+      {
+        "at": "2026-11-10T20:42:15.000Z",
+        "serverTime": 1794343335,
+        "mode": "dry-run",
+        "durationMs": 1704,
+        "killSwitch": {
+          "active": false,
+          "reason": null,
+          "at": null,
+          "source": null
+        },
+        "day": {
+          "key": "2026-11-11",
+          "startEquity": 100000000,
+          "pnlPct": 0,
+          "blocked": false,
+          "rolled": false
+        },
+        "universe": [
+          "BTCIDR",
+          "ETHIDR",
+          "SOLIDR",
+          "XRPIDR",
+          "DOGEIDR",
+          "ADAIDR",
+          "BNBIDR",
+          "TRXIDR"
+        ],
+        "processed": [
+          "BTCIDR",
+          "ETHIDR",
+          "SOLIDR",
+          "XRPIDR",
+          "DOGEIDR",
+          "ADAIDR",
+          "BNBIDR",
+          "TRXIDR"
+        ],
+        "signals": [],
+        "orders": 0,
+        "equity": 100000000,
+        "cash": 100000000,
+        "positions": [],
+        "notes": [],
+        "errors": [],
+        "nextCandleCloseUtc": 1794355200
+      },
+      {
+        "at": "2026-11-10T21:37:41.000Z",
+        "serverTime": 1794346661,
+        "mode": "dry-run",
+        "durationMs": 1558,
+        "killSwitch": {
+          "active": false,
+          "reason": null,
+          "at": null,
+          "source": null
+        },
+        "day": {
+          "key": "2026-11-11",
+          "startEquity": 100000000,
+          "pnlPct": 0,
+          "blocked": false,
+          "rolled": false
+        },
+        "universe": [
+          "BTCIDR",
+          "ETHIDR",
+          "SOLIDR",
+          "XRPIDR",
+          "DOGEIDR",
+          "ADAIDR",
+          "BNBIDR",
+          "TRXIDR"
+        ],
+        "processed": [],
+        "signals": [],
+        "orders": 0,
+        "equity": 100000000,
+        "cash": 100000000,
+        "positions": [],
+        "notes": [],
+        "errors": [],
+        "nextCandleCloseUtc": 1794355200
+      },
+      {
+        "at": "2026-11-10T22:38:10.000Z",
+        "serverTime": 1794350290,
+        "mode": "dry-run",
+        "durationMs": 1523,
+        "killSwitch": {
+          "active": false,
+          "reason": null,
+          "at": null,
+          "source": null
+        },
+        "day": {
+          "key": "2026-11-11",
+          "startEquity": 100000000,
+          "pnlPct": 0,
+          "blocked": false,
+          "rolled": false
+        },
+        "universe": [
+          "BTCIDR",
+          "ETHIDR",
+          "SOLIDR",
+          "XRPIDR",
+          "DOGEIDR",
+          "ADAIDR",
+          "BNBIDR",
+          "TRXIDR"
+        ],
+        "processed": [],
+        "signals": [],
+        "orders": 0,
+        "equity": 100000000,
+        "cash": 100000000,
+        "positions": [],
+        "notes": [],
+        "errors": [],
+        "nextCandleCloseUtc": 1794355200
+      },
+      {
+        "at": "2026-11-10T23:32:15.000Z",
+        "serverTime": 1794353535,
+        "mode": "dry-run",
+        "durationMs": 1190,
+        "killSwitch": {
+          "active": false,
+          "reason": null,
+          "at": null,
+          "source": null
+        },
+        "day": {
+          "key": "2026-11-11",
+          "startEquity": 100000000,
+          "pnlPct": 0,
+          "blocked": false,
+          "rolled": false
+        },
+        "universe": [
+          "BTCIDR",
+          "ETHIDR",
+          "SOLIDR",
+          "XRPIDR",
+          "DOGEIDR",
+          "ADAIDR",
+          "BNBIDR",
+          "TRXIDR"
+        ],
+        "processed": [],
+        "signals": [],
+        "orders": 0,
+        "equity": 100000000,
+        "cash": 100000000,
+        "positions": [],
+        "notes": [],
+        "errors": [],
+        "nextCandleCloseUtc": 1794355200
+      },
+      {
+        "at": "2026-11-11T00:55:08.000Z",
+        "serverTime": 1794358508,
+        "mode": "dry-run",
+        "durationMs": 1729,
+        "killSwitch": {
+          "active": false,
+          "reason": null,
+          "at": null,
+          "source": null
+        },
+        "day": {
+          "key": "2026-11-11",
+          "startEquity": 100000000,
+          "pnlPct": 0,
+          "blocked": false,
+          "rolled": false
+        },
+        "universe": [
+          "BTCIDR",
+          "ETHIDR",
+          "SOLIDR",
+          "XRPIDR",
+          "DOGEIDR",
+          "ADAIDR",
+          "BNBIDR",
+          "TRXIDR"
+        ],
+        "processed": [
+          "BTCIDR",
+          "ETHIDR",
+          "SOLIDR",
+          "XRPIDR",
+          "DOGEIDR",
+          "ADAIDR",
+          "BNBIDR",
+          "TRXIDR"
+        ],
+        "signals": [],
+        "orders": 0,
+        "equity": 100000000,
+        "cash": 100000000,
+        "positions": [],
+        "notes": [],
+        "errors": [],
+        "nextCandleCloseUtc": 1794369600
+      },
+      {
+        "at": "2026-11-11T01:24:20.000Z",
+        "serverTime": 1794360260,
+        "mode": "dry-run",
+        "durationMs": 1585,
+        "killSwitch": {
+          "active": false,
+          "reason": null,
+          "at": null,
+          "source": null
+        },
+        "day": {
+          "key": "2026-11-11",
+          "startEquity": 100000000,
+          "pnlPct": 0,
+          "blocked": false,
+          "rolled": false
+        },
+        "universe": [
+          "BTCIDR",
+          "ETHIDR",
+          "SOLIDR",
+          "XRPIDR",
+          "DOGEIDR",
+          "ADAIDR",
+          "BNBIDR",
+          "TRXIDR"
+        ],
+        "processed": [],
+        "signals": [],
+        "orders": 0,
+        "equity": 100000000,
+        "cash": 100000000,
+        "positions": [],
+        "notes": [],
+        "errors": [],
+        "nextCandleCloseUtc": 1794369600
+      },
+      {
+        "at": "2026-11-11T01:57:34.000Z",
+        "serverTime": 1794362254,
+        "mode": "dry-run",
+        "durationMs": 1399,
+        "killSwitch": {
+          "active": false,
+          "reason": null,
+          "at": null,
+          "source": null
+        },
+        "day": {
+          "key": "2026-11-11",
+          "startEquity": 100000000,
+          "pnlPct": 0,
+          "blocked": false,
+          "rolled": false
+        },
+        "universe": [
+          "BTCIDR",
+          "ETHIDR",
+          "SOLIDR",
+          "XRPIDR",
+          "DOGEIDR",
+          "ADAIDR",
+          "BNBIDR",
+          "TRXIDR"
+        ],
+        "processed": [],
+        "signals": [],
+        "orders": 0,
+        "equity": 100000000,
+        "cash": 100000000,
+        "positions": [],
+        "notes": [],
+        "errors": [],
+        "nextCandleCloseUtc": 1794369600
+      },
+      {
+        "at": "2026-11-11T02:46:35.000Z",
+        "serverTime": 1794365195,
+        "mode": "dry-run",
+        "durationMs": 1761,
+        "killSwitch": {
+          "active": false,
+          "reason": null,
+          "at": null,
+          "source": null
+        },
+        "day": {
+          "key": "2026-11-11",
+          "startEquity": 100000000,
+          "pnlPct": 0,
+          "blocked": false,
+          "rolled": false
+        },
+        "universe": [
+          "BTCIDR",
+          "ETHIDR",
+          "SOLIDR",
+          "XRPIDR",
+          "DOGEIDR",
+          "ADAIDR",
+          "BNBIDR",
+          "TRXIDR"
+        ],
+        "processed": [],
+        "signals": [],
+        "orders": 0,
+        "equity": 100000000,
+        "cash": 100000000,
+        "positions": [],
+        "notes": [],
+        "errors": [],
+        "nextCandleCloseUtc": 1794369600
+      },
+      {
+        "at": "2026-11-11T03:50:49.000Z",
+        "serverTime": 1794369049,
+        "mode": "dry-run",
+        "durationMs": 1597,
+        "killSwitch": {
+          "active": false,
+          "reason": null,
+          "at": null,
+          "source": null
+        },
+        "day": {
+          "key": "2026-11-11",
+          "startEquity": 100000000,
+          "pnlPct": 0,
+          "blocked": false,
+          "rolled": false
+        },
+        "universe": [
+          "BTCIDR",
+          "ETHIDR",
+          "SOLIDR",
+          "XRPIDR",
+          "DOGEIDR",
+          "ADAIDR",
+          "BNBIDR",
+          "TRXIDR"
+        ],
+        "processed": [],
+        "signals": [],
+        "orders": 0,
+        "equity": 100000000,
+        "cash": 100000000,
+        "positions": [],
+        "notes": [],
+        "errors": [],
+        "nextCandleCloseUtc": 1794369600
+      },
+      {
+        "at": "2026-11-11T04:54:52.000Z",
+        "serverTime": 1794372892,
+        "mode": "dry-run",
+        "durationMs": 1547,
+        "killSwitch": {
+          "active": false,
+          "reason": null,
+          "at": null,
+          "source": null
+        },
+        "day": {
+          "key": "2026-11-11",
+          "startEquity": 100000000,
+          "pnlPct": 0,
+          "blocked": false,
+          "rolled": false
+        },
+        "universe": [
+          "BTCIDR",
+          "ETHIDR",
+          "SOLIDR",
+          "XRPIDR",
+          "DOGEIDR",
+          "ADAIDR",
+          "BNBIDR",
+          "TRXIDR"
+        ],
+        "processed": [
+          "BTCIDR",
+          "ETHIDR",
+          "SOLIDR",
+          "XRPIDR",
+          "DOGEIDR",
+          "ADAIDR",
+          "BNBIDR",
+          "TRXIDR"
+        ],
+        "signals": [],
+        "orders": 0,
+        "equity": 100000000,
+        "cash": 100000000,
+        "positions": [],
+        "notes": [],
+        "errors": [],
+        "nextCandleCloseUtc": 1794384000
+      },
+      {
+        "at": "2026-11-11T05:55:13.000Z",
+        "serverTime": 1794376513,
+        "mode": "dry-run",
+        "durationMs": 1551,
+        "killSwitch": {
+          "active": false,
+          "reason": null,
+          "at": null,
+          "source": null
+        },
+        "day": {
+          "key": "2026-11-11",
+          "startEquity": 100000000,
+          "pnlPct": 0,
+          "blocked": false,
+          "rolled": false
+        },
+        "universe": [
+          "BTCIDR",
+          "ETHIDR",
+          "SOLIDR",
+          "XRPIDR",
+          "DOGEIDR",
+          "ADAIDR",
+          "BNBIDR",
+          "TRXIDR"
+        ],
+        "processed": [],
+        "signals": [],
+        "orders": 0,
+        "equity": 100000000,
+        "cash": 100000000,
+        "positions": [],
+        "notes": [],
+        "errors": [],
+        "nextCandleCloseUtc": 1794384000
       }
     ],
-    "errors": [],
+    "errors": [
+      {
+        "at": "2026-11-10T14:07:04.722Z",
+        "scope": "spread",
+        "message": "TRXIDR: spread 3.997% melebihi batas",
+        "symbol": "TRXIDR"
+      }
+    ],
     "kill": [],
     "snapshots": [
       {
-        "at": "2026-11-09T02:16:54.000Z",
-        "serverTime": 1794190614,
+        "at": "2026-11-09T04:37:57.000Z",
+        "serverTime": 1794199077,
         "symbol": "BTCIDR",
-        "bid": 1362367000,
-        "ask": 1362368000,
-        "spreadPct": 7.340163355335473e-7
+        "bid": 1352858000,
+        "ask": 1354989000,
+        "spreadPct": 0.0015739441704054919
       },
       {
-        "at": "2026-11-09T02:16:54.000Z",
-        "serverTime": 1794190614,
+        "at": "2026-11-09T04:37:57.000Z",
+        "serverTime": 1794199077,
         "symbol": "ETHIDR",
-        "bid": 38830000,
-        "ask": 38831000,
-        "spreadPct": 0.00002575295193211522
+        "bid": 38727000,
+        "ask": 38732000,
+        "spreadPct": 0.00012910055642339818
       },
       {
-        "at": "2026-11-09T02:16:54.000Z",
-        "serverTime": 1794190614,
+        "at": "2026-11-09T04:37:57.000Z",
+        "serverTime": 1794199077,
         "symbol": "SOLIDR",
-        "bid": 1592751,
-        "ask": 1593899,
-        "spreadPct": 0.0007205058603862991
+        "bid": 1582696,
+        "ask": 1582697,
+        "spreadPct": 6.318330772829787e-7
       },
       {
-        "at": "2026-11-09T02:16:54.000Z",
-        "serverTime": 1794190614,
+        "at": "2026-11-09T04:37:57.000Z",
+        "serverTime": 1794199077,
         "symbol": "XRPIDR",
-        "bid": 20206,
-        "ask": 20221,
-        "spreadPct": 0.0007420783139980706
+        "bid": 20056,
+        "ask": 20086,
+        "spreadPct": 0.0014946938368790793
       },
       {
-        "at": "2026-11-09T02:16:54.000Z",
-        "serverTime": 1794190614,
+        "at": "2026-11-09T04:37:57.000Z",
+        "serverTime": 1794199077,
         "symbol": "DOGEIDR",
-        "bid": 1262,
+        "bid": 1261,
+        "ask": 1264,
+        "spreadPct": 0.002376237623762376
+      },
+      {
+        "at": "2026-11-09T04:37:57.000Z",
+        "serverTime": 1794199077,
+        "symbol": "ADAIDR",
+        "bid": 3197,
+        "ask": 3201,
+        "spreadPct": 0.0012503907471084713
+      },
+      {
+        "at": "2026-11-09T04:37:57.000Z",
+        "serverTime": 1794199077,
+        "symbol": "BNBIDR",
+        "bid": 12404132,
+        "ask": 12475044,
+        "spreadPct": 0.005700510338445292
+      },
+      {
+        "at": "2026-11-09T04:37:57.000Z",
+        "serverTime": 1794199077,
+        "symbol": "TRXIDR",
+        "bid": 5750,
+        "ask": 5767,
+        "spreadPct": 0.0029521576799513764
+      },
+      {
+        "at": "2026-11-10T01:24:20.000Z",
+        "serverTime": 1794273860,
+        "symbol": "BTCIDR",
+        "bid": 1356002000,
+        "ask": 1356653000,
+        "spreadPct": 0.0004799725729958288
+      },
+      {
+        "at": "2026-11-10T01:24:20.000Z",
+        "serverTime": 1794273860,
+        "symbol": "ETHIDR",
+        "bid": 38437000,
+        "ask": 38438000,
+        "spreadPct": 0.000026016260162601626
+      },
+      {
+        "at": "2026-11-10T01:24:20.000Z",
+        "serverTime": 1794273860,
+        "symbol": "SOLIDR",
+        "bid": 1561153,
+        "ask": 1563646,
+        "spreadPct": 0.0015956226304475903
+      },
+      {
+        "at": "2026-11-10T01:24:20.000Z",
+        "serverTime": 1794273860,
+        "symbol": "XRPIDR",
+        "bid": 19901,
+        "ask": 19925,
+        "spreadPct": 0.0012052428062070005
+      },
+      {
+        "at": "2026-11-10T01:24:20.000Z",
+        "serverTime": 1794273860,
+        "symbol": "DOGEIDR",
+        "bid": 1260,
         "ask": 1263,
-        "spreadPct": 0.0007920792079207921
+        "spreadPct": 0.0023781212841854932
       },
       {
-        "at": "2026-11-09T02:16:54.000Z",
-        "serverTime": 1794190614,
+        "at": "2026-11-10T01:24:20.000Z",
+        "serverTime": 1794273860,
         "symbol": "ADAIDR",
-        "bid": 3215,
-        "ask": 3216,
-        "spreadPct": 0.00031099362463069506
+        "bid": 3196,
+        "ask": 3203,
+        "spreadPct": 0.0021878418502891076
       },
       {
-        "at": "2026-11-09T02:16:54.000Z",
-        "serverTime": 1794190614,
+        "at": "2026-11-10T01:24:20.000Z",
+        "serverTime": 1794273860,
         "symbol": "BNBIDR",
-        "bid": 12400997,
-        "ask": 12459929,
-        "spreadPct": 0.004740933624113599
+        "bid": 12421511,
+        "ask": 12499984,
+        "spreadPct": 0.006297615773050534
       },
       {
-        "at": "2026-11-09T02:16:54.000Z",
-        "serverTime": 1794190614,
+        "at": "2026-11-10T01:24:20.000Z",
+        "serverTime": 1794273860,
         "symbol": "TRXIDR",
-        "bid": 5775,
-        "ask": 5791,
-        "spreadPct": 0.0027667300708974583
+        "bid": 5726,
+        "ask": 5728,
+        "spreadPct": 0.00034922297887200976
       },
       {
-        "at": "2026-11-09T02:18:21.000Z",
-        "serverTime": 1794190701,
+        "at": "2026-11-10T07:19:06.000Z",
+        "serverTime": 1794295146,
         "symbol": "BTCIDR",
-        "bid": 1362367000,
-        "ask": 1362368000,
-        "spreadPct": 7.340163355335473e-7
+        "bid": 1345700000,
+        "ask": 1345787000,
+        "spreadPct": 0.00006464827807082107
       },
       {
-        "at": "2026-11-09T02:18:21.000Z",
-        "serverTime": 1794190701,
+        "at": "2026-11-10T07:19:06.000Z",
+        "serverTime": 1794295146,
         "symbol": "ETHIDR",
-        "bid": 38862000,
-        "ask": 38912000,
-        "spreadPct": 0.001285776737727261
+        "bid": 38144000,
+        "ask": 38176000,
+        "spreadPct": 0.0008385744234800838
       },
       {
-        "at": "2026-11-09T02:18:21.000Z",
-        "serverTime": 1794190701,
+        "at": "2026-11-10T07:19:06.000Z",
+        "serverTime": 1794295146,
         "symbol": "SOLIDR",
-        "bid": 1591000,
-        "ask": 1592827,
-        "spreadPct": 0.0011476754233191691
+        "bid": 1550138,
+        "ask": 1553147,
+        "spreadPct": 0.0019392353586602585
       },
       {
-        "at": "2026-11-09T02:18:21.000Z",
-        "serverTime": 1794190701,
+        "at": "2026-11-10T07:19:06.000Z",
+        "serverTime": 1794295146,
         "symbol": "XRPIDR",
-        "bid": 20208,
-        "ask": 20234,
-        "spreadPct": 0.0012857919984174868
+        "bid": 19815,
+        "ask": 19837,
+        "spreadPct": 0.0011096539897104813
       },
       {
-        "at": "2026-11-09T02:18:21.000Z",
-        "serverTime": 1794190701,
+        "at": "2026-11-10T07:19:06.000Z",
+        "serverTime": 1794295146,
         "symbol": "DOGEIDR",
-        "bid": 1263,
+        "bid": 1261,
         "ask": 1265,
-        "spreadPct": 0.0015822784810126582
+        "spreadPct": 0.003167062549485352
       },
       {
-        "at": "2026-11-09T02:18:21.000Z",
-        "serverTime": 1794190701,
+        "at": "2026-11-10T07:19:06.000Z",
+        "serverTime": 1794295146,
         "symbol": "ADAIDR",
-        "bid": 3215,
-        "ask": 3216,
-        "spreadPct": 0.00031099362463069506
+        "bid": 3225,
+        "ask": 3236,
+        "spreadPct": 0.0034050456585667855
       },
       {
-        "at": "2026-11-09T02:18:21.000Z",
-        "serverTime": 1794190701,
+        "at": "2026-11-10T07:19:06.000Z",
+        "serverTime": 1794295146,
         "symbol": "BNBIDR",
-        "bid": 12401024,
-        "ask": 12459929,
-        "spreadPct": 0.004738756394414969
+        "bid": 12405225,
+        "ask": 12474172,
+        "spreadPct": 0.005542497673878511
       },
       {
-        "at": "2026-11-09T02:18:21.000Z",
-        "serverTime": 1794190701,
+        "at": "2026-11-10T07:19:06.000Z",
+        "serverTime": 1794295146,
         "symbol": "TRXIDR",
-        "bid": 5775,
-        "ask": 5792,
-        "spreadPct": 0.002939396559176969
+        "bid": 5735,
+        "ask": 5764,
+        "spreadPct": 0.005043916862335855
       },
       {
-        "at": "2026-11-09T02:33:14.000Z",
-        "serverTime": 1794191594,
+        "at": "2026-11-10T08:11:04.000Z",
+        "serverTime": 1794298264,
         "symbol": "BTCIDR",
-        "bid": 1365099000,
-        "ask": 1366097000,
-        "spreadPct": 0.0007308153644044588
+        "bid": 1350855000,
+        "ask": 1351411000,
+        "spreadPct": 0.00041150649121885114
       },
       {
-        "at": "2026-11-09T02:33:14.000Z",
-        "serverTime": 1794191594,
+        "at": "2026-11-10T08:11:04.000Z",
+        "serverTime": 1794298264,
         "symbol": "ETHIDR",
-        "bid": 38995000,
-        "ask": 39022000,
-        "spreadPct": 0.0006921568376123153
+        "bid": 38216000,
+        "ask": 38256000,
+        "spreadPct": 0.001046134532900931
       },
       {
-        "at": "2026-11-09T02:33:14.000Z",
-        "serverTime": 1794191594,
+        "at": "2026-11-10T08:11:04.000Z",
+        "serverTime": 1794298264,
         "symbol": "SOLIDR",
-        "bid": 1596379,
-        "ask": 1596977,
-        "spreadPct": 0.00037452761295640074
+        "bid": 1553889,
+        "ask": 1553890,
+        "spreadPct": 6.435464040396695e-7
       },
       {
-        "at": "2026-11-09T02:33:14.000Z",
-        "serverTime": 1794191594,
+        "at": "2026-11-10T08:11:04.000Z",
+        "serverTime": 1794298264,
         "symbol": "XRPIDR",
-        "bid": 20278,
-        "ask": 20293,
-        "spreadPct": 0.000739444430751029
+        "bid": 19742,
+        "ask": 19743,
+        "spreadPct": 0.000050652146384703054
       },
       {
-        "at": "2026-11-09T02:33:14.000Z",
-        "serverTime": 1794191594,
+        "at": "2026-11-10T08:11:04.000Z",
+        "serverTime": 1794298264,
         "symbol": "DOGEIDR",
-        "bid": 1267,
-        "ask": 1268,
-        "spreadPct": 0.0007889546351084812
+        "bid": 1264,
+        "ask": 1266,
+        "spreadPct": 0.0015810276679841897
       },
       {
-        "at": "2026-11-09T02:33:14.000Z",
-        "serverTime": 1794191594,
+        "at": "2026-11-10T08:11:04.000Z",
+        "serverTime": 1794298264,
         "symbol": "ADAIDR",
-        "bid": 3224,
-        "ask": 3229,
-        "spreadPct": 0.001549666821633349
+        "bid": 3233,
+        "ask": 3240,
+        "spreadPct": 0.0021628302178279004
       },
       {
-        "at": "2026-11-09T02:33:14.000Z",
-        "serverTime": 1794191594,
+        "at": "2026-11-10T08:11:04.000Z",
+        "serverTime": 1794298264,
         "symbol": "BNBIDR",
-        "bid": 12410707,
-        "ask": 12459800,
-        "spreadPct": 0.003947888959400787
+        "bid": 12426405,
+        "ask": 12489609,
+        "spreadPct": 0.005073363660816694
       },
       {
-        "at": "2026-11-09T02:33:14.000Z",
-        "serverTime": 1794191594,
+        "at": "2026-11-10T08:11:04.000Z",
+        "serverTime": 1794298264,
         "symbol": "TRXIDR",
-        "bid": 5769,
-        "ask": 5785,
-        "spreadPct": 0.0027696036004846805
+        "bid": 5754,
+        "ask": 5795,
+        "spreadPct": 0.0071001818339250155
+      },
+      {
+        "at": "2026-11-10T09:53:05.000Z",
+        "serverTime": 1794304385,
+        "symbol": "BTCIDR",
+        "bid": 1345166000,
+        "ask": 1345785000,
+        "spreadPct": 0.0004600604024376512
+      },
+      {
+        "at": "2026-11-10T09:53:05.000Z",
+        "serverTime": 1794304385,
+        "symbol": "ETHIDR",
+        "bid": 37936000,
+        "ask": 37983000,
+        "spreadPct": 0.0012381617249963778
+      },
+      {
+        "at": "2026-11-10T09:53:05.000Z",
+        "serverTime": 1794304385,
+        "symbol": "SOLIDR",
+        "bid": 1543727,
+        "ask": 1546291,
+        "spreadPct": 0.0016595372583590128
+      },
+      {
+        "at": "2026-11-10T09:53:05.000Z",
+        "serverTime": 1794304385,
+        "symbol": "XRPIDR",
+        "bid": 19665,
+        "ask": 19678,
+        "spreadPct": 0.0006608545357496886
+      },
+      {
+        "at": "2026-11-10T09:53:05.000Z",
+        "serverTime": 1794304385,
+        "symbol": "DOGEIDR",
+        "bid": 1258,
+        "ask": 1260,
+        "spreadPct": 0.0015885623510722795
+      },
+      {
+        "at": "2026-11-10T09:53:05.000Z",
+        "serverTime": 1794304385,
+        "symbol": "ADAIDR",
+        "bid": 3220,
+        "ask": 3221,
+        "spreadPct": 0.0003105107902499612
+      },
+      {
+        "at": "2026-11-10T09:53:05.000Z",
+        "serverTime": 1794304385,
+        "symbol": "BNBIDR",
+        "bid": 12421537,
+        "ask": 12491017,
+        "spreadPct": 0.005577910638949342
+      },
+      {
+        "at": "2026-11-10T09:53:05.000Z",
+        "serverTime": 1794304385,
+        "symbol": "TRXIDR",
+        "bid": 5762,
+        "ask": 5810,
+        "spreadPct": 0.00829588662288282
+      },
+      {
+        "at": "2026-11-10T10:51:23.000Z",
+        "serverTime": 1794307883,
+        "symbol": "BTCIDR",
+        "bid": 1339798000,
+        "ask": 1340000000,
+        "spreadPct": 0.00015075763173194397
+      },
+      {
+        "at": "2026-11-10T10:51:23.000Z",
+        "serverTime": 1794307883,
+        "symbol": "ETHIDR",
+        "bid": 37744000,
+        "ask": 37745000,
+        "spreadPct": 0.000026493926267403197
+      },
+      {
+        "at": "2026-11-10T10:51:23.000Z",
+        "serverTime": 1794307883,
+        "symbol": "SOLIDR",
+        "bid": 1528201,
+        "ask": 1530481,
+        "spreadPct": 0.0014908382107064416
+      },
+      {
+        "at": "2026-11-10T10:51:23.000Z",
+        "serverTime": 1794307883,
+        "symbol": "XRPIDR",
+        "bid": 19471,
+        "ask": 19496,
+        "spreadPct": 0.0012831370133702877
+      },
+      {
+        "at": "2026-11-10T10:51:23.000Z",
+        "serverTime": 1794307883,
+        "symbol": "DOGEIDR",
+        "bid": 1251,
+        "ask": 1252,
+        "spreadPct": 0.0007990411506192569
+      },
+      {
+        "at": "2026-11-10T10:51:23.000Z",
+        "serverTime": 1794307883,
+        "symbol": "ADAIDR",
+        "bid": 3201,
+        "ask": 3207,
+        "spreadPct": 0.0018726591760299626
+      },
+      {
+        "at": "2026-11-10T10:51:23.000Z",
+        "serverTime": 1794307883,
+        "symbol": "BNBIDR",
+        "bid": 12402723,
+        "ask": 12473107,
+        "spreadPct": 0.005658826258259524
+      },
+      {
+        "at": "2026-11-10T10:51:23.000Z",
+        "serverTime": 1794307883,
+        "symbol": "TRXIDR",
+        "bid": 5759,
+        "ask": 5800,
+        "spreadPct": 0.007094039276754044
+      },
+      {
+        "at": "2026-11-10T11:47:26.000Z",
+        "serverTime": 1794311246,
+        "symbol": "BTCIDR",
+        "bid": 1340950000,
+        "ask": 1340951000,
+        "spreadPct": 7.457396824118415e-7
+      },
+      {
+        "at": "2026-11-10T11:47:26.000Z",
+        "serverTime": 1794311246,
+        "symbol": "ETHIDR",
+        "bid": 37776000,
+        "ask": 37817000,
+        "spreadPct": 0.0010847565250750731
+      },
+      {
+        "at": "2026-11-10T11:47:26.000Z",
+        "serverTime": 1794311246,
+        "symbol": "SOLIDR",
+        "bid": 1527382,
+        "ask": 1529544,
+        "spreadPct": 0.001414492859820617
+      },
+      {
+        "at": "2026-11-10T11:47:26.000Z",
+        "serverTime": 1794311246,
+        "symbol": "XRPIDR",
+        "bid": 19497,
+        "ask": 19514,
+        "spreadPct": 0.0008715490502678732
+      },
+      {
+        "at": "2026-11-10T11:47:26.000Z",
+        "serverTime": 1794311246,
+        "symbol": "DOGEIDR",
+        "bid": 1251,
+        "ask": 1252,
+        "spreadPct": 0.0007990411506192569
+      },
+      {
+        "at": "2026-11-10T11:47:26.000Z",
+        "serverTime": 1794311246,
+        "symbol": "ADAIDR",
+        "bid": 3206,
+        "ask": 3213,
+        "spreadPct": 0.0021810250817884407
+      },
+      {
+        "at": "2026-11-10T11:47:26.000Z",
+        "serverTime": 1794311246,
+        "symbol": "BNBIDR",
+        "bid": 12399839,
+        "ask": 12471807,
+        "spreadPct": 0.005787152165160279
+      },
+      {
+        "at": "2026-11-10T11:47:26.000Z",
+        "serverTime": 1794311246,
+        "symbol": "TRXIDR",
+        "bid": 5752,
+        "ask": 5799,
+        "spreadPct": 0.008137823565059302
+      },
+      {
+        "at": "2026-11-10T12:56:18.000Z",
+        "serverTime": 1794315378,
+        "symbol": "BTCIDR",
+        "bid": 1339462000,
+        "ask": 1339463000,
+        "spreadPct": 7.465681196748696e-7
+      },
+      {
+        "at": "2026-11-10T12:56:18.000Z",
+        "serverTime": 1794315378,
+        "symbol": "ETHIDR",
+        "bid": 37755000,
+        "ask": 37763000,
+        "spreadPct": 0.00021187001774411397
+      },
+      {
+        "at": "2026-11-10T12:56:18.000Z",
+        "serverTime": 1794315378,
+        "symbol": "SOLIDR",
+        "bid": 1529557,
+        "ask": 1531797,
+        "spreadPct": 0.001463404754889503
+      },
+      {
+        "at": "2026-11-10T12:56:18.000Z",
+        "serverTime": 1794315378,
+        "symbol": "XRPIDR",
+        "bid": 19427,
+        "ask": 19446,
+        "spreadPct": 0.0009775422529776452
+      },
+      {
+        "at": "2026-11-10T12:56:18.000Z",
+        "serverTime": 1794315378,
+        "symbol": "DOGEIDR",
+        "bid": 1250,
+        "ask": 1252,
+        "spreadPct": 0.0015987210231814548
+      },
+      {
+        "at": "2026-11-10T12:56:18.000Z",
+        "serverTime": 1794315378,
+        "symbol": "ADAIDR",
+        "bid": 3201,
+        "ask": 3208,
+        "spreadPct": 0.0021844281479169916
+      },
+      {
+        "at": "2026-11-10T12:56:18.000Z",
+        "serverTime": 1794315378,
+        "symbol": "BNBIDR",
+        "bid": 12359681,
+        "ask": 12454477,
+        "spreadPct": 0.007640476860024829
+      },
+      {
+        "at": "2026-11-10T12:56:18.000Z",
+        "serverTime": 1794315378,
+        "symbol": "TRXIDR",
+        "bid": 5740,
+        "ask": 5781,
+        "spreadPct": 0.0071174377224199285
+      },
+      {
+        "at": "2026-11-10T14:07:02.000Z",
+        "serverTime": 1794319622,
+        "symbol": "BTCIDR",
+        "bid": 1334999000,
+        "ask": 1335000000,
+        "spreadPct": 7.490639509602813e-7
+      },
+      {
+        "at": "2026-11-10T14:07:02.000Z",
+        "serverTime": 1794319622,
+        "symbol": "ETHIDR",
+        "bid": 37361000,
+        "ask": 37413000,
+        "spreadPct": 0.0013908577847915051
+      },
+      {
+        "at": "2026-11-10T14:07:02.000Z",
+        "serverTime": 1794319622,
+        "symbol": "SOLIDR",
+        "bid": 1521299,
+        "ask": 1522807,
+        "spreadPct": 0.0009907670757851401
+      },
+      {
+        "at": "2026-11-10T14:07:02.000Z",
+        "serverTime": 1794319622,
+        "symbol": "XRPIDR",
+        "bid": 19276,
+        "ask": 19281,
+        "spreadPct": 0.0002593562777187022
+      },
+      {
+        "at": "2026-11-10T14:07:02.000Z",
+        "serverTime": 1794319622,
+        "symbol": "DOGEIDR",
+        "bid": 1247,
+        "ask": 1249,
+        "spreadPct": 0.0016025641025641025
+      },
+      {
+        "at": "2026-11-10T14:07:02.000Z",
+        "serverTime": 1794319622,
+        "symbol": "ADAIDR",
+        "bid": 3185,
+        "ask": 3189,
+        "spreadPct": 0.0012550988390335738
+      },
+      {
+        "at": "2026-11-10T14:07:02.000Z",
+        "serverTime": 1794319622,
+        "symbol": "BNBIDR",
+        "bid": 12306533,
+        "ask": 12394887,
+        "spreadPct": 0.007153758771762919
+      },
+      {
+        "at": "2026-11-10T14:07:02.000Z",
+        "serverTime": 1794319622,
+        "symbol": "TRXIDR",
+        "bid": 5762,
+        "ask": 5997,
+        "spreadPct": 0.039969385151798625
+      },
+      {
+        "at": "2026-11-10T14:56:45.000Z",
+        "serverTime": 1794322605,
+        "symbol": "BTCIDR",
+        "bid": 1339583000,
+        "ask": 1340934000,
+        "spreadPct": 0.0010080144986955874
+      },
+      {
+        "at": "2026-11-10T14:56:45.000Z",
+        "serverTime": 1794322605,
+        "symbol": "ETHIDR",
+        "bid": 37522000,
+        "ask": 37576000,
+        "spreadPct": 0.0014381208554155903
+      },
+      {
+        "at": "2026-11-10T14:56:45.000Z",
+        "serverTime": 1794322605,
+        "symbol": "SOLIDR",
+        "bid": 1517577,
+        "ask": 1519337,
+        "spreadPct": 0.001159071346768463
+      },
+      {
+        "at": "2026-11-10T14:56:45.000Z",
+        "serverTime": 1794322605,
+        "symbol": "XRPIDR",
+        "bid": 19175,
+        "ask": 19204,
+        "spreadPct": 0.001511243127752156
+      },
+      {
+        "at": "2026-11-10T14:56:45.000Z",
+        "serverTime": 1794322605,
+        "symbol": "DOGEIDR",
+        "bid": 1249,
+        "ask": 1251,
+        "spreadPct": 0.0016
+      },
+      {
+        "at": "2026-11-10T14:56:45.000Z",
+        "serverTime": 1794322605,
+        "symbol": "ADAIDR",
+        "bid": 3194,
+        "ask": 3203,
+        "spreadPct": 0.0028138189776457712
+      },
+      {
+        "at": "2026-11-10T14:56:45.000Z",
+        "serverTime": 1794322605,
+        "symbol": "BNBIDR",
+        "bid": 12390201,
+        "ask": 12459896,
+        "spreadPct": 0.005609233638001494
+      },
+      {
+        "at": "2026-11-10T14:56:45.000Z",
+        "serverTime": 1794322605,
+        "symbol": "TRXIDR",
+        "bid": 5770,
+        "ask": 5797,
+        "spreadPct": 0.004668453358692833
+      },
+      {
+        "at": "2026-11-10T15:44:35.000Z",
+        "serverTime": 1794325475,
+        "symbol": "BTCIDR",
+        "bid": 1320109000,
+        "ask": 1320761000,
+        "spreadPct": 0.0004937766720815489
+      },
+      {
+        "at": "2026-11-10T15:44:35.000Z",
+        "serverTime": 1794325475,
+        "symbol": "ETHIDR",
+        "bid": 36381000,
+        "ask": 36409000,
+        "spreadPct": 0.0007693364473141915
+      },
+      {
+        "at": "2026-11-10T15:44:35.000Z",
+        "serverTime": 1794325475,
+        "symbol": "SOLIDR",
+        "bid": 1476000,
+        "ask": 1476087,
+        "spreadPct": 0.000058941352338193286
+      },
+      {
+        "at": "2026-11-10T15:44:35.000Z",
+        "serverTime": 1794325475,
+        "symbol": "XRPIDR",
+        "bid": 18725,
+        "ask": 18745,
+        "spreadPct": 0.0010675206832132373
+      },
+      {
+        "at": "2026-11-10T15:44:35.000Z",
+        "serverTime": 1794325475,
+        "symbol": "DOGEIDR",
+        "bid": 1212,
+        "ask": 1215,
+        "spreadPct": 0.002472187886279357
+      },
+      {
+        "at": "2026-11-10T15:44:35.000Z",
+        "serverTime": 1794325475,
+        "symbol": "ADAIDR",
+        "bid": 3093,
+        "ask": 3108,
+        "spreadPct": 0.004837929366231253
+      },
+      {
+        "at": "2026-11-10T15:44:35.000Z",
+        "serverTime": 1794325475,
+        "symbol": "BNBIDR",
+        "bid": 12207007,
+        "ask": 12250597,
+        "spreadPct": 0.0035645355939199932
+      },
+      {
+        "at": "2026-11-10T15:44:35.000Z",
+        "serverTime": 1794325475,
+        "symbol": "TRXIDR",
+        "bid": 5756,
+        "ask": 5780,
+        "spreadPct": 0.004160887656033287
+      },
+      {
+        "at": "2026-11-10T16:49:04.000Z",
+        "serverTime": 1794329344,
+        "symbol": "BTCIDR",
+        "bid": 1320505000,
+        "ask": 1321489000,
+        "spreadPct": 0.0007448919263253437
+      },
+      {
+        "at": "2026-11-10T16:49:04.000Z",
+        "serverTime": 1794329344,
+        "symbol": "ETHIDR",
+        "bid": 36527000,
+        "ask": 36551000,
+        "spreadPct": 0.0006568324256274118
+      },
+      {
+        "at": "2026-11-10T16:49:04.000Z",
+        "serverTime": 1794329344,
+        "symbol": "SOLIDR",
+        "bid": 1480723,
+        "ask": 1483067,
+        "spreadPct": 0.001581758491661015
+      },
+      {
+        "at": "2026-11-10T16:49:04.000Z",
+        "serverTime": 1794329344,
+        "symbol": "XRPIDR",
+        "bid": 18833,
+        "ask": 18862,
+        "spreadPct": 0.0015386656055179733
+      },
+      {
+        "at": "2026-11-10T16:49:04.000Z",
+        "serverTime": 1794329344,
+        "symbol": "DOGEIDR",
+        "bid": 1216,
+        "ask": 1218,
+        "spreadPct": 0.0016433853738701725
+      },
+      {
+        "at": "2026-11-10T16:49:04.000Z",
+        "serverTime": 1794329344,
+        "symbol": "ADAIDR",
+        "bid": 3115,
+        "ask": 3125,
+        "spreadPct": 0.003205128205128205
+      },
+      {
+        "at": "2026-11-10T16:49:04.000Z",
+        "serverTime": 1794329344,
+        "symbol": "BNBIDR",
+        "bid": 12150026,
+        "ask": 12206740,
+        "spreadPct": 0.00465694008802318
+      },
+      {
+        "at": "2026-11-10T16:49:04.000Z",
+        "serverTime": 1794329344,
+        "symbol": "TRXIDR",
+        "bid": 5754,
+        "ask": 5787,
+        "spreadPct": 0.005718741876787107
+      },
+      {
+        "at": "2026-11-10T17:45:28.000Z",
+        "serverTime": 1794332728,
+        "symbol": "BTCIDR",
+        "bid": 1319806000,
+        "ask": 1319807000,
+        "spreadPct": 7.576868275766182e-7
+      },
+      {
+        "at": "2026-11-10T17:45:28.000Z",
+        "serverTime": 1794332728,
+        "symbol": "ETHIDR",
+        "bid": 36511000,
+        "ask": 36553000,
+        "spreadPct": 0.001149676995510785
+      },
+      {
+        "at": "2026-11-10T17:45:28.000Z",
+        "serverTime": 1794332728,
+        "symbol": "SOLIDR",
+        "bid": 1483272,
+        "ask": 1485448,
+        "spreadPct": 0.0014659516559325232
+      },
+      {
+        "at": "2026-11-10T17:45:28.000Z",
+        "serverTime": 1794332728,
+        "symbol": "XRPIDR",
+        "bid": 18993,
+        "ask": 18994,
+        "spreadPct": 0.0000526495906494327
+      },
+      {
+        "at": "2026-11-10T17:45:28.000Z",
+        "serverTime": 1794332728,
+        "symbol": "DOGEIDR",
+        "bid": 1208,
+        "ask": 1209,
+        "spreadPct": 0.0008274720728175424
+      },
+      {
+        "at": "2026-11-10T17:45:28.000Z",
+        "serverTime": 1794332728,
+        "symbol": "ADAIDR",
+        "bid": 3100,
+        "ask": 3111,
+        "spreadPct": 0.003542102720978908
+      },
+      {
+        "at": "2026-11-10T17:45:28.000Z",
+        "serverTime": 1794332728,
+        "symbol": "BNBIDR",
+        "bid": 12116373,
+        "ask": 12192262,
+        "spreadPct": 0.006243789501138176
+      },
+      {
+        "at": "2026-11-10T17:45:28.000Z",
+        "serverTime": 1794332728,
+        "symbol": "TRXIDR",
+        "bid": 5741,
+        "ask": 5777,
+        "spreadPct": 0.006251085257857267
+      },
+      {
+        "at": "2026-11-10T18:44:58.000Z",
+        "serverTime": 1794336298,
+        "symbol": "BTCIDR",
+        "bid": 1330921000,
+        "ask": 1331961000,
+        "spreadPct": 0.0007811085883640356
+      },
+      {
+        "at": "2026-11-10T18:44:58.000Z",
+        "serverTime": 1794336298,
+        "symbol": "ETHIDR",
+        "bid": 37000000,
+        "ask": 37040000,
+        "spreadPct": 0.0010804970286331713
+      },
+      {
+        "at": "2026-11-10T18:44:58.000Z",
+        "serverTime": 1794336298,
+        "symbol": "SOLIDR",
+        "bid": 1505000,
+        "ask": 1505086,
+        "spreadPct": 0.000057141224536441815
+      },
+      {
+        "at": "2026-11-10T18:44:58.000Z",
+        "serverTime": 1794336298,
+        "symbol": "XRPIDR",
+        "bid": 19362,
+        "ask": 19399,
+        "spreadPct": 0.0019091354712210728
+      },
+      {
+        "at": "2026-11-10T18:44:58.000Z",
+        "serverTime": 1794336298,
+        "symbol": "DOGEIDR",
+        "bid": 1219,
+        "ask": 1222,
+        "spreadPct": 0.0024580090126997134
+      },
+      {
+        "at": "2026-11-10T18:44:58.000Z",
+        "serverTime": 1794336298,
+        "symbol": "ADAIDR",
+        "bid": 3140,
+        "ask": 3146,
+        "spreadPct": 0.0019090041361756285
+      },
+      {
+        "at": "2026-11-10T18:44:58.000Z",
+        "serverTime": 1794336298,
+        "symbol": "BNBIDR",
+        "bid": 12150517,
+        "ask": 12206721,
+        "spreadPct": 0.004614973175530001
+      },
+      {
+        "at": "2026-11-10T18:44:58.000Z",
+        "serverTime": 1794336298,
+        "symbol": "TRXIDR",
+        "bid": 5742,
+        "ask": 5777,
+        "spreadPct": 0.006076916398992968
+      },
+      {
+        "at": "2026-11-10T19:49:57.000Z",
+        "serverTime": 1794340197,
+        "symbol": "BTCIDR",
+        "bid": 1328630000,
+        "ask": 1328631000,
+        "spreadPct": 7.526547072342537e-7
+      },
+      {
+        "at": "2026-11-10T19:49:57.000Z",
+        "serverTime": 1794340197,
+        "symbol": "ETHIDR",
+        "bid": 37044000,
+        "ask": 37055000,
+        "spreadPct": 0.00029690009311866556
+      },
+      {
+        "at": "2026-11-10T19:49:57.000Z",
+        "serverTime": 1794340197,
+        "symbol": "SOLIDR",
+        "bid": 1501043,
+        "ask": 1501999,
+        "spreadPct": 0.0006366877319731126
+      },
+      {
+        "at": "2026-11-10T19:49:57.000Z",
+        "serverTime": 1794340197,
+        "symbol": "XRPIDR",
+        "bid": 19314,
+        "ask": 19346,
+        "spreadPct": 0.0016554578375581996
+      },
+      {
+        "at": "2026-11-10T19:49:57.000Z",
+        "serverTime": 1794340197,
+        "symbol": "DOGEIDR",
+        "bid": 1221,
+        "ask": 1222,
+        "spreadPct": 0.0008186655751125665
+      },
+      {
+        "at": "2026-11-10T19:49:57.000Z",
+        "serverTime": 1794340197,
+        "symbol": "ADAIDR",
+        "bid": 3143,
+        "ask": 3153,
+        "spreadPct": 0.0031766200762388818
+      },
+      {
+        "at": "2026-11-10T19:49:57.000Z",
+        "serverTime": 1794340197,
+        "symbol": "BNBIDR",
+        "bid": 12151859,
+        "ask": 12206721,
+        "spreadPct": 0.004504531873368645
+      },
+      {
+        "at": "2026-11-10T19:49:57.000Z",
+        "serverTime": 1794340197,
+        "symbol": "TRXIDR",
+        "bid": 5744,
+        "ask": 5777,
+        "spreadPct": 0.005728669386337992
+      },
+      {
+        "at": "2026-11-10T20:42:15.000Z",
+        "serverTime": 1794343335,
+        "symbol": "BTCIDR",
+        "bid": 1333149000,
+        "ask": 1333999000,
+        "spreadPct": 0.0006373849520161611
+      },
+      {
+        "at": "2026-11-10T20:42:15.000Z",
+        "serverTime": 1794343335,
+        "symbol": "ETHIDR",
+        "bid": 37134000,
+        "ask": 37135000,
+        "spreadPct": 0.000026929135978672125
+      },
+      {
+        "at": "2026-11-10T20:42:15.000Z",
+        "serverTime": 1794343335,
+        "symbol": "SOLIDR",
+        "bid": 1505965,
+        "ask": 1507789,
+        "spreadPct": 0.0012104504879960343
+      },
+      {
+        "at": "2026-11-10T20:42:15.000Z",
+        "serverTime": 1794343335,
+        "symbol": "XRPIDR",
+        "bid": 19165,
+        "ask": 19190,
+        "spreadPct": 0.0013036110024768608
+      },
+      {
+        "at": "2026-11-10T20:42:15.000Z",
+        "serverTime": 1794343335,
+        "symbol": "DOGEIDR",
+        "bid": 1222,
+        "ask": 1224,
+        "spreadPct": 0.001635322976287817
+      },
+      {
+        "at": "2026-11-10T20:42:15.000Z",
+        "serverTime": 1794343335,
+        "symbol": "ADAIDR",
+        "bid": 3152,
+        "ask": 3157,
+        "spreadPct": 0.0015850372483753369
+      },
+      {
+        "at": "2026-11-10T20:42:15.000Z",
+        "serverTime": 1794343335,
+        "symbol": "BNBIDR",
+        "bid": 12177106,
+        "ask": 12263324,
+        "spreadPct": 0.007055358682314509
+      },
+      {
+        "at": "2026-11-10T20:42:15.000Z",
+        "serverTime": 1794343335,
+        "symbol": "TRXIDR",
+        "bid": 5749,
+        "ask": 5778,
+        "spreadPct": 0.005031664787021775
+      },
+      {
+        "at": "2026-11-10T21:37:41.000Z",
+        "serverTime": 1794346661,
+        "symbol": "BTCIDR",
+        "bid": 1336900000,
+        "ask": 1337208000,
+        "spreadPct": 0.00023035718826614333
+      },
+      {
+        "at": "2026-11-10T21:37:41.000Z",
+        "serverTime": 1794346661,
+        "symbol": "ETHIDR",
+        "bid": 37229000,
+        "ask": 37273000,
+        "spreadPct": 0.0011811763442592146
+      },
+      {
+        "at": "2026-11-10T21:37:41.000Z",
+        "serverTime": 1794346661,
+        "symbol": "SOLIDR",
+        "bid": 1507700,
+        "ask": 1509708,
+        "spreadPct": 0.0013309436443464059
+      },
+      {
+        "at": "2026-11-10T21:37:41.000Z",
+        "serverTime": 1794346661,
+        "symbol": "XRPIDR",
+        "bid": 19167,
+        "ask": 19181,
+        "spreadPct": 0.0007301554187962866
+      },
+      {
+        "at": "2026-11-10T21:37:41.000Z",
+        "serverTime": 1794346661,
+        "symbol": "DOGEIDR",
+        "bid": 1228,
+        "ask": 1231,
+        "spreadPct": 0.0024400162667751117
+      },
+      {
+        "at": "2026-11-10T21:37:41.000Z",
+        "serverTime": 1794346661,
+        "symbol": "ADAIDR",
+        "bid": 3143,
+        "ask": 3151,
+        "spreadPct": 0.002542103590721322
+      },
+      {
+        "at": "2026-11-10T21:37:41.000Z",
+        "serverTime": 1794346661,
+        "symbol": "BNBIDR",
+        "bid": 12201681,
+        "ask": 12280142,
+        "spreadPct": 0.006409735092031341
+      },
+      {
+        "at": "2026-11-10T21:37:41.000Z",
+        "serverTime": 1794346661,
+        "symbol": "TRXIDR",
+        "bid": 5748,
+        "ask": 5775,
+        "spreadPct": 0.004686279614683676
+      },
+      {
+        "at": "2026-11-10T22:38:10.000Z",
+        "serverTime": 1794350290,
+        "symbol": "BTCIDR",
+        "bid": 1330629000,
+        "ask": 1332639000,
+        "spreadPct": 0.001509423760582863
+      },
+      {
+        "at": "2026-11-10T22:38:10.000Z",
+        "serverTime": 1794350290,
+        "symbol": "ETHIDR",
+        "bid": 37064000,
+        "ask": 37065000,
+        "spreadPct": 0.00002697999433420119
+      },
+      {
+        "at": "2026-11-10T22:38:10.000Z",
+        "serverTime": 1794350290,
+        "symbol": "SOLIDR",
+        "bid": 1500000,
+        "ask": 1500952,
+        "spreadPct": 0.0006344653296687185
+      },
+      {
+        "at": "2026-11-10T22:38:10.000Z",
+        "serverTime": 1794350290,
+        "symbol": "XRPIDR",
+        "bid": 19072,
+        "ask": 19101,
+        "spreadPct": 0.0015193985277552197
+      },
+      {
+        "at": "2026-11-10T22:38:10.000Z",
+        "serverTime": 1794350290,
+        "symbol": "DOGEIDR",
+        "bid": 1225,
+        "ask": 1227,
+        "spreadPct": 0.0016313213703099511
+      },
+      {
+        "at": "2026-11-10T22:38:10.000Z",
+        "serverTime": 1794350290,
+        "symbol": "ADAIDR",
+        "bid": 3137,
+        "ask": 3143,
+        "spreadPct": 0.001910828025477707
+      },
+      {
+        "at": "2026-11-10T22:38:10.000Z",
+        "serverTime": 1794350290,
+        "symbol": "BNBIDR",
+        "bid": 12203630,
+        "ask": 12279043,
+        "spreadPct": 0.006160520136016194
+      },
+      {
+        "at": "2026-11-10T22:38:10.000Z",
+        "serverTime": 1794350290,
+        "symbol": "TRXIDR",
+        "bid": 5737,
+        "ask": 5774,
+        "spreadPct": 0.006428633481018156
+      },
+      {
+        "at": "2026-11-10T23:32:15.000Z",
+        "serverTime": 1794353535,
+        "symbol": "BTCIDR",
+        "bid": 1331653000,
+        "ask": 1331926000,
+        "spreadPct": 0.00020498734972756582
+      },
+      {
+        "at": "2026-11-10T23:32:15.000Z",
+        "serverTime": 1794353535,
+        "symbol": "ETHIDR",
+        "bid": 37026000,
+        "ask": 37034000,
+        "spreadPct": 0.00021604104779908182
+      },
+      {
+        "at": "2026-11-10T23:32:15.000Z",
+        "serverTime": 1794353535,
+        "symbol": "SOLIDR",
+        "bid": 1500421,
+        "ask": 1501653,
+        "spreadPct": 0.0008207659105005406
+      },
+      {
+        "at": "2026-11-10T23:32:15.000Z",
+        "serverTime": 1794353535,
+        "symbol": "XRPIDR",
+        "bid": 19065,
+        "ask": 19079,
+        "spreadPct": 0.0007340604026845638
+      },
+      {
+        "at": "2026-11-10T23:32:15.000Z",
+        "serverTime": 1794353535,
+        "symbol": "DOGEIDR",
+        "bid": 1223,
+        "ask": 1225,
+        "spreadPct": 0.0016339869281045752
+      },
+      {
+        "at": "2026-11-10T23:32:15.000Z",
+        "serverTime": 1794353535,
+        "symbol": "ADAIDR",
+        "bid": 3130,
+        "ask": 3138,
+        "spreadPct": 0.0025526483726866626
+      },
+      {
+        "at": "2026-11-10T23:32:15.000Z",
+        "serverTime": 1794353535,
+        "symbol": "BNBIDR",
+        "bid": 12205018,
+        "ask": 12279224,
+        "spreadPct": 0.006061531331049579
+      },
+      {
+        "at": "2026-11-10T23:32:15.000Z",
+        "serverTime": 1794353535,
+        "symbol": "TRXIDR",
+        "bid": 5735,
+        "ask": 5773,
+        "spreadPct": 0.006604101494612443
+      },
+      {
+        "at": "2026-11-11T00:55:08.000Z",
+        "serverTime": 1794358508,
+        "symbol": "BTCIDR",
+        "bid": 1329458000,
+        "ask": 1329793000,
+        "spreadPct": 0.00025195064324503403
+      },
+      {
+        "at": "2026-11-11T00:55:08.000Z",
+        "serverTime": 1794358508,
+        "symbol": "ETHIDR",
+        "bid": 37079000,
+        "ask": 37084000,
+        "spreadPct": 0.0001348381268287421
+      },
+      {
+        "at": "2026-11-11T00:55:08.000Z",
+        "serverTime": 1794358508,
+        "symbol": "SOLIDR",
+        "bid": 1504903,
+        "ask": 1505057,
+        "spreadPct": 0.00010232694122181026
+      },
+      {
+        "at": "2026-11-11T00:55:08.000Z",
+        "serverTime": 1794358508,
+        "symbol": "XRPIDR",
+        "bid": 19010,
+        "ask": 19011,
+        "spreadPct": 0.000052602509139685966
+      },
+      {
+        "at": "2026-11-11T00:55:08.000Z",
+        "serverTime": 1794358508,
+        "symbol": "DOGEIDR",
+        "bid": 1234,
+        "ask": 1236,
+        "spreadPct": 0.0016194331983805667
+      },
+      {
+        "at": "2026-11-11T00:55:08.000Z",
+        "serverTime": 1794358508,
+        "symbol": "ADAIDR",
+        "bid": 3156,
+        "ask": 3165,
+        "spreadPct": 0.0028476506881822496
+      },
+      {
+        "at": "2026-11-11T00:55:08.000Z",
+        "serverTime": 1794358508,
+        "symbol": "BNBIDR",
+        "bid": 12258792,
+        "ask": 12317427,
+        "spreadPct": 0.004771685994497363
+      },
+      {
+        "at": "2026-11-11T00:55:08.000Z",
+        "serverTime": 1794358508,
+        "symbol": "TRXIDR",
+        "bid": 5740,
+        "ask": 5766,
+        "spreadPct": 0.004519381192421346
+      },
+      {
+        "at": "2026-11-11T01:24:20.000Z",
+        "serverTime": 1794360260,
+        "symbol": "BTCIDR",
+        "bid": 1327359000,
+        "ask": 1328869000,
+        "spreadPct": 0.0011369505930966769
+      },
+      {
+        "at": "2026-11-11T01:24:20.000Z",
+        "serverTime": 1794360260,
+        "symbol": "ETHIDR",
+        "bid": 36977000,
+        "ask": 37030000,
+        "spreadPct": 0.0014322969448835922
+      },
+      {
+        "at": "2026-11-11T01:24:20.000Z",
+        "serverTime": 1794360260,
+        "symbol": "SOLIDR",
+        "bid": 1499430,
+        "ask": 1499635,
+        "spreadPct": 0.00013670927439051839
+      },
+      {
+        "at": "2026-11-11T01:24:20.000Z",
+        "serverTime": 1794360260,
+        "symbol": "XRPIDR",
+        "bid": 18972,
+        "ask": 18977,
+        "spreadPct": 0.00026351155498168595
+      },
+      {
+        "at": "2026-11-11T01:24:20.000Z",
+        "serverTime": 1794360260,
+        "symbol": "DOGEIDR",
+        "bid": 1231,
+        "ask": 1234,
+        "spreadPct": 0.002434077079107505
+      },
+      {
+        "at": "2026-11-11T01:24:20.000Z",
+        "serverTime": 1794360260,
+        "symbol": "ADAIDR",
+        "bid": 3154,
+        "ask": 3155,
+        "spreadPct": 0.0003170074496750674
+      },
+      {
+        "at": "2026-11-11T01:24:20.000Z",
+        "serverTime": 1794360260,
+        "symbol": "BNBIDR",
+        "bid": 12231567,
+        "ask": 12317102,
+        "spreadPct": 0.006968605915049814
+      },
+      {
+        "at": "2026-11-11T01:24:20.000Z",
+        "serverTime": 1794360260,
+        "symbol": "TRXIDR",
+        "bid": 5735,
+        "ask": 5763,
+        "spreadPct": 0.004870412245607932
+      },
+      {
+        "at": "2026-11-11T01:57:34.000Z",
+        "serverTime": 1794362254,
+        "symbol": "BTCIDR",
+        "bid": 1331956000,
+        "ask": 1331957000,
+        "spreadPct": 7.507752693124738e-7
+      },
+      {
+        "at": "2026-11-11T01:57:34.000Z",
+        "serverTime": 1794362254,
+        "symbol": "ETHIDR",
+        "bid": 37149000,
+        "ask": 37150000,
+        "spreadPct": 0.000026918262695325645
+      },
+      {
+        "at": "2026-11-11T01:57:34.000Z",
+        "serverTime": 1794362254,
+        "symbol": "SOLIDR",
+        "bid": 1505892,
+        "ask": 1505893,
+        "spreadPct": 6.640580253902586e-7
+      },
+      {
+        "at": "2026-11-11T01:57:34.000Z",
+        "serverTime": 1794362254,
+        "symbol": "XRPIDR",
+        "bid": 19013,
+        "ask": 19024,
+        "spreadPct": 0.0005783842048531693
+      },
+      {
+        "at": "2026-11-11T01:57:34.000Z",
+        "serverTime": 1794362254,
+        "symbol": "DOGEIDR",
+        "bid": 1233,
+        "ask": 1235,
+        "spreadPct": 0.0016207455429497568
+      },
+      {
+        "at": "2026-11-11T01:57:34.000Z",
+        "serverTime": 1794362254,
+        "symbol": "ADAIDR",
+        "bid": 3160,
+        "ask": 3168,
+        "spreadPct": 0.0025284450063211127
+      },
+      {
+        "at": "2026-11-11T01:57:34.000Z",
+        "serverTime": 1794362254,
+        "symbol": "BNBIDR",
+        "bid": 12292323,
+        "ask": 12378344,
+        "spreadPct": 0.006973544736346204
+      },
+      {
+        "at": "2026-11-11T01:57:34.000Z",
+        "serverTime": 1794362254,
+        "symbol": "TRXIDR",
+        "bid": 5735,
+        "ask": 5763,
+        "spreadPct": 0.004870412245607932
+      },
+      {
+        "at": "2026-11-11T02:46:35.000Z",
+        "serverTime": 1794365195,
+        "symbol": "BTCIDR",
+        "bid": 1333606000,
+        "ask": 1334314000,
+        "spreadPct": 0.0005307505472427959
+      },
+      {
+        "at": "2026-11-11T02:46:35.000Z",
+        "serverTime": 1794365195,
+        "symbol": "ETHIDR",
+        "bid": 37239000,
+        "ask": 37240000,
+        "spreadPct": 0.000026853206944239314
+      },
+      {
+        "at": "2026-11-11T02:46:35.000Z",
+        "serverTime": 1794365195,
+        "symbol": "SOLIDR",
+        "bid": 1510390,
+        "ask": 1512287,
+        "spreadPct": 0.0012551787703416542
+      },
+      {
+        "at": "2026-11-11T02:46:35.000Z",
+        "serverTime": 1794365195,
+        "symbol": "XRPIDR",
+        "bid": 19166,
+        "ask": 19182,
+        "spreadPct": 0.0008344633357671847
+      },
+      {
+        "at": "2026-11-11T02:46:35.000Z",
+        "serverTime": 1794365195,
+        "symbol": "DOGEIDR",
+        "bid": 1240,
+        "ask": 1242,
+        "spreadPct": 0.0016116035455278
+      },
+      {
+        "at": "2026-11-11T02:46:35.000Z",
+        "serverTime": 1794365195,
+        "symbol": "ADAIDR",
+        "bid": 3178,
+        "ask": 3184,
+        "spreadPct": 0.001886199308393587
+      },
+      {
+        "at": "2026-11-11T02:46:35.000Z",
+        "serverTime": 1794365195,
+        "symbol": "BNBIDR",
+        "bid": 12282202,
+        "ask": 12358107,
+        "spreadPct": 0.006161042866791971
+      },
+      {
+        "at": "2026-11-11T02:46:35.000Z",
+        "serverTime": 1794365195,
+        "symbol": "TRXIDR",
+        "bid": 5736,
+        "ask": 5764,
+        "spreadPct": 0.004869565217391304
+      },
+      {
+        "at": "2026-11-11T03:50:49.000Z",
+        "serverTime": 1794369049,
+        "symbol": "BTCIDR",
+        "bid": 1334100000,
+        "ask": 1334914000,
+        "spreadPct": 0.0006099630799988311
+      },
+      {
+        "at": "2026-11-11T03:50:49.000Z",
+        "serverTime": 1794369049,
+        "symbol": "ETHIDR",
+        "bid": 37346000,
+        "ask": 37347000,
+        "spreadPct": 0.000026776270868756108
+      },
+      {
+        "at": "2026-11-11T03:50:49.000Z",
+        "serverTime": 1794369049,
+        "symbol": "SOLIDR",
+        "bid": 1507786,
+        "ask": 1510060,
+        "spreadPct": 0.0015070351502362944
+      },
+      {
+        "at": "2026-11-11T03:50:49.000Z",
+        "serverTime": 1794369049,
+        "symbol": "XRPIDR",
+        "bid": 19188,
+        "ask": 19189,
+        "spreadPct": 0.00005211454777601167
+      },
+      {
+        "at": "2026-11-11T03:50:49.000Z",
+        "serverTime": 1794369049,
+        "symbol": "DOGEIDR",
+        "bid": 1238,
+        "ask": 1239,
+        "spreadPct": 0.0008074283407347598
+      },
+      {
+        "at": "2026-11-11T03:50:49.000Z",
+        "serverTime": 1794369049,
+        "symbol": "ADAIDR",
+        "bid": 3177,
+        "ask": 3182,
+        "spreadPct": 0.0015725743041358703
+      },
+      {
+        "at": "2026-11-11T03:50:49.000Z",
+        "serverTime": 1794369049,
+        "symbol": "BNBIDR",
+        "bid": 12305008,
+        "ask": 12378194,
+        "spreadPct": 0.005930024799861866
+      },
+      {
+        "at": "2026-11-11T03:50:49.000Z",
+        "serverTime": 1794369049,
+        "symbol": "TRXIDR",
+        "bid": 5739,
+        "ask": 5764,
+        "spreadPct": 0.004346692167260715
+      },
+      {
+        "at": "2026-11-11T04:54:52.000Z",
+        "serverTime": 1794372892,
+        "symbol": "BTCIDR",
+        "bid": 1335486000,
+        "ask": 1335487000,
+        "spreadPct": 7.487907964625625e-7
+      },
+      {
+        "at": "2026-11-11T04:54:52.000Z",
+        "serverTime": 1794372892,
+        "symbol": "ETHIDR",
+        "bid": 37395000,
+        "ask": 37405000,
+        "spreadPct": 0.00026737967914438503
+      },
+      {
+        "at": "2026-11-11T04:54:52.000Z",
+        "serverTime": 1794372892,
+        "symbol": "SOLIDR",
+        "bid": 1500002,
+        "ask": 1501465,
+        "spreadPct": 0.0009748566284420252
+      },
+      {
+        "at": "2026-11-11T04:54:52.000Z",
+        "serverTime": 1794372892,
+        "symbol": "XRPIDR",
+        "bid": 19089,
+        "ask": 19092,
+        "spreadPct": 0.0001571462245619549
+      },
+      {
+        "at": "2026-11-11T04:54:52.000Z",
+        "serverTime": 1794372892,
+        "symbol": "DOGEIDR",
+        "bid": 1235,
+        "ask": 1236,
+        "spreadPct": 0.0008093889113719142
+      },
+      {
+        "at": "2026-11-11T04:54:52.000Z",
+        "serverTime": 1794372892,
+        "symbol": "ADAIDR",
+        "bid": 3168,
+        "ask": 3173,
+        "spreadPct": 0.0015770383220312253
+      },
+      {
+        "at": "2026-11-11T04:54:52.000Z",
+        "serverTime": 1794372892,
+        "symbol": "BNBIDR",
+        "bid": 12306046,
+        "ask": 12377869,
+        "spreadPct": 0.005819417219675242
+      },
+      {
+        "at": "2026-11-11T04:54:52.000Z",
+        "serverTime": 1794372892,
+        "symbol": "TRXIDR",
+        "bid": 5755,
+        "ask": 5763,
+        "spreadPct": 0.0013891300573016148
+      },
+      {
+        "at": "2026-11-11T05:55:13.000Z",
+        "serverTime": 1794376513,
+        "symbol": "BTCIDR",
+        "bid": 1339730000,
+        "ask": 1339999000,
+        "spreadPct": 0.00020076657005241948
+      },
+      {
+        "at": "2026-11-11T05:55:13.000Z",
+        "serverTime": 1794376513,
+        "symbol": "ETHIDR",
+        "bid": 37513000,
+        "ask": 37551000,
+        "spreadPct": 0.0010124693594799105
+      },
+      {
+        "at": "2026-11-11T05:55:13.000Z",
+        "serverTime": 1794376513,
+        "symbol": "SOLIDR",
+        "bid": 1509901,
+        "ask": 1511000,
+        "spreadPct": 0.0007275974949195621
+      },
+      {
+        "at": "2026-11-11T05:55:13.000Z",
+        "serverTime": 1794376513,
+        "symbol": "XRPIDR",
+        "bid": 19249,
+        "ask": 19250,
+        "spreadPct": 0.00005194940128315021
+      },
+      {
+        "at": "2026-11-11T05:55:13.000Z",
+        "serverTime": 1794376513,
+        "symbol": "DOGEIDR",
+        "bid": 1237,
+        "ask": 1239,
+        "spreadPct": 0.0016155088852988692
+      },
+      {
+        "at": "2026-11-11T05:55:13.000Z",
+        "serverTime": 1794376513,
+        "symbol": "ADAIDR",
+        "bid": 3174,
+        "ask": 3182,
+        "spreadPct": 0.0025173064820641915
+      },
+      {
+        "at": "2026-11-11T05:55:13.000Z",
+        "serverTime": 1794376513,
+        "symbol": "BNBIDR",
+        "bid": 12333339,
+        "ask": 12377869,
+        "spreadPct": 0.003604032631670617
+      },
+      {
+        "at": "2026-11-11T05:55:13.000Z",
+        "serverTime": 1794376513,
+        "symbol": "TRXIDR",
+        "bid": 5755,
+        "ask": 5762,
+        "spreadPct": 0.0012155943388035078
       }
     ],
     "cost_breakdown": {

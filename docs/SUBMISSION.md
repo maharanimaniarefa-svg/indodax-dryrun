@@ -21,7 +21,13 @@
 | Commit beku | `7fd8746` — `freeze-2026-11-08: bot dry-run Indodax + backtest 3 tahun` |
 | Commit manifest | `4723293` — `freeze manifest SHA-256 + dashboard offline` |
 | Manifest | `results/freeze_manifest.json` |
+| Hash gabungan aturan | `05739d638487a99b4176ecc21cb447e4e706ebe8196771a414224c25f93483d7` (tidak berubah sejak 8 Nov) |
 | Verifikasi | `npm run verify` → `Diverifikasi 31 file: 0 berubah, 0 hilang. FREEZE UTUH.` |
+
+Manifest di-*rebaseline* setiap kali log forward diekspor ulang, mengikuti urutan
+`export → recompute → freeze → dashboard`. Yang di-*rebaseline* hanya hash bukti
+(log, `recompute.json`, hasil backtest); **hash aturan (`freeze_hash`) tetap sama**,
+dan versi manifest lama tetap tersimpan di riwayat commit (`4723293`).
 
 Riwayat commit **tidak** pernah di-force-push. Folder `.git` ikut di dalam ZIP ini
 sebagai cadangan, sehingga bukti freeze bisa diperiksa tanpa internet.
@@ -45,6 +51,13 @@ sebagai cadangan, sehingga bukti freeze bisa diperiksa tanpa internet.
 | Snapshot order book | `logs/export/snapshots.csv`, `data/spread_samples.jsonl` |
 | Catatan perbaikan pasca-freeze | `docs/BUGFIX_LOG.md` (BF-001…BF-007) |
 | Checklist requirement | `docs/CHECKLIST_UAS.md` |
+
+## Catatan tampilan GitHub Actions
+
+Halaman **Actions** menampilkan 26 run berstatus merah pada 9–10 November 2026.
+Itu bukan kegagalan bot: semua run berhenti karena secret `BOT_URL` dan `CRON_SECRET`
+belum dipasang. Setelah secret dipasang pada 10 November 2026 07:18 UTC, seluruh run
+berstatus **success** (21 dari 21). Penjelasan lengkap ada di `docs/DEPLOY.md` §4.
 
 ## Cara menjalankan ulang
 

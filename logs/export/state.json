@@ -1,31 +1,31 @@
 {
   "version": 1,
-  "createdAt": "2026-11-09T02:16:53.000Z",
-  "updatedAt": "2026-11-09T02:33:14.000Z",
+  "createdAt": "2026-11-09T04:37:57.000Z",
+  "updatedAt": "2026-11-11T05:55:13.000Z",
   "capital": 100000000,
   "cash": 100000000,
   "positions": {},
   "lastProcessed": {
-    "BTCIDR": 1794168000,
-    "ETHIDR": 1794168000,
-    "SOLIDR": 1794168000,
-    "XRPIDR": 1794168000,
-    "DOGEIDR": 1794168000,
-    "ADAIDR": 1794168000,
-    "BNBIDR": 1794168000,
-    "TRXIDR": 1794168000
+    "BTCIDR": 1794355200,
+    "ETHIDR": 1794355200,
+    "SOLIDR": 1794355200,
+    "XRPIDR": 1794355200,
+    "DOGEIDR": 1794355200,
+    "ADAIDR": 1794355200,
+    "BNBIDR": 1794355200,
+    "TRXIDR": 1794355200
   },
   "day": {
-    "key": "2026-11-09",
+    "key": "2026-11-11",
     "startEquity": 100000000,
     "blockedLogged": false
   },
   "counters": {
-    "calls": 3,
+    "calls": 26,
     "orders": 0,
     "entries": 0,
     "exits": 0,
-    "errors": 0,
+    "errors": 1,
     "killSwitchUses": 0,
     "blockedDays": 0
   },
@@ -36,9 +36,9 @@
     "source": null
   },
   "lastTick": {
-    "at": "2026-11-09T02:33:14.000Z",
-    "serverTime": 1794191594,
-    "durationMs": 1861,
+    "at": "2026-11-11T05:55:13.000Z",
+    "serverTime": 1794376513,
+    "durationMs": 1551,
     "processed": [],
     "orders": 0,
     "equity": 100000000
