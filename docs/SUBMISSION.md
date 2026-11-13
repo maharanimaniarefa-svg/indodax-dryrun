@@ -46,7 +46,7 @@ sebagai cadangan, sehingga bukti freeze bisa diperiksa tanpa internet.
 | Refleksi backtest vs forward | `REFLEKSI.md` §10 |
 | `.env.example` tanpa rahasia | `.env.example` |
 | Hasil backtest 3 tahun | `results/backtest_*.json`, `results/backtest_*.csv` |
-| Backtest jendela forward | `results/backtest_forward.json`, `results/backtest_summary.json` → `forward_backtest` |
+| Backtest jendela forward | `results/backtest_forward.json`, `results/backtest_summary.json` → `forward_backtest` (dibuat saat finalisasi 14 Nov 2026, dari jendela yang sama dengan forward test) |
 | Data candle 4 jam | `data/candles/*_240.csv` |
 | Snapshot order book | `logs/export/snapshots.csv`, `data/spread_samples.jsonl` |
 | Catatan perbaikan pasca-freeze | `docs/BUGFIX_LOG.md` (BF-001…BF-007) |
@@ -54,10 +54,26 @@ sebagai cadangan, sehingga bukti freeze bisa diperiksa tanpa internet.
 
 ## Catatan tampilan GitHub Actions
 
-Halaman **Actions** menampilkan 26 run berstatus merah pada 9–10 November 2026.
-Itu bukan kegagalan bot: semua run berhenti karena secret `BOT_URL` dan `CRON_SECRET`
-belum dipasang. Setelah secret dipasang pada 10 November 2026 07:18 UTC, seluruh run
-berstatus **success** (21 dari 21). Penjelasan lengkap ada di `docs/DEPLOY.md` §4.
+Halaman **Actions** menampilkan run berstatus merah pada 9–10 November 2026.
+Itu bukan kegagalan bot: semua run tersebut berhenti karena secret `BOT_URL` dan
+`CRON_SECRET` belum dipasang. Setelah secret dipasang pada 10 November 2026 07:18 UTC,
+**65 dari 66 run berstatus success**. Satu run (11 Nov 21:29 UTC) berstatus gagal karena
+job dibatalkan oleh infrastruktur GitHub sebelum satu pun step dijalankan; tick
+berikutnya tetap sukses sehingga tidak ada data yang hilang. Penjelasan lengkap ada
+di `docs/DEPLOY.md` §4.
+
+## Kenapa log di ZIP adalah snapshot
+
+`logs/export/` dan `public/data.js` di dalam ZIP adalah **potret pada saat ZIP dibangun**,
+bukan data yang terus berubah. Sumber data live ada di Upstash Redis dan ditampilkan
+oleh dashboard online. Karena itu jumlah `calls` di ZIP bisa lebih kecil daripada
+dashboard online bila ZIP dibuka beberapa jam setelah dibangun — itu normal, bukan
+data hilang dan bukan data ganda. Angka final di ZIP dibangun ulang pada
+14 November 2026 setelah jendela forward berakhir.
+
+Cara memeriksa konsistensinya: buka `logs/export/manifest.json` (ada `exported_at`,
+`store`, dan jumlah baris), lalu bandingkan dengan `counters.calls` di
+`/api/health` pada waktu yang sama.
 
 ## Cara menjalankan ulang
 
@@ -70,14 +86,34 @@ npm run smoke       # uji entry/exit/idempotensi
 
 Dashboard offline: buka `public/index.html` langsung dengan browser (tanpa server).
 
-## Deviasi yang dilaporkan terbuka
+## Kepatuhan terhadap jadwal instruksi
 
-1. **Forward test 6,37 hari** (8 Nov 15.00 WIB → 14 Nov 23.59 WIB), bukan 10 hari.
-   Freeze dilakukan 8 November, bukan 4 November.
-2. **Cakupan candle di bawah 100%.** Tick pertama baru berjalan 9 Nov 04:37 UTC,
-   sehingga candle 8 Nov–9 Nov tidak terproses dan tidak diisi ulang. Angka cakupan
-   dilaporkan apa adanya di dashboard (`coverage_pct`), bukan diklaim 100%.
-3. **Snapshot spread/slippage 24 sampel** sebelum freeze; floor 0,05% dipakai.
+| Item | Instruksi | Aktual | Selisih |
+|---|---|---|---|
+| Freeze aturan & parameter | 4 Nov 2026 12.00 WIB | 8 Nov 2026 13.41 WIB | +4 hari 1 jam |
+| Awal forward test | 4 Nov 2026 12.00 WIB | 8 Nov 2026 15.00 WIB | +4 hari 3 jam |
+| Akhir forward test | 14 Nov 2026 12.00 WIB | 14 Nov 2026 23.59 WIB | +11 jam 59 menit |
+| Durasi forward | 10 hari | 6,37 hari | −3,63 hari |
+| Bukti freeze | riwayat commit publik atau ZIP + `.git` | **keduanya** tersedia | sesuai |
+| Pengumpulan | 14 Nov 2026 23.59 WIB | 14 Nov 2026 sebelum 23.59 WIB | sesuai |
 
-Deviasi ini juga tercatat di `README.md` §9, `STRATEGI.md` §9.3, `REFLEKSI.md`,
+**Sebab:** deployment Vercel + Upstash baru selesai 8 November 2026, bukan 4 November.
+Repositori dibuat lokal sejak 8 November dan di-push ke GitHub pada 9 November
+(timestamp commit tidak diubah). Secret penjadwal dipasang 10 November 07.18 UTC,
+sehingga candle 8–9 November tidak teramati.
+
+**Tanggal freeze tidak diubah**, karena mengubahnya akan menjadi fabrikasi dan membuat
+bukti freeze tidak sah. Perbandingan backtest–forward memakai jendela aktual yang sama
+(8 Nov 15.00 WIB → 14 Nov 23.59 WIB), sehingga tetap setara. Penjelasan lengkap ada di
+`REFLEKSI.md` §12.
+
+## Deviasi lain yang dilaporkan terbuka
+
+1. **Cakupan candle di bawah 100%.** Penjadwal otomatis baru aktif penuh 10 November,
+   sehingga candle 8–9 November tidak terproses dan tidak diisi ulang (agar tidak
+   terjadi look-ahead bias). Angka cakupan dilaporkan apa adanya di dashboard
+   (`coverage_pct`), bukan diklaim 100%.
+2. **Snapshot spread/slippage 24 sampel** sebelum freeze; floor 0,05% dipakai.
+
+Deviasi ini juga tercatat di `README.md` §9, `STRATEGI.md` §9.3, `REFLEKSI.md` §12,
 `HASIL_BACKTEST.md` §14, dan `docs/CHECKLIST_UAS.md` §5.

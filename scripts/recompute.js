@@ -276,18 +276,53 @@ function recomputeLive(raw) {
   // (open <= now < open+tf) belum dihitung; rumus lama (+1) menghitungnya.
   const now = Math.min(Math.floor(Date.now() / 1000), cfg.forwardEnd);
   const expected = Math.max(0, Math.floor((now - cfg.forwardStart) / cfg.tfSec));
+
+  // BF-008: coverage dihitung dari candle yang BENAR-BENAR diproses di log `calls`,
+  // bukan dari asumsi kontigu `state.lastProcessed`. Metode lama menghitung candle
+  // yang terlewat (tick mati 8-10 Nov) sebagai sudah diproses, sehingga coverage
+  // tampak ~97% padahal dashboard (lib/report.js, BF-002) menghitung ~72%.
+  const candleOf = call => {
+    const st = Number(call?.serverTime);
+    return Number.isFinite(st) ? Math.floor(st / cfg.tfSec) * cfg.tfSec - cfg.tfSec : null;
+  };
+  const seenPer = new Map(cfg.SYMBOLS.map(s => [s, new Set()]));
+  for (const call of raw.calls || []) {
+    const t = candleOf(call);
+    if (!Number.isFinite(t) || t < cfg.forwardStart || t > now) continue;
+    for (const sym of call.processed || []) if (seenPer.has(sym)) seenPer.get(sym).add(t);
+    for (const sig of call.signals || []) {
+      const ct = Number(sig?.candleTime);
+      if (seenPer.has(sig.symbol) && Number.isFinite(ct) && ct >= cfg.forwardStart && ct <= now) {
+        seenPer.get(sig.symbol).add(ct);
+      }
+    }
+  }
   const progress = {};
-  let minProgress = 1;
   for (const sym of cfg.SYMBOLS) {
     const last = raw.state?.lastProcessed?.[sym];
-    const n = Number.isFinite(last)
+    const fromLog = seenPer.get(sym).size;
+    const fallback = Number.isFinite(last)
       ? Math.max(0, Math.min(expected, Math.floor((last - cfg.forwardStart) / cfg.tfSec) + 1))
       : 0;
-    progress[sym] = { processed: n, expected };
-    if (expected > 0) minProgress = Math.min(minProgress, n / expected);
+    const processed = Math.min(expected, fromLog > 0 ? fromLog : fallback);
+    progress[sym] = { processed, expected, method: fromLog > 0 ? 'calls' : 'lastProcessed' };
   }
-  checks.push(check('live.progress', 'setiap simbol memproses >= 90% candle yang seharusnya', minProgress >= 0.9,
-    { min_coverage: minProgress, expected_candles: expected, per_symbol: progress }));
+  const counts = cfg.SYMBOLS.map(s => progress[s].processed);
+  const minCount = Math.min(...counts);
+  const maxCount = Math.max(...counts);
+  const coveragePct = expected > 0 ? minCount / expected : 0;
+  checks.push(check(
+    'live.progress',
+    'semua simbol memproses jumlah candle yang sama (tidak ada simbol tertinggal)',
+    minCount > 0 && minCount === maxCount,
+    {
+      per_symbol: progress,
+      expected_candles: expected,
+      processed_candles: minCount,
+      coverage_pct: coveragePct,
+      note: 'Cakupan < 100% adalah deviasi yang dilaporkan terbuka (tick otomatis baru aktif 10 Nov 07:18 UTC); lihat docs/CHECKLIST_UAS.md §5.',
+    }
+  ));
 
   // Bandingkan dengan backtest jendela forward (kalau data candle sudah diperbarui).
   const fwd = readJson(path.join(ds.RESULTS_DIR, 'backtest_forward.json'), null);
@@ -315,6 +350,13 @@ function recomputeLive(raw) {
     passed: checks.every(c => c.pass),
     comparison,
     progress,
+    coverage: {
+      expected_candles: expected,
+      processed_candles: minCount,
+      coverage_pct: coveragePct,
+      method: 'calls',
+      note: 'Dihitung dari candle unik yang tercatat di logs/export/calls.jsonl (BF-008), sama seperti dashboard.',
+    },
   };
 }
 

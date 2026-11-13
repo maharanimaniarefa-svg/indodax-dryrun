@@ -1,6 +1,6 @@
 {
   "frozen_at_wib": "2026-11-08T13:41:22+07:00",
-  "generated_at": "2026-11-11T06:16:59.936Z",
+  "generated_at": "2026-11-13T08:16:08.281Z",
   "strategy": "Dual SMA Trend Following (MA20 cross-up + filter MA150)",
   "timeframe": "4h",
   "universe": [
@@ -25,7 +25,7 @@
       "lib/metrics.js": "4fc9e32d691187ee9293c8f42468396ab2d9886db859753e42c74b4851d2b3e7"
     }
   },
-  "git_commit": "671f17477c24e8b40bd40d949963957bb60cd791",
+  "git_commit": "639a4f0913d559930d7c39a82f98a1a431a6fd57",
   "node": "v24.20.0",
   "files": {
     "config/frozen.json": "aa13853ad62467b2d80ac0adb606728b7d9a28cc3386b83991cefb0b941dd7c8",
@@ -46,11 +46,11 @@
     "results/backtest_trades.csv": "716eee853da2de44f006e49c24873044aaa2e155778b9cd409651f1fa3fff0f1",
     "results/backtest_equity.csv": "4519793fbbfda4b49d6554e297264b4baf2e9c06cb4846a5f949c5507fd9b4be",
     "results/backtest_signals.csv": "bc251658de570c59c07ee5d8a37f069531b9ea48884004b5251e1c24483332c8",
-    "results/recompute.json": "aaaec1aa1399eddaca60405c265173fc38166f4f6c8c74f7f0431252fa223832",
+    "results/recompute.json": "673fd609ed400b4a7f59514dd33f422bff1d4a2bc6d4f13fb95abd84b30d1a93",
     "logs/export/orders.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "logs/export/equity.jsonl": "8e39228c6fb47d12603c0d9af38b9e90bdb50ee3fbdc032aeeaaa2cb004d96ec",
-    "logs/export/calls.jsonl": "ea113c5ccc43aaafaf1909b841a85b1fb3825ef1a076db4a02efe0136d632a35",
-    "logs/export/state.json": "0faf36340e63a68a8573852a897f8bde7f4cd5054f2b0cb8c4dd467df0e307ee",
+    "logs/export/equity.jsonl": "294c648e95b8ebadb180c65e874501ac8bf41c5a3acb45bd7b9c24b7cba2e807",
+    "logs/export/calls.jsonl": "b0b65892c7a3abd54d7b1a4a8a705757f113310f30a3551908491760452e7af8",
+    "logs/export/state.json": "2f0ff09bea1b250e6944a7994f77c03738bb020ceead58f5cb03831e77624b0c",
     "data/candles/BTCIDR_240.csv": "52e0ad5f8b46501443bae6e619973cbf283d691abc60b26e875d01034eb7d7a3",
     "data/candles/ETHIDR_240.csv": "7d92d854eed2fbdedce59372cb442b7c5167a641b4cada0f85b4bef902e510ac",
     "data/candles/SOLIDR_240.csv": "5e49263a6e2594da9c6c6aac9f6f66cccdddbe40d539e1f7e582c959c55ef62c",

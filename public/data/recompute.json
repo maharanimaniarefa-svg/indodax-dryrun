@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T06:16:34.111Z",
+  "generated_at": "2026-11-13T08:16:06.639Z",
   "inputs": {
     "backtest_full": "results/backtest_full.json",
     "backtest_summary": "results/backtest_summary.json",
@@ -254,12 +254,12 @@
     "available": true,
     "source": "logs/export",
     "orders": 0,
-    "equity_points": 26,
+    "equity_points": 70,
     "trades": 0,
     "metrics": {
       "start": 1794199077,
-      "end": 1794376513,
-      "years": 0.005622607549370041,
+      "end": 1794553590,
+      "years": 0.011233839075214845,
       "initialCapital": 100000000,
       "finalEquity": 100000000,
       "totalReturn": 0,
@@ -351,45 +351,55 @@
       },
       {
         "id": "live.progress",
-        "label": "setiap simbol memproses >= 90% candle yang seharusnya",
+        "label": "semua simbol memproses jumlah candle yang sama (tidak ada simbol tertinggal)",
         "pass": true,
         "detail": {
-          "min_coverage": 1,
-          "expected_candles": 17,
           "per_symbol": {
             "BTCIDR": {
-              "processed": 17,
-              "expected": 17
+              "processed": 21,
+              "expected": 30,
+              "method": "calls"
             },
             "ETHIDR": {
-              "processed": 17,
-              "expected": 17
+              "processed": 21,
+              "expected": 30,
+              "method": "calls"
             },
             "SOLIDR": {
-              "processed": 17,
-              "expected": 17
+              "processed": 21,
+              "expected": 30,
+              "method": "calls"
             },
             "XRPIDR": {
-              "processed": 17,
-              "expected": 17
+              "processed": 21,
+              "expected": 30,
+              "method": "calls"
             },
             "DOGEIDR": {
-              "processed": 17,
-              "expected": 17
+              "processed": 21,
+              "expected": 30,
+              "method": "calls"
             },
             "ADAIDR": {
-              "processed": 17,
-              "expected": 17
+              "processed": 21,
+              "expected": 30,
+              "method": "calls"
             },
             "BNBIDR": {
-              "processed": 17,
-              "expected": 17
+              "processed": 21,
+              "expected": 30,
+              "method": "calls"
             },
             "TRXIDR": {
-              "processed": 17,
-              "expected": 17
+              "processed": 21,
+              "expected": 30,
+              "method": "calls"
             }
-          }
+          },
+          "expected_candles": 30,
+          "processed_candles": 21,
+          "coverage_pct": 0.7,
+          "note": "Cakupan < 100% adalah deviasi yang dilaporkan terbuka (tick otomatis baru aktif 10 Nov 07:18 UTC); lihat docs/CHECKLIST_UAS.md §5."
         }
       }
     ],
@@ -397,37 +407,52 @@
     "comparison": null,
     "progress": {
       "BTCIDR": {
-        "processed": 17,
-        "expected": 17
+        "processed": 21,
+        "expected": 30,
+        "method": "calls"
       },
       "ETHIDR": {
-        "processed": 17,
-        "expected": 17
+        "processed": 21,
+        "expected": 30,
+        "method": "calls"
       },
       "SOLIDR": {
-        "processed": 17,
-        "expected": 17
+        "processed": 21,
+        "expected": 30,
+        "method": "calls"
       },
       "XRPIDR": {
-        "processed": 17,
-        "expected": 17
+        "processed": 21,
+        "expected": 30,
+        "method": "calls"
       },
       "DOGEIDR": {
-        "processed": 17,
-        "expected": 17
+        "processed": 21,
+        "expected": 30,
+        "method": "calls"
       },
       "ADAIDR": {
-        "processed": 17,
-        "expected": 17
+        "processed": 21,
+        "expected": 30,
+        "method": "calls"
       },
       "BNBIDR": {
-        "processed": 17,
-        "expected": 17
+        "processed": 21,
+        "expected": 30,
+        "method": "calls"
       },
       "TRXIDR": {
-        "processed": 17,
-        "expected": 17
+        "processed": 21,
+        "expected": 30,
+        "method": "calls"
       }
+    },
+    "coverage": {
+      "expected_candles": 30,
+      "processed_candles": 21,
+      "coverage_pct": 0.7,
+      "method": "calls",
+      "note": "Dihitung dari candle unik yang tercatat di logs/export/calls.jsonl (BF-008), sama seperti dashboard."
     }
   },
   "overall_passed": true

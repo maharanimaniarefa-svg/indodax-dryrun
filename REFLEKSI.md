@@ -17,7 +17,7 @@ Saya membangun bot **dry-run** Indodax dengan empat bagian yang saling bergantun
 
 Yang paling saya pelajari bukan cara menghitung SMA, tetapi cara membuat **sistem yang bisa dipercaya**: data divalidasi, eksekusi memakai ask/bid, biaya dihitung konservatif, order idempoten, dan hasil bisa dihitung ulang dari log mentah.
 
-Pada saat dokumen ini ditulis, backtest dan audit sudah selesai. Forward test belum berjalan karena deployment dilakukan oleh pemilik proyek, bukan oleh asisten. Bagian 10 berisi rencana pengisian hasil forward setelah 14 November 2026.
+Pada saat dokumen ini diperbarui (13 November 2026), backtest, audit, dan deployment sudah selesai. **Forward test sedang berjalan**: dimulai 8 November 2026 15.00 WIB dan berakhir 14 November 2026 23.59 WIB. Bagian 10 berisi prosedur pengisian angka forward setelah jendela berakhir. Deviasi jadwal terhadap instruksi UAS dijelaskan terbuka di Bagian 12.
 
 ---
 
@@ -240,14 +240,12 @@ Kedua daftar itu sama pentingnya. Yang pertama menunjukkan apa yang sudah dikerj
 
 ---
 
-## 10. Rencana setelah forward test (14 November 2026)
+## 10. Prosedur finalisasi setelah forward test (14 November 2026)
 
-Setelah jendela berakhir:
-
-1. Tunggu sampai 15 November 2026 pukul 03:00 WIB agar candle 16:00 UTC 14 November tertutup.
-2. Jalankan `npm run history`, `npm run backtest`, `node scripts/export_logs.js`, `npm run recompute`, `npm run freeze`, `npm run dashboard`.
-3. Jika deployment baru berjalan setelah 8 November 15:00 WIB, sebagian candle awal jendela tidak akan pernah diproses. Bot tidak melakukan order retroaktif; dashboard akan menampilkan coverage berdasarkan candle yang benar-benar ada di `calls.jsonl`. Ini dilaporkan apa adanya, bukan ditutupi dengan angka `lastProcessed`.
-4. Isi tabel berikut dari `results/recompute.json` dan `logs/export/`:
+1. Candle 4 jam terakhir yang masuk ke laporan adalah candle 12.00–16.00 UTC 14 November (tutup 23.00 WIB). Finalisasi dijalankan 14 November 23.10 WIB. Candle 16.00–20.00 UTC dilepas karena tenggat pengumpulan 23.59 WIB.
+2. Panggil `/api/tick` manual (tidak menunggu cron), lalu jalankan berurutan: `node scripts/export_logs.js` → `npm run recompute` → `npm run history` → `npm run backtest` → `npm run freeze` → `npm run dashboard` → `npm run verify`.
+3. Sebagian candle awal jendela tidak pernah diproses karena penjadwal otomatis baru aktif penuh 10 November. Bot tidak melakukan order retroaktif; dashboard menampilkan coverage berdasarkan candle yang benar-benar ada di `calls.jsonl`. Ini dilaporkan apa adanya, bukan ditutupi dengan angka `lastProcessed`.
+4. Isi tabel berikut dari `results/recompute.json` dan `logs/export/`. Tidak ada angka yang diketik manual:
 
 | Item | Hasil |
 |---|---|
@@ -263,11 +261,11 @@ Setelah jendela berakhir:
 | Selisih live vs backtest | _isi_ |
 | Error yang tercatat | _isi_ |
 
-4. Bandingkan live vs backtest. Bedakan:
+5. Bandingkan live vs backtest. Bedakan:
    - **bug** (order ganda, sinyal salah, kas tidak rekonsiliasi),
    - **perbedaan eksekusi wajar** (depth walk, timing, spread berubah).
-5. Tulis paragraf refleksi tambahan: apa yang berjalan sesuai rencana, apa yang tidak, dan apa yang akan diperbaiki.
-6. Commit hasil forward dan dashboard final.
+6. Tulis paragraf refleksi tambahan: apa yang berjalan sesuai rencana, apa yang tidak, dan apa yang akan diperbaiki.
+7. Commit hasil forward dan dashboard final.
 
 Saya tidak akan mengklaim forward test berhasil hanya karena return positif. Keberhasilan diukur dari **kepatuhan proses**: tidak ada order ganda, semua candle diproses atau alasannya dicatat, tidak ada pelanggaran risiko, dan log bisa dihitung ulang.
 
@@ -282,3 +280,25 @@ Jika ada satu hal yang saya bawa dari proyek ini, itu adalah kebiasaan bertanya:
 > "Apakah hasil ini bisa saya pertahankan jika seseorang memeriksa data mentahnya?"
 
 Itulah standar yang saya coba penuhi.
+
+---
+
+## 12. Kepatuhan terhadap jadwal instruksi UAS
+
+Instruksi UAS menetapkan freeze 4 November 2026 12.00 WIB, forward test 10 hari (4–14 November), dan pengumpulan 14 November 23.59 WIB. Pelaksanaan proyek ini bergeser. Saya laporkan perbedaannya terbuka, bukan ditutupi.
+
+| Item | Instruksi | Aktual | Selisih |
+|---|---|---|---|
+| Freeze aturan & parameter | 4 Nov 2026 12.00 WIB | 8 Nov 2026 13.41 WIB | +4 hari 1 jam |
+| Awal forward test | 4 Nov 2026 12.00 WIB | 8 Nov 2026 15.00 WIB | +4 hari 3 jam |
+| Akhir forward test | 14 Nov 2026 12.00 WIB | 14 Nov 2026 23.59 WIB | +11 jam 59 menit |
+| Durasi forward | 10 hari | 6,37 hari | −3,63 hari |
+| Cakupan candle 4 jam | 100% | di bawah 100% (angka final di Bagian 10) | candle awal tidak teramati |
+| Bukti freeze | riwayat commit publik **atau** ZIP + `.git` | **keduanya** tersedia | sesuai |
+| Pengumpulan | 14 Nov 2026 23.59 WIB | 14 Nov 2026 sebelum 23.59 WIB | sesuai |
+
+**Sebab deviasi.** Deployment Vercel + Upstash baru selesai 8 November 2026 13.41 WIB, bukan 4 November. Repositori dibuat lokal sejak 8 November dan baru di-push ke GitHub pada 9 November; timestamp commit tidak diubah. Penjadwal otomatis (GitHub Actions) baru menerima secret pada 10 November 07.18 UTC, sehingga candle 8–9 November tidak pernah teramati.
+
+**Mengapa tidak diperbaiki dengan mengubah tanggal.** Mengubah `frozen_at_wib`, tanggal commit, atau manifest akan membuat bukti freeze tidak sah dan termasuk fabrikasi data. Aturan, parameter, dan universe tetap persis seperti yang di-commit pada 8 November (`freeze_hash` 05739d63…483d7).
+
+**Konsekuensi yang diterima.** Perbandingan backtest–forward memakai jendela yang benar-benar dijalankan (8 Nov 15.00 WIB → 14 Nov 23.59 WIB), bukan jendela 4–14 November. `results/backtest_forward.json` dihitung pada jendela yang sama, sehingga perbandingannya tetap setara. Cakupan candle di bawah 100% dilaporkan apa adanya di dashboard, bukan diklaim penuh.
