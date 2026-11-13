@@ -145,6 +145,32 @@ Hash gabungan aturan (`freeze_hash.aggregate`) tetap sama sebelum dan sesudah pe
 
 ---
 
+## BF-008 — Metrik coverage di `recompute` memakai asumsi kontigu (angka terlalu tinggi)
+
+- **Tanggal:** 2026-11-13 (WIB)
+- **File:** `scripts/recompute.js` (`recomputeLive`)
+- **Dampak:** audit/pelaporan saja; tidak memengaruhi tick, order, backtest, maupun state.
+- **Gejala:** check `live.progress` melaporkan cakupan **≥ 90%** (praktis ~97%), padahal
+  dashboard (`lib/report.js`, BF-002) menghitung **~70%** dari `calls.jsonl`. Dua angka
+  berbeda untuk hal yang sama di dalam satu paket — berpotensi dianggap tidak konsisten.
+- **Penyebab:** rumus lama memakai `floor((lastProcessed - forwardStart) / tf) + 1`, yang
+  mengasumsikan semua candle sejak awal jendela diproses berurutan. Asumsi itu tidak sah:
+  tick sempat mati 8–10 November, sehingga ada candle yang tidak pernah teramati.
+  `lastProcessed` hanya menunjuk candle terakhir, bukan bukti bahwa candle sebelumnya
+  diproses.
+- **Perbaikan:** coverage dihitung dari candle **unik yang benar-benar tercatat** di
+  `logs/export/calls.jsonl` (`serverTime` → candle tertutup terakhir) dan
+  `signals[].candleTime`. Check diubah menjadi: semua simbol memproses jumlah candle
+  yang sama (tidak ada simbol tertinggal), dan `coverage_pct` dilaporkan eksplisit
+  di `results/recompute.json` (`coverage`).
+- **Verifikasi:** `npm run recompute` → semua check PASS, `coverage_pct` 0,70 (21/30),
+  sama dengan dashboard; `npm run verify` → `FREEZE UTUH`.
+- **Tidak mengubah aturan:** `scripts/recompute.js` bukan bagian manifest hash aturan.
+  Cakupan di bawah 100% tetap dilaporkan sebagai deviasi terbuka
+  (`docs/CHECKLIST_UAS.md` §5), bukan ditutupi.
+
+---
+
 ## Ringkasan bugfix pasca-freeze
 
 | Kode | File | Sifat | Hash aturan berubah? |
@@ -156,6 +182,7 @@ Hash gabungan aturan (`freeze_hash.aggregate`) tetap sama sebelum dan sesudah pe
 | BF-005 | `scripts/recompute.js`, `lib/report.js` | rumus coverage candle tertutup | tidak |
 | BF-006 | `vercel.json` | `includeFiles` string glob | tidak |
 | BF-007 | `lib/report.js` | normalisasi `serverTime` → `t` di dashboard | tidak |
+| BF-008 | `scripts/recompute.js` | coverage dari candle unik di log, bukan asumsi kontigu | tidak |
 
 Semua perubahan dilakukan **tanpa** menyentuh `config/frozen.json`, `config/universe.json`,
 `lib/strategy.js`, `lib/backtest.js`, `lib/bot.js`, `lib/fill.js`, atau `lib/metrics.js`.

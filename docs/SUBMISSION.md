@@ -49,7 +49,7 @@ sebagai cadangan, sehingga bukti freeze bisa diperiksa tanpa internet.
 | Backtest jendela forward | `results/backtest_forward.json`, `results/backtest_summary.json` → `forward_backtest` (dibuat saat finalisasi 14 Nov 2026, dari jendela yang sama dengan forward test) |
 | Data candle 4 jam | `data/candles/*_240.csv` |
 | Snapshot order book | `logs/export/snapshots.csv`, `data/spread_samples.jsonl` |
-| Catatan perbaikan pasca-freeze | `docs/BUGFIX_LOG.md` (BF-001…BF-007) |
+| Catatan perbaikan pasca-freeze | `docs/BUGFIX_LOG.md` (BF-001…BF-008) |
 | Checklist requirement | `docs/CHECKLIST_UAS.md` |
 
 ## Catatan tampilan GitHub Actions
